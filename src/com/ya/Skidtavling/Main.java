@@ -8,7 +8,8 @@ public class Main {
 		// detta var bara för test :) och det fungerade 
 		TestKlass test = new TestKlass();
 		System.out.println(test.toString());
-
+		
+		System.out.println("Annnaaaaa");
 	}
 
 }
