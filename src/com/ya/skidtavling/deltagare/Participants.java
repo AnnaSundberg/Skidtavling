@@ -1,4 +1,4 @@
-package com.ya.java.skidtavling.deltagare;
+package com.ya.skidtavling.deltagare;
 
 public class Participants {
 

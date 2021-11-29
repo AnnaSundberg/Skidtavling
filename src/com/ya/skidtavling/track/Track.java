@@ -1,4 +1,4 @@
-package com.ya.java.skidtavling.track;
+package com.ya.skidtavling.track;
 
 public class Track {
 	

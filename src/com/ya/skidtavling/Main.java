@@ -1,10 +1,10 @@
-package com.ya.java.skidtavling;
+package com.ya.skidtavling;
 
 import java.util.*;
 import java.io.*;
 
-import com.ya.java.skidtavling.time.Time;
 import com.ya.joakim.test.TestKlass;
+import com.ya.skidtavling.time.Time;
 
 public class Main {
 

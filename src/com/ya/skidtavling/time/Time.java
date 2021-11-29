@@ -1,4 +1,4 @@
-package com.ya.java.skidtavling.time;
+package com.ya.skidtavling.time;
 
 public class Time {
 	
