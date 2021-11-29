@@ -3,45 +3,28 @@ package com.ya.java.skidtavling.deltagare;
 public class Participants {
 
 	private String participantNumber;
-	private String place;
-	private int trackNumber;
-	private int finishTime;
-	private int currentTime;
+	private String forName;
+	private int place;
 	
 	
+		public String getForName() {
+		return forName;
+	}
 	public String getParticipantNumber() {
 		return participantNumber;
 	}
 	public void setParticipantNumber(String participantNumber) {
 		this.participantNumber = participantNumber;
 	}
-	public String getPlace() {
+	public int getPlace() {
 		return place;
 	}
-	public void setPlace(String place) {
+	public void setPlace(int place) {
 		this.place = place;
 	}
-	public int getTrackNumber() {
-		return trackNumber;
-	}
-	public void setTrackNumber(int trackNumber) {
-		this.trackNumber = trackNumber;
-	}
-	public int getFinishTime() {
-		return finishTime;
-	}
-	public void setFinishTime(int finishTime) {
-		this.finishTime = finishTime;
-	}
-	public int getCurrentTime() {
-		return currentTime;
-	}
-	public void setCurrentTime(int currentTime) {
-		this.currentTime = currentTime;
-	}
 	
 	
-	
+
 }
 
 /*
