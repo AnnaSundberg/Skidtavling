@@ -2,7 +2,7 @@ package com.ya.java.skidtavling.time;
 
 public class Time {
 	
-private int finishTime;
+	private int finishTime;
 	private int currentTime;
 	
 	
