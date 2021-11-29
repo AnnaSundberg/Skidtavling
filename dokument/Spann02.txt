@@ -1,0 +1,15 @@
+ klipp från discord_Joakim.
+
+ 
+ Räkna ut mellantiden på åkare på skidspåret
+-    Hålla koll på vilka platser åkarna har 
+-    Tider
+-    Tidtagning– tänkbar klass
+-    deltagarinformation– tänkbar klass
+-    Tävlingsnummer - personer
+-    Spår plats för den som leder
+-    Filhanteringar - spara resultat och /hämta föregående resultat
+
+
+
+https://github.com/AnnaSundberg/Skidtavling
