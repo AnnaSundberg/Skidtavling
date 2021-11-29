@@ -1,4 +1,4 @@
-package com.ya.Skidtavling;
+package com.ya.java.skidtavling;
 
 import com.ya.joakim.test.TestKlass;
 
