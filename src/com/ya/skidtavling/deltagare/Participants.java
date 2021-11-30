@@ -1,28 +1,34 @@
 package com.ya.skidtavling.deltagare;
 
 public class Participants {
+	
+	
+	
+	public Participants(String participantNumber, String forName, int place) {
+		super();
+		this.participantNumber = participantNumber;
+		this.forName = forName;
+		this.place = place;
+		
+		
+	}
+	
+	
+	@Override
+	public String toString() {
+		return "StartNummer = " + participantNumber + "\tNamn = " + forName + "\tPlats = " + place;
+	}
+
 
 	private String participantNumber;
 	private String forName;
 	private int place;
 	
+
 	
-		public String getForName() {
-		return forName;
-	}
-	public String getParticipantNumber() {
-		return participantNumber;
-	}
-	public void setParticipantNumber(String participantNumber) {
-		this.participantNumber = participantNumber;
-	}
-	public int getPlace() {
-		return place;
-	}
-	public void setPlace(int place) {
-		this.place = place;
-	}
+
 	
+
 	
 
 }
