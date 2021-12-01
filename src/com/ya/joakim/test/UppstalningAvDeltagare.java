@@ -1,7 +1,7 @@
 package com.ya.joakim.test;
 	//test Kommentar
 
-public class TestKlass {
+public class UppstalningAvDeltagare {
 	String testVar = "Jag är en textSträng för test ! ! ";
 	
 	@Override
