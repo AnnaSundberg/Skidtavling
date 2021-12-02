@@ -1,8 +1,5 @@
 package com.ya.skidtavling.main;
 
-
-
-
 import com.ya.joakim.test.UppstallningAvDeltagare;
 
 
