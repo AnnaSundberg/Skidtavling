@@ -1,10 +1,14 @@
 package com.ya.skidtavling.deltagare;
 
-public class Participants {
+import com.ya.skidtavling.person.Person;
 
+public class Participants {
+	
+	Person person = new Person();
 	private String participantNumber;
 	private String forName;
 	private int place;
+	
 	
 	
 	public Participants(String participantNumber, String forName, int place) {
@@ -12,6 +16,7 @@ public class Participants {
 		this.participantNumber = participantNumber;
 		this.forName = forName;
 		this.place = place;
+		
 			
 	}
 	
@@ -20,14 +25,6 @@ public class Participants {
 	public String toString() {
 		return "StartNummer = " + participantNumber + "\tNamn = " + forName + "\tPlats = " + place;
 	}
-
-	
-
-	
-
-	
-
-	
 
 }
 

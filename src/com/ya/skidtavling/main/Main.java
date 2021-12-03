@@ -1,18 +1,20 @@
 package com.ya.skidtavling.main;
 
-import com.ya.joakim.test.UppstallningAvDeltagare;
+import com.ya.joakim.test.TavlingsTavla;
+import com.ya.skidtavling.person.Person;
 
 
 public class Main {
 
 	public static void main(String[] args) {
-		UppstallningAvDeltagare tagare = new UppstallningAvDeltagare();
+		TavlingsTavla tagare = new TavlingsTavla();
 
 		tagare.fill();
-		System.out.println("\n\n\n-------Meny-------\n");
-		System.out.println("deltagare : namn Plats och skill");
-		tagare.printList();
-
+		//tagare.printList();
+		System.out.println(tagare.printOne(44));
+		
+		
+		
 	}
 	
 	
