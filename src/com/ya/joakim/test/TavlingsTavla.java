@@ -19,7 +19,7 @@ public class TavlingsTavla {
 			int i = 0;
 			while ((line = fReader.readLine()) != null) {
 				int randNum = rand.nextInt(100);// random nummer för start Dock kan tävlande nu får samma.....
-				Participants newDeltag = new Participants(randNum, line, i);
+				Participants newDeltag = new Participants(randNum, line, i+1);
 				deltagareLista[i] = newDeltag;
 				i++;
 

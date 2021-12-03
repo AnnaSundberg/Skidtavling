@@ -3,7 +3,7 @@ package com.ya.skidtavling.main;
 import java.util.Scanner;
 
 import com.ya.joakim.test.TavlingsTavla;
-import com.ya.skidtavling.person.Person;
+
 
 
 public class Main {
