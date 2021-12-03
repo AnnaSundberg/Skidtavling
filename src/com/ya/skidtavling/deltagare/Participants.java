@@ -1,22 +1,21 @@
 package com.ya.skidtavling.deltagare;
 
+
+
 import com.ya.skidtavling.person.Person;
 
 public class Participants {
 	
 	Person person = new Person();
-	private String participantNumber;
+	private int participantNumber;
 	private String forName;
 	private int place;
 	
-	
-	
-	public Participants(String participantNumber, String forName, int place) {
+	public Participants(int participantNumber, String forName, int place) {
 		super();
 		this.participantNumber = participantNumber;
 		this.forName = forName;
 		this.place = place;
-		
 			
 	}
 	
