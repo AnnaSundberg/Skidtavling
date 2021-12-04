@@ -12,20 +12,20 @@ public class TavlingsTavla {
 
 	public void fill() {
 		Random rand = new Random();
-
+		// Läser in deltagarena från filen
 		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
 
 			String line;
-
 			int i = 0;
+			//ställer upp deltagarna rad för rad
 			while ((line = fReader.readLine()) != null) {
-				String split[] = line.split(" ");
-				String fName = split[0];
-				String lName = split[1];
+				String split[] = line.split(" ");// stringSplitar raden 
+				String fName = split[0];// sparar förnamn 
+				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
-
+				
 				Participants newDeltag = new Participants(randNum, fName, lName, i + 1);
-
+										//skapar objektet som innan men nu kopplat med Personklassen.					
 				deltagareLista[i] = newDeltag;
 				i++;
 
@@ -43,7 +43,7 @@ public class TavlingsTavla {
 		}
 	}
 
-	public Participants printOne(int x) {
+	public Participants printOne(int x) {// den Här verkar inte fungera
 		return deltagareLista[x];
 	}
 
