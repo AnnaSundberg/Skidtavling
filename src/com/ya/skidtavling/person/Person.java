@@ -5,15 +5,16 @@ public class Person {
 	private String forName;
 	private String lastName;
 
-
-
-	public Person() {
-		
+	
+	
+	public Person(String fName,String lName) {
+		this.forName = fName;
+		this.lastName = lName;
 	}
 
 	@Override
 	public String toString() {
-		return "Person [forName=" + forName + ", lastName=" + lastName + "]";
+		return   forName + " " + lastName ;
 	}
 
 	public String getForName() {

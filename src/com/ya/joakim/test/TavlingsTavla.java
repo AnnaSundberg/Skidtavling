@@ -9,17 +9,23 @@ import com.ya.skidtavling.deltagare.Participants;
 public class TavlingsTavla {
 
 	Participants[] deltagareLista = new Participants[100];
-	
+
 	public void fill() {
 		Random rand = new Random();
-		
+
 		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-			
+
 			String line;
+
 			int i = 0;
 			while ((line = fReader.readLine()) != null) {
-				int randNum = rand.nextInt(100);// random nummer för start Dock kan tävlande nu får samma.....
-				Participants newDeltag = new Participants(randNum, line, i+1);
+				String split[] = line.split(" ");
+				String fName = split[0];
+				String lName = split[1];
+				int randNum = rand.nextInt(100);
+
+				Participants newDeltag = new Participants(randNum, fName, lName, i + 1);
+
 				deltagareLista[i] = newDeltag;
 				i++;
 

@@ -6,24 +6,26 @@ import com.ya.skidtavling.person.Person;
 
 public class Participants {
 	
-	Person person = new Person();
-	private int participantNumber;
-	private String forName;
-	private int place;
 	
-	public Participants(int participantNumber, String forName, int place) {
+	private int participantNumber;
+	private int place;
+	Person person;
+	
+	public Participants(int participantNumber, String forName,String lastName, int place) {
 		super();
 		this.participantNumber = participantNumber;
-		this.forName = forName;
+		this.person = new Person(forName,lastName);
 		this.place = place;
 			
 	}
-	
-	
+
 	@Override
 	public String toString() {
-		return "StartNummer = " + participantNumber + "\tNamn = " + forName + "\tPlats = " + place;
+		return  participantNumber + " " + person+ "\t place=" + place  ;
 	}
+	
+	
+	
 
 }
 

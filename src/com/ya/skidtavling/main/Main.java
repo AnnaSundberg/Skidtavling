@@ -15,7 +15,7 @@ public class Main {
 		tagare.printList();
 		System.out.println("\n\n\n\n");
 		System.out.println("Skriv in ett Nummer 1-100\nför att se en Tävlande");
-		int input = scan.nextInt();
+		int input = scan.nextInt()+1;
 		System.out.println(tagare.printOne(input));
 		
 		scan.close();
