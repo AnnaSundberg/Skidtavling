@@ -43,7 +43,7 @@ public class TavlingsTavla {
 		}
 	}
 
-	public Participants printOne(int x) {// den Här verkar inte fungera
+	public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
 		return deltagareLista[x];
 	}
 
