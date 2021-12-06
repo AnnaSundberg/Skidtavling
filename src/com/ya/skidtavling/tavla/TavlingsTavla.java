@@ -1,4 +1,4 @@
-package com.ya.joakim.test;
+package com.ya.skidtavling.tavla;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
@@ -42,8 +42,7 @@ public class TavlingsTavla {
 			System.out.println(deltagareLista[k]);
 		}
 	}
-
-	public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
+		public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
 		return deltagareLista[x];
 	}
 
