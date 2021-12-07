@@ -2,14 +2,16 @@ package com.ya.skidtavling.tavla;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.util.Random;
+import java.util.*;
 
 import com.ya.skidtavling.deltagare.Participants;
 
 public class TavlingsTavla {
 
 	Participants[] deltagareLista = new Participants[100];
-
+	
+	ArrayList<Participants> dl = new ArrayList<Participants>();
+	
 	public void fill() {
 		Random rand = new Random();
 		// Läser in deltagarena från filen
@@ -17,6 +19,7 @@ public class TavlingsTavla {
 
 			String line;
 			int i = 0;
+			long tid = 0;
 			//ställer upp deltagarna rad för rad
 			while ((line = fReader.readLine()) != null) {
 				String split[] = line.split(" ");// stringSplitar raden 
@@ -24,10 +27,11 @@ public class TavlingsTavla {
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
 				
-				Participants newDeltag = new Participants(randNum, fName, lName, i + 1);
+				Participants newDeltag = new Participants(randNum, fName, lName, i + 1,tid);
 										//skapar objektet som innan men nu kopplat med Personklassen.					
 				deltagareLista[i] = newDeltag;
 				i++;
+				tid +=15;
 
 			}
 		} catch (Exception e) {

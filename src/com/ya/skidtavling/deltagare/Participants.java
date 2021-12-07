@@ -10,18 +10,20 @@ public class Participants {
 	private int participantNumber;
 	private int place;
 	Person person;
+	private long startTid;
 	
-	public Participants(int participantNumber, String forName,String lastName, int place) {
+	public Participants(int participantNumber, String forName,String lastName, int place,long startTid) {
 		super();
 		this.participantNumber = participantNumber;
 		this.person = new Person(forName,lastName);
 		this.place = place;
+		this.startTid = startTid;
 			
 	}
 
 	@Override
 	public String toString() {
-		return  participantNumber + " " + person+ "\t place=" + place  ;
+		return  participantNumber + " " + person+ "\t place=" + place +" startar  10:00:  "+ startTid  ;
 	}
 	
 	
