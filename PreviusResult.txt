@@ -1,8 +1,1 @@
-<<<<<<< HEAD
-hej
-=======
-
-#FIS protokoll
-
-## underrubrik?
->>>>>>> d00c30397ffcb52faba922a1a4f3347a119346d8
+Här ska vi eventuellt skriva in åkarnas tidigare resultat.
