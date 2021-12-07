@@ -1,6 +1,7 @@
 package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
+import com.ya.skidtavling.simulering.Simulator;
 import com.ya.skidtavling.tavla.TavlingsTavla;
 
 
@@ -8,7 +9,7 @@ public class Menu {
 	
 	boolean quit;
 	TavlingsTavla tagare = new TavlingsTavla();
-	public void runMenu() {
+	public void runMenu() throws InterruptedException {
 		PrintMenu.printWelcomeBox();
 		
 		while(!quit) {
@@ -34,7 +35,7 @@ public class Menu {
 		return userChoice;
 	}
 	
-	public void switchMenu(int userChoice) {
+	public void switchMenu(int userChoice) throws InterruptedException {
 	
 		
 		switch (userChoice) {			// 
@@ -54,7 +55,8 @@ public class Menu {
 			tagare.printOne(userChoice);
 			break;
 		case 4:
-			System.out.println("hej hej hej");
+			System.out.println("Sim Demo Ish");
+			new Simulator();
 			break;
 		case 5:
 			System.out.println("liilili");

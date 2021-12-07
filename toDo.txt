@@ -9,6 +9,9 @@ Kompllittera Deltagare klassen.
 Tid Klassen? mellantider
 Målgång här är det slut vi har fått en vinnare!
 
- 
+///////////////////////////////////////////GÖRA typ nu/////////////////////////////////////////////////////
+Titta funktionen för att söka en åkare fungerar inte alls.
+
+Fortsätta Simuleringen av loopet , kasta in någon form som avgör att en deltagare har vunnit. 
  
  
