@@ -2,17 +2,15 @@ package com.ya.skidtavling.deltagare;
 
 import com.ya.skidtavling.person.Person;
 
-public class Participants {
+public class Participants extends Person{// kan ärvas av person titta vidare på detta !!! :) 
 
 	private int participantNumber;
 	private int place;
-	Person person;
 	private long startTid;
 
 	public Participants(int participantNumber, String forName, String lastName, int place, long startTid) {
-		super();
+		super(forName, lastName);
 		this.participantNumber = participantNumber;
-		this.person = new Person(forName, lastName);
 		this.place = place;
 		this.startTid = startTid;
 
@@ -20,7 +18,7 @@ public class Participants {
 
 	@Override
 	public String toString() {
-		return participantNumber + " " + person + "\t place=" + place + " startar  10:00:  " + startTid;
+		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place + " startar  10:00:  " + startTid;
 	}
 
 }

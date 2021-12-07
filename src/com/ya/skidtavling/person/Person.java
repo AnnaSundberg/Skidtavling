@@ -2,8 +2,8 @@ package com.ya.skidtavling.person;
 
 public class Person {
 
-	private String forName;
-	private String lastName;
+	protected String forName;
+	protected String lastName;
 
 	public Person(String fName, String lName) {
 		this.forName = fName;

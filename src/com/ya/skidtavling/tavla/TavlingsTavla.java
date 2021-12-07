@@ -3,15 +3,14 @@ package com.ya.skidtavling.tavla;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
-import java.time.LocalTime;
 
 import com.ya.skidtavling.deltagare.Participants;
 
 public class TavlingsTavla {
 
-	Participants[] deltagareLista = new Participants[100];
+	public Participants[] deltagareLista = new Participants[100];
 	
-	ArrayList<Participants> dl = new ArrayList<Participants>();
+//	ArrayList<Participants> dl = new ArrayList<Participants>();//kanske skall byta ut arrayen till en LISTA istället.
 	
 	public void fill() {
 		Random rand = new Random();

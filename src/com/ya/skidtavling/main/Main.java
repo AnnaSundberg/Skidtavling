@@ -2,6 +2,7 @@ package com.ya.skidtavling.main;
 
 import com.ya.skidtavling.menu.Menu;
 
+
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
@@ -12,6 +13,7 @@ public class Main {
 		System.out.println("\n");
 		
 		System.out.println("\n\n\n\n");
+		
 
 	}
 
