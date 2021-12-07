@@ -1,4 +1,4 @@
-package com.ya.skidtavling.main;
+package com.ya.skidtavling.menu;
 
 public class PrintMenu {
 	
