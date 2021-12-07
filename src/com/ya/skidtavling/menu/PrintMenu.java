@@ -15,7 +15,7 @@ public class PrintMenu {
 		System.out.println("\nGör ett av valen:\n" 
 				+ "1. Fyll Tävlingstavla\n" 
 				+ "2. Skriv ut Tävlingstavla\n" 
-				+ "3. Här händer ngt\n"
+				+ "3. Sök en Deltagare\n"
 				+ "4. Simulering.\n" 
 				+ "5. Menyval 5.\n" 
 				+ "6. Avlsuta.\n");

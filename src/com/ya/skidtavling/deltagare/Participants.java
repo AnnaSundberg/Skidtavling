@@ -2,7 +2,7 @@ package com.ya.skidtavling.deltagare;
 
 import com.ya.skidtavling.person.Person;
 
-public class Participants extends Person{// kan ärvas av person titta vidare på detta !!! :) 
+public class Participants extends Person{
 
 	private int participantNumber;
 	private int place;

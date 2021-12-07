@@ -8,7 +8,7 @@ import com.ya.skidtavling.tavla.TavlingsTavla;
 public class Menu {
 	
 	boolean quit;
-	TavlingsTavla tagare = new TavlingsTavla();
+	public TavlingsTavla tagare = new TavlingsTavla();
 	public void runMenu() throws InterruptedException {
 		PrintMenu.printWelcomeBox();
 		
@@ -34,6 +34,21 @@ public class Menu {
 		}
 		return userChoice;
 	}
+	private int getInput2() {
+		Scanner scan = new Scanner(System.in);
+		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
+		while(userChoice < 0 || userChoice > 100) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
+			try {
+				System.out.print("\nSkriv en siffra: ");
+				userChoice = Integer.parseInt(scan.nextLine());
+			}
+			catch (NumberFormatException e) {
+				System.out.println("Försök igen");		
+			}
+			
+		}
+		return userChoice-1;// vet inte varför man måste ha -1 
+	}
 	
 	public void switchMenu(int userChoice) throws InterruptedException {
 	
@@ -51,8 +66,9 @@ public class Menu {
 			tagare.printList();
 			break;
 		case 3:
-			System.out.println("Här händer ngt ");
-			tagare.printOne(userChoice);
+			System.out.println("Sök en Deltagare");
+			//getInput2();
+			System.out.println(tagare.printOne(getInput2()));
 			break;
 		case 4:
 			System.out.println("Sim Demo Ish");
