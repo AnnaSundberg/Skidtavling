@@ -9,18 +9,24 @@ public class Participants extends Person{
 	private int participantNumber;
 	private int place;
 	private long startTid;
+	private int distance;
 
-	public Participants(int participantNumber, String forName, String lastName, int place, long startTid) {
+	public Participants(int participantNumber, String forName, String lastName, int place, long startTid,int distance) {
 		super(forName, lastName);
 		this.participantNumber = participantNumber;
 		this.place = place;
 		this.startTid = startTid;
+		this.distance = distance;
+		
 
 	}
 
 	@Override
 	public String toString() {
-		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place + " startar  10:00:  " + startTid;
+		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place 
+				+ " startar  10:00:  " + startTid
+				+" har kommit : "+ distance;
+				
 	}
 	public int getParticipantNumber() {
 		return participantNumber;
@@ -44,6 +50,14 @@ public class Participants extends Person{
 
 	public void setStartTid(long startTid) {
 		this.startTid = startTid;
+	}
+
+	public int getDistance() {
+		return distance;
+	}
+
+	public void setDistance(int distance) {
+		this.distance = distance;
 	}
 
 }

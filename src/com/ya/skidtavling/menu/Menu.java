@@ -72,7 +72,7 @@ public class Menu {
 			break;
 		case 4:
 			System.out.println("Sim Demo Ish");
-			new Simulator();
+			tagare.Race();
 			break;
 		case 5:
 			System.out.println("liilili");
