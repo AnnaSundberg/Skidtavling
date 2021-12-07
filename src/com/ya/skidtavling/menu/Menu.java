@@ -1,35 +1,18 @@
 package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
+import com.ya.skidtavling.main.PrintMenu;
+
 
 public class Menu {
 	
 	boolean quit;
 	
-	public void printWelcomeBox() {
-
-		System.out.println("¤---------------¤------------------¤");
-		System.out.println("|      Välkommen till denna        |");
-		System.out.println("|           Skidtävling            |");
-		System.out.println("¤---------------¤------------------¤");
-	}
-
-	private void printMenu() {
-		
-		System.out.println("\nGör ett av valen:\n" 
-				+ "1. Menyval 1.\n" 
-				+ "2. Menyval 2.\n" 
-				+ "3. Menyval 3.\n"
-				+ "4. Menyval 4.\n" 
-				+ "5. Menyval 5.\n" 
-				+ "6. Avlsuta.\n");
-	}
-
 	public void runMenu() {
-		printWelcomeBox();
+		PrintMenu.printWelcomeBox();
 		
 		while(!quit) {
-			printMenu();
+			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
 			switchMenu(userChoice);
 			
@@ -44,9 +27,9 @@ public class Menu {
 				userChoice = Integer.parseInt(scan.nextLine());
 			}
 			catch (NumberFormatException e) {
-				System.out.println("Försök igen");
-				
+				System.out.println("Försök igen");		
 			}
+			
 		}
 		return userChoice;
 	}
