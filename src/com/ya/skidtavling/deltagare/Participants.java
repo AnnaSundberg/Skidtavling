@@ -4,6 +4,8 @@ import com.ya.skidtavling.person.Person;
 
 public class Participants extends Person{
 
+	
+
 	private int participantNumber;
 	private int place;
 	private long startTid;
@@ -19,6 +21,29 @@ public class Participants extends Person{
 	@Override
 	public String toString() {
 		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place + " startar  10:00:  " + startTid;
+	}
+	public int getParticipantNumber() {
+		return participantNumber;
+	}
+
+	public void setParticipantNumber(int participantNumber) {
+		this.participantNumber = participantNumber;
+	}
+
+	public int getPlace() {
+		return place;
+	}
+
+	public void setPlace(int place) {
+		this.place = place;
+	}
+
+	public long getStartTid() {
+		return startTid;
+	}
+
+	public void setStartTid(long startTid) {
+		this.startTid = startTid;
 	}
 
 }
