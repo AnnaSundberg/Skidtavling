@@ -79,6 +79,7 @@ public class Menu {
 			break;
 		case 6:
 			System.out.println("BYE\n");
+			PrintMenu.printByeByeBox();
 			quit = true;
 			break;
 		default:

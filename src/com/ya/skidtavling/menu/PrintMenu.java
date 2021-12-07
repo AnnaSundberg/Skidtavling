@@ -20,4 +20,11 @@ public class PrintMenu {
 				+ "5. Menyval 5.\n" 
 				+ "6. Avlsuta.\n");
 	}
+	public static void printByeByeBox() {
+
+		System.out.println("¤---------------¤------------------¤");
+		System.out.println("|      Tack och Välkommen          |");
+		System.out.println("|           Åter, Hej Då!          |");
+		System.out.println("¤---------------¤------------------¤");
+	}
 }
