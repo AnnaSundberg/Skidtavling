@@ -1,11 +1,13 @@
 package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
+import com.ya.skidtavling.tavla.TavlingsTavla;
+
 
 public class Menu {
 	
 	boolean quit;
-	
+	TavlingsTavla tagare = new TavlingsTavla();
 	public void runMenu() {
 		PrintMenu.printWelcomeBox();
 		
@@ -40,14 +42,16 @@ public class Menu {
 			System.out.println("Det här var inget val ajabaja");
 			break;
 		case 1:
-			System.out.println("lalala");
-//			Time();			//Min eclipse bugga ur så här tar jag en paus
+			System.out.println("Fyll Tävlingstavla");
+			tagare.fill();			//Min eclipse bugga ur så här tar jag en paus
 			break;
 		case 2:
-			System.out.println("något annat");
+			System.out.println("Skriv ut Tävlingstavla");
+			tagare.printList();
 			break;
 		case 3:
-			System.out.println("blablabla");
+			System.out.println("Här händer ngt ");
+			tagare.printOne(userChoice);
 			break;
 		case 4:
 			System.out.println("hej hej hej");

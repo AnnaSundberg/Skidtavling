@@ -13,9 +13,9 @@ public class PrintMenu {
 	public static void printMenu() {
 		
 		System.out.println("\nGör ett av valen:\n" 
-				+ "1. Skriv Ut deltagarLista 1.\n" 
-				+ "2. Menyval 2.\n" 
-				+ "3. Menyval 3.\n"
+				+ "1. Fyll Tävlingstavla\n" 
+				+ "2. Skriv ut Tävlingstavla\n" 
+				+ "3. Här händer ngt\n"
 				+ "4. Menyval 4.\n" 
 				+ "5. Menyval 5.\n" 
 				+ "6. Avlsuta.\n");
