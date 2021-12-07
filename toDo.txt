@@ -1,0 +1,12 @@
+Vad har vi ?:
+en meny, Fungerar lite sådär. *arbetas vidare under jobbets gång.Uppdateras var eftersom.
+Deltagarlista.txt , förbestäd* frågan är om vi ska ha lite mer data säg kanske rang*titta vidare på detta!
+Början på tävlingen,Start.*Logik till hur det skall hänga ihop,.
+
+Vad Skall vi göra?:
+START : individuell start (bör anges på lottningen). IntervallStart
+Kompllittera Deltagare klassen.
+Tid Klassen? mellantider
+Målgång här är det slut vi har fått en vinnare!
+
+ 

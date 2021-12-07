@@ -3,6 +3,7 @@ package com.ya.skidtavling.tavla;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
+import java.time.LocalTime;
 
 import com.ya.skidtavling.deltagare.Participants;
 
