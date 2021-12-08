@@ -50,7 +50,21 @@ public class TavlingsTavla {
 	public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
 		return deltagareLista[x];
 	}
-
+	/*tankar runt detta är : 
+	 * kan man göra en egen klass med detta då iform av att kasta in den existerande arrayen i 
+	 * klassen och få ut en ny array som man då sedan kan skriva till en fil som blir TIDIGARE_resultat.txt
+	 * gissar på att man kanske kan göra något åt åkartiderna här oxå 
+	 * om man lägger starttiderna på något annat sätt i uppställningen av tävlingstavlan 
+	 * kan man väl med .get&set method göra ändringar här 
+	 * 
+	 * 
+	 * Note* jag är oxå väldigt intresserad att implimentara hans Händelse Logg här oxå 
+	 * något kan hända åkaren längs vägen som gör att den inte kan fortsätta.'
+	 * 
+	 * 
+	 * 
+	 * 
+	 * */
 	public void Race() { // ett sätt jag fick ihop simuleringen funkar lite sisådär
 		boolean winner = false;
 		do {
@@ -58,7 +72,7 @@ public class TavlingsTavla {
 				int distancedTraveled = rand.nextInt(10);
 				deltagareLista[i].setDistance(deltagareLista[i].getDistance() + distancedTraveled);
 				System.out.println(deltagareLista[i]);
-				if (deltagareLista[i].getDistance() == 100) {
+				if (deltagareLista[i].getDistance() >= 100) {
 					System.out.println("\n\nVinnaren för tävlingen är " + deltagareLista[i].getForName() + " "
 							+ deltagareLista[i].getLastName().toString());
 					winner = true;
