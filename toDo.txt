@@ -14,4 +14,7 @@ Titta funktionen för att söka en åkare fungerar inte alls.
 
 Fortsätta Simuleringen av loopet , kasta in någon form som avgör att en deltagare har vunnit. 
  
+///////////////////////////////////////////Måsten/////////////////////////////////////////////////////////
+Se över Namnen på diverse Variabler och methoder och ge dem mer självförkarande namn.
+bryta ut stora klasser till mindre klasser. 
  
