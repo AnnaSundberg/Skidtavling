@@ -15,8 +15,7 @@ public class Menu {
 		while(!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
-			switchMenu(userChoice);
-			
+			MenuManager.switchMenu(userChoice,tagare);
 		}
 	}
 	private int getInput() {
@@ -50,40 +49,5 @@ public class Menu {
 		return userChoice-1;// vet inte varför man måste ha -1 
 	}
 	
-	public void switchMenu(int userChoice) throws InterruptedException {
-	
-		
-		switch (userChoice) {			// 
-		case 0:
-			System.out.println("Det här var inget val ajabaja");
-			break;
-		case 1:
-			System.out.println("Fyll Tävlingstavla");
-			tagare.fill();			//Min eclipse bugga ur så här tar jag en paus
-			break;
-		case 2:
-			System.out.println("Skriv ut Tävlingstavla");
-			tagare.printList();
-			break;
-		case 3:
-			System.out.println("Sök en Deltagare");
-			//getInput2();
-			System.out.println(tagare.printOne(getInput2()));
-			break;
-		case 4:
-			System.out.println("Sim Demo Ish");
-			tagare.Race();
-			break;
-		case 5:
-			System.out.println("liilili");
-			break;
-		case 6:
-			System.out.println("BYE\n");
-			PrintMenu.printByeByeBox();
-			quit = true;
-			break;
-		default:
-			System.out.println("Något gick snett");
-		}
-	}
+
 }

@@ -8,9 +8,9 @@ import com.ya.skidtavling.deltagare.Participants;
 
 public class TavlingsTavla {
 
-	public Participants[] deltagareLista = new Participants[100];
+	//public Participants[] deltagareLista = new Participants[100];
 	Random rand = new Random();
-//	ArrayList<Participants> dl = new ArrayList<Participants>();//kanske skall byta ut arrayen till en LISTA istället.
+	public List<Participants> dl = new ArrayList<>();//kanske skall byta ut arrayen till en LISTA istället.
 
 	public void fill() {
 
@@ -29,7 +29,8 @@ public class TavlingsTavla {
 
 				Participants newDeltag = new Participants(randNum, fName, lName, i + 1, tid, 0);
 				// skapar objektet som innan men nu kopplat med Personklassen.
-				deltagareLista[i] = newDeltag;
+				//deltagareLista[i] = newDeltag;
+				dl.add(newDeltag);
 				i++;
 				tid += 15;
 
@@ -42,14 +43,31 @@ public class TavlingsTavla {
 	}
 
 	public void printList() {
-		for (int k = 0; k < deltagareLista.length; k++) {
-			System.out.println(deltagareLista[k]);
+//		for (int k = 0; k < deltagareLista.length; k++) {
+//			System.out.println(deltagareLista[k]);
+//		}
+		for(Participants s: dl) {
+			System.out.println(s);
 		}
 	}
-
-	public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
-		return deltagareLista[x];
+	public void race() {
+		boolean winner = false;
+		do {
+			for(Participants p:dl) {
+				p.setDistance(p.getDistance()+rand.nextInt(10));
+				System.out.println(p.toString());
+				if(p.getDistance()>=100) {
+					System.out.println("\n Vinnaren för tävlingen är "+p.getForName()+" "+p.getLastName());
+					winner = true;
+				}
+			}
+			
+		}while(!winner);
 	}
+
+//	public Participants printOne(int x) {// den Här verkar inte fungera*note Uppdaterad
+//		return deltagareLista[x];
+//	}
 	/*tankar runt detta är : 
 	 * kan man göra en egen klass med detta då iform av att kasta in den existerande arrayen i 
 	 * klassen och få ut en ny array som man då sedan kan skriva till en fil som blir TIDIGARE_resultat.txt
@@ -65,20 +83,31 @@ public class TavlingsTavla {
 	 * 
 	 * 
 	 * */
-	public void Race() { // ett sätt jag fick ihop simuleringen funkar lite sisådär
-		boolean winner = false;
-		do {
-			for (int i = 0; i < deltagareLista.length; i++) {
-				int distancedTraveled = rand.nextInt(10);
-				deltagareLista[i].setDistance(deltagareLista[i].getDistance() + distancedTraveled);
-				System.out.println(deltagareLista[i]);
-				if (deltagareLista[i].getDistance() >= 100) {
-					System.out.println("\n\nVinnaren för tävlingen är " + deltagareLista[i].getForName() + " "
-							+ deltagareLista[i].getLastName().toString());
-					winner = true;
-				}
-			}
-		} while (!winner);
-	}
+//	static public void Race() { // ett sätt jag fick ihop simuleringen funkar lite sisådär
+////		boolean winner = false;
+////		do {
+////			for (int i = 0; i < deltagareLista.length; i++) {
+////				int distancedTraveled = rand.nextInt(10);
+////				deltagareLista[i].setDistance(deltagareLista[i].getDistance() + distancedTraveled);
+////				System.out.println(deltagareLista[i]);
+////				if (deltagareLista[i].getDistance() >= 100) {
+////					System.out.println("\n\nVinnaren för tävlingen är " + deltagareLista[i].getForName() + " "
+////							+ deltagareLista[i].getLastName().toString());
+////					winner = true;
+////				}
+////			}
+////		} while (!winner);
+//		boolean winner = false;
+//		do {
+//			for(Participants p:dl) {
+//				p.setDistance(p.getDistance()+rand.nextInt(10));
+//				if(p.getDistance()>=100) {
+//					System.out.println("\n Vinnaren för tävlingen är "+p.getForName()+" "+p.getLastName());
+//					winner = true;
+//				}
+//			}
+//			
+//		}while(!winner);
+//	}
 
 }
