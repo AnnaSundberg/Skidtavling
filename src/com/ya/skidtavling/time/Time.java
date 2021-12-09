@@ -2,43 +2,35 @@ package com.ya.skidtavling.time;
 
 public class Time {
 	// kommentar
-	private int hour;
-	private int minutes;
-	private int sec;
+	// 1 hour = 3600 secunder
+	// 1 min = 60 secunder;
+	
+	private long sec;
 
-	public Time(int hour, int minutes, int sec) {
+	public Time(long sec) {
 		super();
-		this.hour = hour;
-		this.minutes = minutes;
-		this.sec = sec;
+		this.setSec(sec);
+	}
+
+	public long getSec() {
+		return sec;
 	}
 
 	@Override
 	public String toString() {
-		return "Time " + hour + ":" + minutes + ":" + sec + "]";
+		int temp = (int) sec;
+		int hour = temp/3600;
+		temp = temp-hour*3600;
+		int min = temp/60;
+		temp = temp-min*60;
+		int secu = temp;
+		return " time "+hour+" :" + min +" :"+ secu ;
 	}
 
-	public int getHour() {
-		return hour;
-	}
-
-	public void setHour(int hour) {
-		this.hour = hour;
-	}
-
-	public int getMinutes() {
-		return minutes;
-	}
-
-	public void setMinutes(int minutes) {
-		this.minutes = minutes;
-	}
-
-	public int getSec() {
-		return sec;
-	}
-
-	public void setSec(int sec) {
+	public void setSec(long sec) {
 		this.sec = sec;
 	}
+
+
+	
 }
