@@ -1,7 +1,7 @@
 package com.ya.skidtavling.time;
 
 public class Time {
-
+	// kommentar
 	private int hour;
 	private int minutes;
 	private int sec;
