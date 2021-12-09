@@ -1,6 +1,7 @@
 package com.ya.skidtavling.deltagare;
 
 import com.ya.skidtavling.person.Person;
+import com.ya.skidtavling.time.Time;
 
 public class Participants extends Person{
 
@@ -8,10 +9,10 @@ public class Participants extends Person{
 
 	private int participantNumber;
 	private int place;
-	private long startTid;
+	Time startTid;
 	private int distance;
 
-	public Participants(int participantNumber, String forName, String lastName, int place, long startTid,int distance) {
+	public Participants(int participantNumber, String forName, String lastName, int place, Time startTid,int distance) {
 		super(forName, lastName);
 		this.participantNumber = participantNumber;
 		this.place = place;
@@ -24,10 +25,11 @@ public class Participants extends Person{
 	@Override
 	public String toString() {
 		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place 
-				+ " startar  10:00:  " + startTid
+				+ " :  " + startTid
 				+" har kommit : "+ distance;
 				
 	}
+
 	public int getParticipantNumber() {
 		return participantNumber;
 	}
@@ -44,11 +46,11 @@ public class Participants extends Person{
 		this.place = place;
 	}
 
-	public long getStartTid() {
+	public Time getStartTid() {
 		return startTid;
 	}
 
-	public void setStartTid(long startTid) {
+	public void setStartTid(Time startTid) {
 		this.startTid = startTid;
 	}
 
@@ -59,7 +61,7 @@ public class Participants extends Person{
 	public void setDistance(int distance) {
 		this.distance = distance;
 	}
-
+	
 }
 
 /*

@@ -5,6 +5,7 @@ import java.io.FileReader;
 import java.util.*;
 
 import com.ya.skidtavling.deltagare.Participants;
+import com.ya.skidtavling.time.Time;
 
 public class TavlingsTavla {
 
@@ -13,26 +14,35 @@ public class TavlingsTavla {
 	public List<Participants> dl = new ArrayList<>();//kanske skall byta ut arrayen till en LISTA istället.
 
 	public void fill() {
-
+//		int sec=+14;
+//		Time newTime = new Time(9, 10, sec);
+		
 		// Läser in deltagarena från filen
 		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
 
 			String line;
 			int i = 0;
-			long tid = 0;
+			int sec= 0;
+			Time newTime = new Time(9, 10, sec);
+			
+			//int tid = 0;
 			// ställer upp deltagarna rad för rad
 			while ((line = fReader.readLine()) != null) {
 				String split[] = line.split(" ");// stringSplitar raden
 				String fName = split[0];// sparar förnamn
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
-
-				Participants newDeltag = new Participants(randNum, fName, lName, i + 1, tid, 0);
+				
+				//Participants newDeltag = new Participants(randNum, fName, lName, i + 1, tid,tid, 0);
+				Participants newDeltag = new Participants(randNum, fName, lName, i+1, newTime, 0);
 				// skapar objektet som innan men nu kopplat med Personklassen.
 				//deltagareLista[i] = newDeltag;
 				dl.add(newDeltag);
 				i++;
-				tid += 15;
+				//tid += 15;
+				//sec++;
+				newTime.setSec(newTime.getSec()+1);
+				
 
 			}
 		} catch (Exception e) {
