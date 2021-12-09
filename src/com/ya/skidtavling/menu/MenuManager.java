@@ -19,6 +19,9 @@ public class MenuManager {
 			break;
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");
+			
+			tagare.tidsDelning();
+			
 			tagare.printList();
 			break;
 		case 3:

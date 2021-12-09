@@ -22,8 +22,8 @@ public class TavlingsTavla {
 
 			String line;
 			int i = 0;
-			int sec= 0;
-			Time newTime = new Time(9, 10, sec);
+			//int sec= 0;
+			Time newTime = new Time(13507);
 			
 			//int tid = 0;
 			// ställer upp deltagarna rad för rad
@@ -32,16 +32,17 @@ public class TavlingsTavla {
 				String fName = split[0];// sparar förnamn
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
-				
+//				long secPlus = 15;
 				//Participants newDeltag = new Participants(randNum, fName, lName, i + 1, tid,tid, 0);
-				Participants newDeltag = new Participants(randNum, fName, lName, i+1, newTime, 0);
+				Participants newDeltag = new Participants(randNum, fName, lName, i+1, null, 0);
 				// skapar objektet som innan men nu kopplat med Personklassen.
 				//deltagareLista[i] = newDeltag;
 				dl.add(newDeltag);
 				i++;
 				//tid += 15;
 				//sec++;
-				newTime.setSec(newTime.getSec()+1);
+				
+//				newTime.setSec(newTime.getSec()+secPlus);
 				
 
 			}
@@ -49,6 +50,14 @@ public class TavlingsTavla {
 			System.out.println(e);
 		} finally {
 			System.out.println("Succes!");
+		}
+		
+	}
+	public void tidsDelning() {
+		long longsetTid = rand.nextLong();
+		Time nytid = new Time(longsetTid);
+		for(Participants p:dl) {
+			p.setStartTid(nytid);
 		}
 	}
 
