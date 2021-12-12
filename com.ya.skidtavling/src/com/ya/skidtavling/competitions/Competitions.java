@@ -1,7 +1,14 @@
 package com.ya.skidtavling.competitions;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+import java.time.LocalDate;
+
+//Competitions.java
 	public class Competitions {
-		
+/*
+ * default arbetskatalog skulle kunna läggas till..		
+ */
 		
 
 		/**
@@ -16,12 +23,8 @@ package com.ya.skidtavling.competitions;
 		public void setTavlingsnamn(String tavlingsnamn) {
 			this.tavlingsnamn = tavlingsnamn;
 		}
-		/**
-		 * @param sista_anmalningsdatumg the sista_anmalningsdatumg to set
-		 */
-		public void setSista_anmalningsdatum(long sista_anmalningsdatumg) {
-			this.sista_anmalningsdatum = sista_anmalningsdatumg;
-		}
+	
+	
 		/**
 		 * @param startmetod the startmetod to set
 		 */
@@ -85,8 +88,10 @@ package com.ya.skidtavling.competitions;
 		/**
 		 * @param senUppd the senUppd to set
 		 */
-		public void setSenUppd(long senUppd) {
-			this.senUppd = senUppd;
+		public void setSenUppd() {
+			LocalDate idag = LocalDate.now();	
+	
+			this.senUppd = idag.toString();
 		}
 		/**
 		 * @param haschKod the haschKod to set
@@ -97,8 +102,7 @@ package com.ya.skidtavling.competitions;
 		/**
 		 * @param forHandsanmalanKrav
 		 * @param tavlingsnamn
-		 * @param sista_anmalningsdatumg
-		 * @param startmetod
+		 		 * @param startmetod
 		 * @param fixedStartnbr
 		 * @param sistaAnmalningsdatum
 		 * @param maxAntalstartande
@@ -111,14 +115,13 @@ package com.ya.skidtavling.competitions;
 		 * @param senUppd
 		 * @param haschKod
 		 */
-		private Competitions(boolean forHandsanmalanKrav, String tavlingsnamn, long sista_anmalningsdatumg,
+		private Competitions(boolean forHandsanmalanKrav, String tavlingsnamn,
 				int startmetod, int fixedStartnbr, long sistaAnmalningsdatum, int maxAntalstartande,
 				long forstaStartPlanned, long forstaStartVerklig, int startIntervall, int nbrStart, int nbrSlut,
-				boolean simTidtagning, long senUppd, String haschKod) {
+				boolean simTidtagning, String senUppd, String haschKod) {
 			super();
 			this.forHandsanmalanKrav = forHandsanmalanKrav;
 			this.tavlingsnamn = tavlingsnamn;
-			this.sista_anmalningsdatum = sista_anmalningsdatumg;
 			this.startmetod = startmetod;
 			this.fixedStartnbr = fixedStartnbr;
 			this.sistaAnmalningsdatum = sistaAnmalningsdatum;
@@ -134,7 +137,7 @@ package com.ya.skidtavling.competitions;
 		}
 		private boolean forHandsanmalanKrav;       //* krav på förhandsanmälan == här: inläst lista är alla
 		private String tavlingsnamn;				// marknadsföringsnamn  
-		private long sista_anmalningsdatum;
+		
 	
 
 		private int startmetod;						//* kod för startmetod koder 
@@ -148,7 +151,7 @@ package com.ya.skidtavling.competitions;
 //		ges möjlighet att via menyn variera.
 
 
-		private int fixedStartnbr;		//* Vid Jaktstart fixerad startordning .
+		private int fixedStartnbr;		//* Antaled anmälda startande.
 		private long sistaAnmalningsdatum; // Java time hourmin,sista anmälan för deltagare;
 				
 
@@ -161,8 +164,9 @@ package com.ya.skidtavling.competitions;
 		private int nbrSlut;			//* sista nummer i sviten nummerlappar tävling genom läsbarhet etc.
 		private boolean simTidtagning;   // för test och utvärdering all manuell tidtagning ersatt med metod för
 										//slumpad tidtagning; 
-		private long senUppd;			// senaste uppdatering av posten java.time format.
+		private String senUppd;			// senaste uppdatering av posten string format.
 		private String haschKod	;		// post check; integritet.
+		
 		/**
 		 * 
 		 */
@@ -170,10 +174,134 @@ package com.ya.skidtavling.competitions;
 			super();
 			// TODO Auto-generated constructor stub
 		}
+		/**
+		 * @return the forHandsanmalanKrav
+		 */
+		public boolean isForHandsanmalanKrav() {
+			return forHandsanmalanKrav;
+		}
+		/**
+		 * @return the tavlingsnamn
+		 */
+		public String getTavlingsnamn() {
+			return tavlingsnamn;
+		}
+		/**
+		 * @return the sista_anmalningsdatum
+		 */
+		public String getSistaAnmalningsdatum() {
+			
+			 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
+			 Date date= new Date(sistaAnmalningsdatum);
+			 
+	       
+		        String dettadatum = df.format(date);
+		        			
+			return dettadatum;
+		}
+		/**
+		 * @return the startmetod
+		 */
+		public int getStartmetod() {
+			return startmetod;
+		}
+		/**
+		 * @return the fixedStartnbr
+		 */
+		public int getFixedStartnbr() {
+			return fixedStartnbr;
+		}
+		/**
+		 * @return the sistaAnmalningsdatum
+		 */
+//		public long getSistaAnmalningsdatum() {
+			
+			
+			
+			
+			
+			
+			
+//			return sistaAnmalningsdatum;
+//		}
+		/**
+		 * @return the maxAntalstartande
+		 */
+		public int getMaxAntalstartande() {
+			return maxAntalstartande;
+		}
+		/**
+		 * @return the forstaStartPlanned
+		 */
+		public String getForstaStartPlanned() {
+			 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
+			 Date date= new Date(forstaStartPlanned);
+			 
+	       
+		    String dettadatum = df.format(date);
+		        			
+			return dettadatum;	
+		
+		}
+		/**
+		 * @return the forstaStartVerklig
+		 */
+		public String getForstaStartVerklig() {
+			 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
+			 Date date= new Date(forstaStartVerklig);
+			 
+	       
+		    String dettadatum = df.format(date);
+		        			
+			return dettadatum;				
+			
+			
+			
+			
+			
+	
+		}
+		/**
+		 * @return the startIntervall
+		 */
+		public int getStartIntervall() {
+			return startIntervall;
+		}
+		/**
+		 * @return the nbrStart
+		 */
+		public int getNbrStart() {
+			return nbrStart;
+		}
+		/**
+		 * @return the nbrSlut
+		 */
+		public int getNbrSlut() {
+			return nbrSlut;
+		}
+		/**
+		 * @return the simTidtagning
+		 */
+		public boolean isSimTidtagning() {
+			return simTidtagning;
+		}
+		/**
+		 * @return the senUppd
+		 */
+		public String getSenUppd() {
+		        			
+			return senUppd;
+		}
+		/**
+		 * @return the haschKod
+		 */
+		public String getHaschKod() {
+			return haschKod;
+		}
 		@Override
 		public String toString() {
 			return "Competitions [forHandsanmalanKrav=" + forHandsanmalanKrav + ", tavlingsnamn=" + tavlingsnamn
-					+ ", sista_anmalningsdatum=" + sista_anmalningsdatum + ", startmetod=" + startmetod +"\n"
+					+  "startmetod=" + startmetod +"\n"
 					+ ", fixedStartnbr=" + fixedStartnbr + ", sistaAnmalningsdatum=" + sistaAnmalningsdatum
 					+ ", maxAntalstartande=" + maxAntalstartande + ", forstaStartPlanned=" + forstaStartPlanned
 					+ ", forstaStartVerklig=" + forstaStartVerklig + ", startIntervall=" + startIntervall
@@ -181,6 +309,7 @@ package com.ya.skidtavling.competitions;
 					+ ", senUppd=" + senUppd + ", haschKod=" + haschKod + "="
 				;
 		}
+		
 	
 		}
 	

@@ -1,14 +1,18 @@
 package com.ya.skidtavling.competitions;
+//Managecompetitions.java
 
 import com.ya.skidtavling.*;
 import java.util.*;
 import java.text.SimpleDateFormat;
 import java.time.*;
 import java.text.*;
+import com.ya.skidtavling.competitions.Compmenue.*;
 
 public class Managecompetitions {
 	public static void main(String[] args)  {
 		// TODO Auto-generated method stub
+		
+		
 		String wrk = "";
 		String prmt = "";
 		int win = 0;
@@ -26,7 +30,6 @@ public class Managecompetitions {
 		tavl1.setForHandsanmalanKrav(wbool);
 		wlong = inputDatum(" Senaste Anm‰lningsdag ");
 		tavl1.setSistaAnmalningsdatum(wlong);	
-		
 		wbool = inputBool("Simulerad tidtagning");
 		tavl1.setSimTidtagning(wbool);
 
@@ -48,12 +51,16 @@ public class Managecompetitions {
 
 		wlong = inputDatum("Ange t‰vlingsdatum som ≈≈≈-MM_DD ");
 				tavl1.setForstaStartPlanned(wlong);		
-		wlong = inputDatum("Ange Senaste uppdatering som ≈≈≈-MM_DD ");
-				tavl1.setSenUppd(wlong);
+						tavl1.setSenUppd();
 		
 		
 		System.out.println(tavl1.toString());
 
+	}
+
+	private static void Compmenue() {
+		// TODO Auto-generated method stub
+		
 	}
 
 	private static String inputString(String promptString, boolean b, int i) {
@@ -215,6 +222,7 @@ public class Managecompetitions {
 
 		return;
 	}
+	
 	// TODO Auto-generated method stub
 
 }
