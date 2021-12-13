@@ -36,11 +36,13 @@ public class MenuManager {
 			break;
 		case 5:
 			System.out.println("liilili");
+			tagare.printList2();
 			break;
 		case 6:
 			System.out.println("BYE\n");
 			PrintMenu.printByeByeBox();
 			//quit = true;
+			tagare.printList2();
 			break;
 		default:
 			System.out.println("Något gick snett");

@@ -30,6 +30,7 @@ public class Time {
 	public void setSec(long sec) {
 		this.sec = sec;
 	}
+	
 
 
 	

@@ -11,15 +11,36 @@ public class Participants extends Person{
 	private int place;
 	Time startTid;
 	private int distance;
+	private boolean notFinished;
 
-	public Participants(int participantNumber, String forName, String lastName, int place, Time startTid,int distance) {
+//public Participants(String fName, String lName, int participantNumber, int place, Time startTid, int distance,
+//			boolean notFinished) {
+//		super(fName, lName);
+//		this.participantNumber = participantNumber;
+//		this.place = place;
+//		this.startTid = startTid;
+//		this.distance = distance;
+//		this.notFinished = notFinished;
+//	}
+
+	public Participants(int participantNumber, String forName, String lastName, int place, Time startTid,int distance,boolean notFinished) {
 		super(forName, lastName);
 		this.participantNumber = participantNumber;
 		this.place = place;
 		this.startTid = startTid;
 		this.distance = distance;
+		this.notFinished= notFinished;
 		
 
+	}
+
+
+	public boolean isNotFinished() {
+		return notFinished;
+	}
+
+	public void setNotFinished(boolean notFinished) {
+		this.notFinished = notFinished;
 	}
 
 	@Override
