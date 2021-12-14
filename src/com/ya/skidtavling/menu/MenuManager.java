@@ -42,6 +42,7 @@ public class MenuManager {
 			System.out.println("BYE\n");
 			PrintMenu.printByeByeBox();
 			//quit = true;
+			System.exit(0);// END
 			break;
 		default:
 			System.out.println("Något gick snett");
