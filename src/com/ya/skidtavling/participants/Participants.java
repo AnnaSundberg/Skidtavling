@@ -1,4 +1,4 @@
-package com.ya.skidtavling.deltagare;
+package com.ya.skidtavling.participants;
 
 import com.ya.skidtavling.person.Person;
 import com.ya.skidtavling.time.Time;

@@ -1,6 +1,6 @@
 package com.ya.skidtavling.menu;
 
-import com.ya.skidtavling.deltagare.Participants;
+import com.ya.skidtavling.participants.Participants;
 import com.ya.skidtavling.simulering.Simulator;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 

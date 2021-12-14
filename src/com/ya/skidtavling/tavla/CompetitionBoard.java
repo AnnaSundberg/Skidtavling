@@ -4,7 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
-import com.ya.skidtavling.deltagare.Participants;
+import com.ya.skidtavling.participants.Participants;
 import com.ya.skidtavling.time.Time;
 
 public class CompetitionBoard {
