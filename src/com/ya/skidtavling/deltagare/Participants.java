@@ -3,37 +3,24 @@ package com.ya.skidtavling.deltagare;
 import com.ya.skidtavling.person.Person;
 import com.ya.skidtavling.time.Time;
 
-public class Participants extends Person{
-
-	
+public class Participants extends Person {
 
 	private int participantNumber;
 	private int place;
-	Time startTid;
+	Time startTime;
 	private int distance;
 	private boolean notFinished;
 
-//public Participants(String fName, String lName, int participantNumber, int place, Time startTid, int distance,
-//			boolean notFinished) {
-//		super(fName, lName);
-//		this.participantNumber = participantNumber;
-//		this.place = place;
-//		this.startTid = startTid;
-//		this.distance = distance;
-//		this.notFinished = notFinished;
-//	}
-
-	public Participants(int participantNumber, String forName, String lastName, int place, Time startTid,int distance,boolean notFinished) {
+	public Participants(int participantNumber, String forName, String lastName, int place, Time startTime, int distance,
+			boolean notFinished) {
 		super(forName, lastName);
 		this.participantNumber = participantNumber;
 		this.place = place;
-		this.startTid = startTid;
+		this.startTime = startTime;
 		this.distance = distance;
-		this.notFinished= notFinished;
-		
+		this.notFinished = notFinished;
 
 	}
-
 
 	public boolean isNotFinished() {
 		return notFinished;
@@ -45,10 +32,9 @@ public class Participants extends Person{
 
 	@Override
 	public String toString() {
-		return participantNumber + " " + forName  +" "+lastName+""+"\t place=" + place 
-				+ " :  " + startTid
-				+" har kommit : "+ distance;
-				
+		return participantNumber + " " + forName + " " + lastName + "" + "\t place=" + place + " :  " + startTime
+				+ " har kommit : " + distance;
+
 	}
 
 	public int getParticipantNumber() {
@@ -67,12 +53,12 @@ public class Participants extends Person{
 		this.place = place;
 	}
 
-	public Time getStartTid() {
-		return startTid;
+	public Time getStartTime() {
+		return startTime;
 	}
 
-	public void setStartTid(Time startTid) {
-		this.startTid = startTid;
+	public void setStartTime(Time startTime) {
+		this.startTime = startTime;
 	}
 
 	public int getDistance() {
@@ -82,13 +68,5 @@ public class Participants extends Person{
 	public void setDistance(int distance) {
 		this.distance = distance;
 	}
-	
-}
 
-/*
- * - Räkna ut mellantiden på åkare på skidspåret - Hålla koll på vilka platser
- * åkarna har - Tider - Tidtagning– tänkbar klass - deltagarinformation– tänkbar
- * klass - Tävlingsnummer - personer - Spår plats för den som leder -
- * Filhanteringar - spara resultat och /hämta föregående resultat
- * 
- */
+}
