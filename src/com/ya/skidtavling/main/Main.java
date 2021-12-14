@@ -6,8 +6,8 @@ import com.ya.skidtavling.time.Time;
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
-		Time nyTid = new Time(13507);
-		System.out.println(nyTid.toString());
+		Time newTime = new Time(13507);
+		System.out.println(newTime.toString());
 		Menu menu = new Menu(); // instans för meny klassen
 		menu.runMenu(); // kallar på runMenu klassen som skriver ut välkommen rutan och sedan valen
 		//System.out.println(menu.tagare.printOne(0));

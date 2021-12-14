@@ -7,7 +7,7 @@ import java.util.*;
 import com.ya.skidtavling.deltagare.Participants;
 import com.ya.skidtavling.time.Time;
 
-public class TavlingsTavla {
+public class CompetitionBoard {
 
 	Random rand = new Random();
 	public List<Participants> participantsList = new ArrayList<>();
@@ -54,14 +54,14 @@ public class TavlingsTavla {
 		}
 	}
 
-	public void printList() {
+	public void printParticipantsBoard() {
 
 		for (Participants s : participantsList) {
 			System.out.println(s);
 		}
 	}
 
-	public void printList2() {
+	public void printResultBoard() {
 
 		for (Participants s : resultBoard) {
 			System.out.println(s);

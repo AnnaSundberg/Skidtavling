@@ -2,11 +2,11 @@ package com.ya.skidtavling.menu;
 
 import com.ya.skidtavling.deltagare.Participants;
 import com.ya.skidtavling.simulering.Simulator;
-import com.ya.skidtavling.tavla.TavlingsTavla;
+import com.ya.skidtavling.tavla.CompetitionBoard;
 
 public class MenuManager {
 	
-	public static void switchMenu(int userChoice, TavlingsTavla tagare) throws InterruptedException {
+	public static void switchMenu(int userChoice, CompetitionBoard compBoard) throws InterruptedException {
 	
 		
 		switch (userChoice) {			// 
@@ -15,14 +15,14 @@ public class MenuManager {
 			break;
 		case 1:
 			System.out.println("Fyll Tävlingstavla");
-			tagare.fill();			//Min eclipse bugga ur så här tar jag en paus
+			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
 			break;
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");
 			
-			tagare.startingTime();
+			compBoard.startingTime();
 			
-			tagare.printList();
+			compBoard.printParticipantsBoard();
 			break;
 		case 3:
 			System.out.println("Sök en Deltagare");
@@ -32,17 +32,16 @@ public class MenuManager {
 		case 4:
 			System.out.println("Sim Demo Ish");
 			//tagare.Race();
-			tagare.race();
+			compBoard.race();
 			break;
 		case 5:
-			System.out.println("liilili");
-			tagare.printList2();
+			System.out.println(" - ");
+			compBoard.printResultBoard();
 			break;
 		case 6:
 			System.out.println("BYE\n");
 			PrintMenu.printByeByeBox();
 			//quit = true;
-			tagare.printList2();
 			break;
 		default:
 			System.out.println("Något gick snett");

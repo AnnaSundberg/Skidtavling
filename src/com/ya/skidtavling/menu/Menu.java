@@ -2,20 +2,20 @@ package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
 import com.ya.skidtavling.simulering.Simulator;
-import com.ya.skidtavling.tavla.TavlingsTavla;
+import com.ya.skidtavling.tavla.CompetitionBoard;
 
 
 public class Menu {
 	
 	boolean quit;
-	public TavlingsTavla tagare = new TavlingsTavla();
+	public CompetitionBoard compBoard = new CompetitionBoard();
 	public void runMenu() throws InterruptedException {
 		PrintMenu.printWelcomeBox();
 		
 		while(!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
-			MenuManager.switchMenu(userChoice,tagare);
+			MenuManager.switchMenu(userChoice,compBoard);
 		}
 	}
 	private int getInput() {
