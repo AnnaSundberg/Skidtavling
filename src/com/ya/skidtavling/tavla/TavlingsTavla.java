@@ -50,7 +50,7 @@ public class TavlingsTavla {
 		for (Participants p : participantsList) {
 			long longSetTime = rand.nextLong() % (max - min) + max;
 			Time newTime = new Time(longSetTime);
-			p.setStartTid(newTime);
+			p.setStartTime(newTime);
 		}
 	}
 
