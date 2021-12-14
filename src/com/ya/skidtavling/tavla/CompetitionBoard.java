@@ -67,6 +67,14 @@ public class CompetitionBoard {
 			System.out.println(s);
 		}
 	}
+	//ett försök till vinnar upvissning . . .. 
+	public void printWinnerBoard() {
+		String firstPlaced = resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
+		String secondPlaced = resultBoard.get(1).getForName()+" "+resultBoard.get(1).getLastName();
+		String thirdPlaced =resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
+		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3");
+		
+	}
 
 	public void race() {
 		boolean raceOn = true;

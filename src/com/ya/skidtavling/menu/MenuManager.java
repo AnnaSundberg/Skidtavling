@@ -39,10 +39,11 @@ public class MenuManager {
 			compBoard.printResultBoard();
 			break;
 		case 6:
-			System.out.println("BYE\n");
-			PrintMenu.printByeByeBox();
-			//quit = true;
-			System.exit(0);// END
+			compBoard.printWinnerBoard();
+//			System.out.println("BYE\n");
+//			PrintMenu.printByeByeBox();
+//			//quit = true;
+//			System.exit(0);// END
 			break;
 		default:
 			System.out.println("Något gick snett");

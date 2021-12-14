@@ -27,4 +27,5 @@ public class PrintMenu {
 		System.out.println("|         Åter, Hej Då!            |");
 		System.out.println("¤---------------¤------------------¤");
 	}
+	
 }

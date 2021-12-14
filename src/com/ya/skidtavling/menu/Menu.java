@@ -18,6 +18,7 @@ public class Menu {
 			MenuManager.switchMenu(userChoice,compBoard);
 		}
 	}
+	
 	private int getInput() {
 		Scanner scan = new Scanner(System.in);
 		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
