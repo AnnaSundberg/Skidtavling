@@ -20,7 +20,7 @@ public class MenuManager {
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");
 			
-			tagare.tidsDelning();
+			tagare.startingTime();
 			
 			tagare.printList();
 			break;

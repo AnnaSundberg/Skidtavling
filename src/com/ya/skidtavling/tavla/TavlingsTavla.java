@@ -10,7 +10,7 @@ import com.ya.skidtavling.time.Time;
 public class TavlingsTavla {
 
 	Random rand = new Random();
-	public List<Participants> dl = new ArrayList<>();// kanske skall byta ut arrayen till en LISTA istället.
+	public List<Participants> participantsList = new ArrayList<>();
 	public List<Participants> resultBoard = new ArrayList<>();
 
 	public void fill() {
@@ -19,9 +19,8 @@ public class TavlingsTavla {
 		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
 
 			String line;
-			int i = 0;
+			int i = 0;			
 
-			// Time newTime = new Time(13507);
 
 			// ställer upp deltagarna rad för rad
 			while ((line = fReader.readLine()) != null) {
@@ -30,34 +29,34 @@ public class TavlingsTavla {
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
 
-				Participants newDeltag = new Participants(randNum, fName, lName, i + 1, null, 0, false);
+				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false);
 
-				dl.add(newDeltag);
+				participantsList.add(newParticipant);
 				i++;
 
 			}
 		} catch (Exception e) {
 			System.out.println(e);
 		} finally {
-			System.out.println("Succes!");
+			System.out.println("Listan är nu fylld!");
 		}
 
 	}
 
-	public void tidsDelning() {
+	public void startingTime() {
 		long max = 500;
 		long min = 100;
 
-		for (Participants p : dl) {
-			long longsetTid = rand.nextLong() % (max - min) + max;
-			Time nytid = new Time(longsetTid);
-			p.setStartTid(nytid);
+		for (Participants p : participantsList) {
+			long longSetTime = rand.nextLong() % (max - min) + max;
+			Time newTime = new Time(longSetTime);
+			p.setStartTid(newTime);
 		}
 	}
 
 	public void printList() {
 
-		for (Participants s : dl) {
+		for (Participants s : participantsList) {
 			System.out.println(s);
 		}
 	}
@@ -73,7 +72,7 @@ public class TavlingsTavla {
 		boolean raceOn = true;
 		do {
 
-			for (Participants p : dl) {
+			for (Participants p : participantsList) {
 
 				if (!p.isNotFinished()) {
 					p.setDistance(p.getDistance() + rand.nextInt(10));
@@ -89,7 +88,7 @@ public class TavlingsTavla {
 
 					}
 					if (p.isNotFinished()) {
-						for (Participants p1 : dl) {
+						for (Participants p1 : participantsList) {
 							if (p1.isNotFinished()) {
 								raceOn = false;
 							} else
