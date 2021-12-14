@@ -12,7 +12,11 @@ public class CompetitionBoard {
 	Random rand = new Random();
 	public List<Participants> participantsList = new ArrayList<>();
 	public List<Participants> resultBoard = new ArrayList<>();
-
+	
+	public void makeUsrParticipant() {
+		
+	}
+	
 	public void fill() {
 
 		// Läser in deltagarena från filen
@@ -72,7 +76,7 @@ public class CompetitionBoard {
 		String firstPlaced = resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
 		String secondPlaced = resultBoard.get(1).getForName()+" "+resultBoard.get(1).getLastName();
 		String thirdPlaced =resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
-		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3");
+		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3\n");
 		
 	}
 

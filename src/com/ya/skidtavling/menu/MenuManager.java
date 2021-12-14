@@ -1,7 +1,6 @@
 package com.ya.skidtavling.menu;
 
-import com.ya.skidtavling.participants.Participants;
-import com.ya.skidtavling.simulering.Simulator;
+
 import com.ya.skidtavling.tavla.CompetitionBoard;
 
 public class MenuManager {
@@ -27,7 +26,7 @@ public class MenuManager {
 		case 3:
 			System.out.println("Sök en Deltagare");
 
-		//	System.out.println(tagare.printOne(getInput2()));
+//			System.out.println(compBoard.printOne(getInput2()));
 			break;
 		case 4:
 			System.out.println("Sim Demo Ish");
@@ -41,10 +40,11 @@ public class MenuManager {
 		case 6:
 			compBoard.printWinnerBoard();
 //			System.out.println("BYE\n");
-//			PrintMenu.printByeByeBox();
+			PrintMenu.printByeByeBox();
 //			//quit = true;
-//			System.exit(0);// END
+			System.exit(0);// END
 			break;
+
 		default:
 			System.out.println("Något gick snett");
 		}

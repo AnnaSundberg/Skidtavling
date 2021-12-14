@@ -7,7 +7,7 @@ public class Participants extends Person {
 
 	private int participantNumber;
 	private int place;
-	Time startTime;
+	public Time startTime;
 	private int distance;
 	private boolean notFinished;
 
