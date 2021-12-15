@@ -13,10 +13,10 @@ import com.ya.skidtavling.time.Time;
 public class SearchParticipant{
 
 
-	public static String sp() {
+	public String sp() {
 		boolean found = false;
-		
-		ArrayList<Participants> searchPart = new ArrayList<>();
+		this.sp();
+//		ArrayList<Participants> searchPart;
 		Scanner input = new Scanner(System.in);
 		String search = input.nextLine();
 		{

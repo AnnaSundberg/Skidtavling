@@ -27,7 +27,7 @@ public class MenuManager {
 			break;
 		case 3:
 			System.out.println("Sök en Deltagare");
-			SearchParticipant.sp();					// Skickas till SearchParticipants som skulle kunna hitta namn och efternamn i Arraylistan men ngt är inte helt 100%
+			SearchParticipant.sp(compBoard.participantsList);					// Skickas till SearchParticipants som skulle kunna hitta namn och efternamn i Arraylistan men ngt är inte helt 100%
 		//	System.out.println(tagare.printOne(getInput2()));
 			break;
 		case 4:
