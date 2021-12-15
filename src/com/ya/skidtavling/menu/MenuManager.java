@@ -1,6 +1,7 @@
 package com.ya.skidtavling.menu;
 
 import com.ya.skidtavling.participants.Participants;
+import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.simulering.Simulator;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 
@@ -26,7 +27,7 @@ public class MenuManager {
 			break;
 		case 3:
 			System.out.println("Sök en Deltagare");
-
+			SearchParticipant.sp();					// Skickas till SearchParticipants som skulle kunna hitta namn och efternamn i Arraylistan men ngt är inte helt 100%
 		//	System.out.println(tagare.printOne(getInput2()));
 			break;
 		case 4:
