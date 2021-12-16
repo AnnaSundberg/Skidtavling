@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.FillFromFile;
 
-
+//Kanske bör byta namn på denna klass för den börja komma ifrån Sitt syfte
 public class Menu {
 	
 	boolean quit;
