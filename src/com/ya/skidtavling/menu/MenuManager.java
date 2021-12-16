@@ -7,7 +7,7 @@ public class MenuManager {
 	
 	public static void switchMenu(int userChoice, CompetitionBoard compBoard) throws InterruptedException {
 	
-		
+		// behöver ses igenom
 		switch (userChoice) {			// 
 		case 0:
 			System.out.println("Det här var inget val ajabaja");
