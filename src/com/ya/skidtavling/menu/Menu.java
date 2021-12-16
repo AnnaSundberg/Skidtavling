@@ -1,7 +1,7 @@
 package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
-import com.ya.skidtavling.simulering.Simulator;
+
 import com.ya.skidtavling.tavla.CompetitionBoard;
 
 
