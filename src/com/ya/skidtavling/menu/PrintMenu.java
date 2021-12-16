@@ -12,13 +12,14 @@ public class PrintMenu {
 
 	public static void printMenu() {
 		
-		System.out.println("\nGör ett av valen:\n" 
+		System.out.println("\nGör ett av valen:\n"
+				+ "0. Avsluta.\n"
 				+ "1. Fyll Tävlingstavla\n" 
 				+ "2. Skriv ut Tävlingstavla\n" 
 				+ "3. Sök en Deltagare\n"
 				+ "4. Simulering.\n" 
 				+ "5. Menyval 5.\n" 
-				+ "6. Avlsuta.\n");
+				+ "6. ETT ANNAT VAL");
 	}
 	public static void printByeByeBox() {
 

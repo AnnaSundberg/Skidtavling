@@ -10,8 +10,9 @@ public class MenuManager {
 		
 		switch (userChoice) {			// 
 		case 0:
-			System.out.println("Det här var inget val ajabaja");
-			break;
+			PrintMenu.printByeByeBox();
+//			//quit = true;
+			System.exit(0);// END
 		case 1:
 			System.out.println("Fyll Tävlingstavla");
 			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
@@ -40,9 +41,6 @@ public class MenuManager {
 		case 6:
 			compBoard.printWinnerBoard();
 //			System.out.println("BYE\n");
-			PrintMenu.printByeByeBox();
-//			//quit = true;
-			System.exit(0);// END
 			break;
 
 		default:
