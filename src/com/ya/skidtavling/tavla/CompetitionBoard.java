@@ -20,8 +20,8 @@ public class CompetitionBoard {
 	public void fill() {
 
 		// Läser in deltagarena från filen
-		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-
+//		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
+		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
 			String line;
 			int i = 0;			
 
@@ -47,7 +47,7 @@ public class CompetitionBoard {
 
 	}
 
-	public void startingTime() {
+	public void startingTime() {// hur fungerar detta ???? 
 		long max = 500;
 		long min = 100;
 
@@ -82,13 +82,16 @@ public class CompetitionBoard {
 
 	public void race() {
 		boolean raceOn = true;
+		long plusSec = 15;
+		
 		do {
 
 			for (Participants p : participantsList) {
 
 				if (!p.isNotFinished()) {
-					p.setDistance(p.getDistance() + rand.nextInt(10));
-
+					p.setDistance(p.getDistance() + rand.nextInt(5));
+					
+					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
 
 					if (p.getDistance() >= 100) {
