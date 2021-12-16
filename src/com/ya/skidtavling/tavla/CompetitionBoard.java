@@ -108,6 +108,7 @@ public class CompetitionBoard {
 						p.setNotFinished(true);
 
 					}
+					
 					if (p.isNotFinished()) {
 						for (Participants p1 : participantsList) {
 							if (p1.isNotFinished()) {

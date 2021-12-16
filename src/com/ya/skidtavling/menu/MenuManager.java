@@ -1,6 +1,7 @@
 package com.ya.skidtavling.menu;
 
 
+import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 
 public class MenuManager {
@@ -8,6 +9,7 @@ public class MenuManager {
 	public static void switchMenu(int userChoice, CompetitionBoard compBoard) throws InterruptedException {
 	
 		// behöver ses igenom
+		// behöver vi under menyer för diverse menyval
 		switch (userChoice) {			// 
 		case 0:
 			PrintMenu.printByeByeBox();
@@ -26,7 +28,8 @@ public class MenuManager {
 			break;
 		case 3:
 			System.out.println("Sök en Deltagare");
-
+			SearchParticipant test = new SearchParticipant(compBoard);
+//			test(compBoard);
 //			System.out.println(compBoard.printOne(getInput2()));
 			break;
 		case 4:
