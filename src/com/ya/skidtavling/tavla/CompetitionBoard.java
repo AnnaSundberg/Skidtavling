@@ -90,7 +90,9 @@ public class CompetitionBoard {
 
 				if (!p.isNotFinished()) {
 					p.setDistance(p.getDistance() + rand.nextInt(5));
-					
+					/*Idé 'är att vi skall använda randen för att generera fram en tid som blir kopplad 
+					 * till tid
+					 * */
 					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
 
