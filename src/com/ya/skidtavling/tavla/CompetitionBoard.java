@@ -16,12 +16,13 @@ public class CompetitionBoard {
 	public void makeUsrParticipant() {
 		
 	}
+	//eventuellt göra om denna method till en egen klass 
 	
 	public void fill() {
 
 		// Läser in deltagarena från filen
-		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-
+//		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
+		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
 			String line;
 			int i = 0;			
 
@@ -46,8 +47,8 @@ public class CompetitionBoard {
 		}
 
 	}
-
-	public void startingTime() {
+// tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
+	public void startingTime() {// hur fungerar detta ???? 
 		long max = 500;
 		long min = 100;
 
@@ -57,7 +58,7 @@ public class CompetitionBoard {
 			p.setStartTime(newTime);
 		}
 	}
-
+// Dessa tre kanske kan göras om till egna klasser. 
 	public void printParticipantsBoard() {
 
 		for (Participants s : participantsList) {
@@ -79,18 +80,26 @@ public class CompetitionBoard {
 		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3\n");
 		
 	}
-
+// göra om till en egen klass ha som objekt någon annanstans
+	
 	public void race() {
 		boolean raceOn = true;
+		long plusSec = 15;
+		
 		do {
 
 			for (Participants p : participantsList) {
 
 				if (!p.isNotFinished()) {
-					p.setDistance(p.getDistance() + rand.nextInt(10));
-
+					p.setDistance(p.getDistance() + rand.nextInt(5));
+					/*Idé 'är att vi skall använda randen för att generera fram en tid som blir kopplad 
+					 * till tid
+					 * */
+					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
-
+					
+					
+					
 					if (p.getDistance() >= 100) {
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
 
