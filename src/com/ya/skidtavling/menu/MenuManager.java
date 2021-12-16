@@ -17,7 +17,7 @@ public class MenuManager {
 			System.exit(0);// END
 		case 1:
 			System.out.println("Fyll Tävlingstavla");
-			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
+//			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
 			break;
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");

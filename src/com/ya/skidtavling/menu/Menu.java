@@ -3,6 +3,7 @@ import java.util.Scanner;
 
 
 import com.ya.skidtavling.tavla.CompetitionBoard;
+import com.ya.skidtavling.tavla.FillFromFile;
 
 
 public class Menu {
@@ -11,14 +12,16 @@ public class Menu {
 	public CompetitionBoard compBoard = new CompetitionBoard();
 	public void runMenu() throws InterruptedException {
 		PrintMenu.printWelcomeBox();
-		
+		FillFromFile FFF = new FillFromFile(compBoard);
 		while(!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
 			MenuManager.switchMenu(userChoice,compBoard);
+			
 		}
 	}
 	
+
 	private int getInput() {
 		Scanner scan = new Scanner(System.in);
 		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
