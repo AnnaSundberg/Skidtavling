@@ -75,7 +75,7 @@ public class CompetitionBoard {
 	public void printWinnerBoard() {
 		String firstPlaced = resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
 		String secondPlaced = resultBoard.get(1).getForName()+" "+resultBoard.get(1).getLastName();
-		String thirdPlaced =resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
+		String thirdPlaced =resultBoard.get(2).getForName()+" "+resultBoard.get(2).getLastName();
 		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3\n");
 		
 	}
