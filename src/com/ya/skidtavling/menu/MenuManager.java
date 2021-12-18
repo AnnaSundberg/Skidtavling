@@ -16,13 +16,14 @@ public class MenuManager {
 //			//quit = true;
 			System.exit(0);// END
 		case 1:
-			System.out.println("Fyll Tävlingstavla");
+			//System.out.println("Fyll Tävlingstavla");
 //			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
+			compBoard.printMidTimeList();
 			break;
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");
 			
-			compBoard.startingTime();
+			
 			
 			compBoard.printParticipantsBoard();
 			break;
@@ -35,6 +36,7 @@ public class MenuManager {
 		case 4:
 			System.out.println("Sim Demo Ish");
 			//tagare.Race();
+			compBoard.startingTime();
 			compBoard.race();
 			break;
 		case 5:

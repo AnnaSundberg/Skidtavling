@@ -17,7 +17,7 @@ public class PrintMenu {
 				+ "1. Fyll Tävlingstavla\n" 
 				+ "2. Skriv ut Tävlingstavla\n" 
 				+ "3. Sök en Deltagare\n"
-				+ "4. Simulering.\n" 
+				+ "4. Starta Tävling.\n" 
 				+ "5. Menyval 5.\n" 
 				+ "6. ETT ANNAT VAL");
 	}

@@ -12,6 +12,7 @@ public class CompetitionBoard {
 	Random rand = new Random();
 	public List<Participants> participantsList = new ArrayList<>();
 	public List<Participants> resultBoard = new ArrayList<>();
+	public List<Participants> midTimeList = new ArrayList<>();
 	
 	public void makeUsrParticipant() {
 		
@@ -72,6 +73,11 @@ public class CompetitionBoard {
 			System.out.println(s);
 		}
 	}
+	public void printMidTimeList() {
+		for (Participants s : midTimeList) {
+			System.out.println(s);
+		}
+	}
 	//ett försök till vinnar upvissning . . .. 
 	public void printWinnerBoard() {
 		String firstPlaced = resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
@@ -98,7 +104,16 @@ public class CompetitionBoard {
 					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
 					
-					
+					if (!p.isPassedMiddle() && p.getDistance()>=50) {
+						if(!p.isPassedMiddle() && p.getDistance()<=55) {
+							
+							System.out.println("midList Update-----------------------------------------");
+							midTimeList.add(p);
+							p.setPassedMiddle(true);
+						}else break;
+			
+					}else if(p.isPassedMiddle() && p.getDistance()>50) {
+						System.out.println(" ----");}
 					
 					if (p.getDistance() >= 100) {
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
@@ -108,7 +123,7 @@ public class CompetitionBoard {
 						p.setNotFinished(true);
 
 					}
-					
+				
 					if (p.isNotFinished()) {
 						for (Participants p1 : participantsList) {
 							if (p1.isNotFinished()) {
