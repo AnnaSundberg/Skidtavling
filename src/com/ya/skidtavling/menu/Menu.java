@@ -12,7 +12,7 @@ public class Menu {
 	public CompetitionBoard compBoard = new CompetitionBoard();
 	public void runMenu() throws InterruptedException {
 		PrintMenu.printWelcomeBox();
-		FillFromFile FFF = new FillFromFile(compBoard);
+		FillFromFile FFF = new FillFromFile(compBoard);// instans till nya klassen för fil läsning
 		while(!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
