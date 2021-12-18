@@ -24,7 +24,7 @@ public class MenuManager {
 			System.out.println("Skriv ut Tävlingstavla");
 			
 			
-			
+			compBoard.startingTime();
 			compBoard.printParticipantsBoard();
 			break;
 		case 3:
@@ -36,7 +36,7 @@ public class MenuManager {
 		case 4:
 			System.out.println("Sim Demo Ish");
 			//tagare.Race();
-			compBoard.startingTime();
+			
 			compBoard.race();
 			break;
 		case 5:

@@ -52,11 +52,16 @@ public class CompetitionBoard {
 	public void startingTime() {// hur fungerar detta ???? 
 		long max = 500;
 		long min = 100;
-
-		for (Participants p : participantsList) {
-			long longSetTime = rand.nextLong() % (max - min) + max;
-			Time newTime = new Time(longSetTime);
-			p.setStartTime(newTime);
+		long twoPm = 50400;// kl är 1400.
+//		for (Participants p : participantsList) {
+//			long longSetTime = rand.nextLong() % (max - min) + max;
+//			Time newTime = new Time(longSetTime);
+//			p.setStartTime(newTime);
+//		}
+		for(Participants p:participantsList) {
+			Time startTime = new Time(twoPm);
+			p.setStartTime(startTime);
+			
 		}
 	}
 // Dessa tre kanske kan göras om till egna klasser. 
