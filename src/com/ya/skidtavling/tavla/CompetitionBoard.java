@@ -14,40 +14,7 @@ public class CompetitionBoard {
 	public List<Participants> resultBoard = new ArrayList<>();
 	public List<Participants> midTimeList = new ArrayList<>();
 	
-	public void makeUsrParticipant() {
-		
-	}
-//	//eventuellt göra om denna method till en egen klass 
-//	
-//	public void fill() {
-//
-//		// Läser in deltagarena från filen
-////		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-//		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
-//			String line;
-//			int i = 0;			
-//
-//
-//			// ställer upp deltagarna rad för rad
-//			while ((line = fReader.readLine()) != null) {
-//				String split[] = line.split(" ");// stringSplitar raden
-//				String fName = split[0];// sparar förnamn
-//				String lName = split[1];// sparar efternamn
-//				int randNum = rand.nextInt(100);
-//
-//				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false);
-//
-//				participantsList.add(newParticipant);
-//				i++;
-//
-//			}
-//		} catch (Exception e) {
-//			System.out.println(e);
-//		} finally {
-//			System.out.println("Listan är nu fylld!");
-//		}
-//
-//	}
+	
 // tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
 	public void startingTime() {// hur fungerar detta ???? 
 		long max = 500;
