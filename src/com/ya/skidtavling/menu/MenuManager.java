@@ -3,6 +3,7 @@ package com.ya.skidtavling.menu;
 
 import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
+import com.ya.skidtavling.tavla.Race;
 
 public class MenuManager {
 	
@@ -36,8 +37,9 @@ public class MenuManager {
 		case 4:
 			System.out.println("Sim Demo Ish");
 			//tagare.Race();
-			
-			compBoard.race();
+			Race race = new Race();
+			race.race(compBoard);
+			//compBoard.race();
 			break;
 		case 5:
 			System.out.println(" - ");
