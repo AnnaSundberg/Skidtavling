@@ -59,8 +59,16 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 		} while (raceOn);
 	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera nu får vi ut mellantiden som det är tänkt 
 	public void midListUpdate(Participants p,CompetitionBoard compBoard) {
-		
-		Participants midListPar = new Participants(p.getParticipantNumber(),p.getForName(),p.getLastName(), p.getPlace(), p.getStartTime(), p.getDistance(), p.isNotFinished(),p.isPassedMiddle());
+		// gör en ny deltagare och copy n pastar Värderna för att sedan spara in dem i
+		// Mid mellantidsListan 
+		Participants midListPar = new Participants(p.getParticipantNumber(),
+				p.getForName(),
+				p.getLastName(), 
+				p.getPlace(),
+				p.getStartTime(),
+				p.getDistance(),
+				p.isNotFinished(),
+				p.isPassedMiddle());
 		compBoard.midTimeList.add(midListPar);
 	}
 

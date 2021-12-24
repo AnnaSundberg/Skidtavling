@@ -56,6 +56,7 @@ public class CompetitionBoard {
 		System.out.print("\n\t"+firstPlaced+"\n\t    1#\n"+secondPlaced +"\t"+thirdPlaced+"\n\t#2\t    #3\n");
 		
 	}
+}
 // göra om till en egen klass ha som objekt någon annanstans
 	
 //	public void race() {
@@ -106,6 +107,6 @@ public class CompetitionBoard {
 //			}
 //
 //		} while (raceOn);
-//	}
-
-}
+////	}
+//
+//}
