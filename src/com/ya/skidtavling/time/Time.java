@@ -15,7 +15,7 @@ public class Time {
 	public long getSec() {
 		return sec;
 	}
-
+	// kanske skall ändra denna 
 	@Override
 	public String toString() {
 		int temp = (int) sec;

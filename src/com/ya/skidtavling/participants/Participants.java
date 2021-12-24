@@ -4,7 +4,7 @@ import com.ya.skidtavling.person.Person;
 import com.ya.skidtavling.time.Time;
 
 public class Participants extends Person {
-
+	// egenskaperna för klassen Participants
 	private int participantNumber;
 	private int place;
 	public Time startTime;

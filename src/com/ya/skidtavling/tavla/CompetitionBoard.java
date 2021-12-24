@@ -1,7 +1,5 @@
 package com.ya.skidtavling.tavla;
 
-import java.io.BufferedReader;
-import java.io.FileReader;
 import java.util.*;
 
 import com.ya.skidtavling.participants.Participants;
@@ -75,7 +73,7 @@ public class CompetitionBoard {
 					 * */
 					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
-					
+					//Här måste tittas över 
 					if (!p.isPassedMiddle() && p.getDistance()>=50) {
 						if(!p.isPassedMiddle() && p.getDistance()<=55) {
 							
