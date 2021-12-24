@@ -14,32 +14,23 @@ public class MenuManager {
 		switch (userChoice) {			// 
 		case 0:
 			PrintMenu.printByeByeBox();
-//			//quit = true;
 			System.exit(0);// END
 		case 1:
-			//System.out.println("Fyll Tävlingstavla");
-//			compBoard.fill();			//Min eclipse bugga ur så här tar jag en paus
 			compBoard.printMidTimeList();
 			break;
 		case 2:
 			System.out.println("Skriv ut Tävlingstavla");
-			
-			
 			compBoard.startingTime();
 			compBoard.printParticipantsBoard();
 			break;
 		case 3:
 			System.out.println("Sök en Deltagare");
 			SearchParticipant test = new SearchParticipant(compBoard);
-//			test(compBoard);
-//			System.out.println(compBoard.printOne(getInput2()));
 			break;
 		case 4:
 			System.out.println("Sim Demo Ish");
-			//tagare.Race();
-			Race race = new Race();
-			race.race(compBoard);
-			//compBoard.race();
+			Race race = new Race();// skapar en instans för Rejset.
+			race.race(compBoard);// anropar metoden race
 			break;
 		case 5:
 			System.out.println(" - ");
@@ -47,7 +38,6 @@ public class MenuManager {
 			break;
 		case 6:
 			compBoard.printWinnerBoard();
-//			System.out.println("BYE\n");
 			break;
 
 		default:

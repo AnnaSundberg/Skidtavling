@@ -8,13 +8,13 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 	
 	Random rand = new Random();
 
-	public void race(CompetitionBoard compBoard) {
+	public void race(CompetitionBoard compBoard) {// tar listan som Parameter
 		boolean raceOn = true;
-		long plusSec = 15;
+		long plusSec = 15;// lägger på 15 sekunder för alla varje varv
 		
 		do {
 
-			for (Participants p : compBoard.participantsList) {
+			for (Participants p : compBoard.participantsList) {// ställer upp listan
 
 				if (!p.isNotFinished()) {
 					p.setDistance(p.getDistance() + rand.nextInt(5));
@@ -25,14 +25,14 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					System.out.println(p.toString());
 					//Här måste tittas över 
 					if (!p.isPassedMiddle() && p.getDistance()>=50) {
-						if(!p.isPassedMiddle() && p.getDistance()<=55) {
+						if(!p.isPassedMiddle() && p.getDistance()<=55) {// vet inte om detta gör så mkt längre
 							
 							System.out.println("midList Update-----------------------------------------");
-							midListUpdate(p,compBoard);
+							midListUpdate(p,compBoard);// ny metod som gör jobbet 
 //							compBoard.midTimeList.add(p);
 							p.setPassedMiddle(true);
 						}else break;
-			
+						
 					}else if(p.isPassedMiddle() && p.getDistance()>50) {
 						System.out.println(" ----");}
 					
@@ -44,8 +44,8 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						p.setNotFinished(true);
 
 					}
-				
-					if (p.isNotFinished()) {
+					// den här behöver ses över en del gånger kommer de alla fram andra inte .... 
+					if (p.isNotFinished()) {// kollar om någon inte kommit till mål än 
 						for (Participants p1 : compBoard.participantsList) {
 							if (p1.isNotFinished()) {
 								raceOn = false;

@@ -31,7 +31,7 @@ public class Participants extends Person {
 	public void setNotFinished(boolean notFinished) {
 		this.notFinished = notFinished;
 	}
-
+	// används den här ?? 
 	@Override
 	public String toString() {
 		return participantNumber + " " + forName + " " + lastName + "" + "\t place=" + place + " :  " + startTime

@@ -48,7 +48,7 @@ public class CompetitionBoard {
 			System.out.println(s);
 		}
 	}
-	//ett försök till vinnar upvissning . . .. 
+	//ett försök till vinnar upvissning . . .. // fungerar 
 	public void printWinnerBoard() {
 		String firstPlaced = resultBoard.get(0).getForName()+" "+resultBoard.get(0).getLastName();
 		String secondPlaced = resultBoard.get(1).getForName()+" "+resultBoard.get(1).getLastName();
@@ -57,7 +57,7 @@ public class CompetitionBoard {
 		
 	}
 }
-// göra om till en egen klass ha som objekt någon annanstans
+// göra om till en egen klass ha som objekt någon annanstans / detta är nu gjort 
 	
 //	public void race() {
 //		boolean raceOn = true;

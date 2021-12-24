@@ -9,9 +9,6 @@ public class Main {
 		Menu menu = new Menu(); // instans för meny klassen
 		menu.runMenu(); // kallar på runMenu klassen som skriver ut välkommen rutan och sedan valen
 
-		System.out.println("\n");
-		menu.compBoard.printResultBoard();
-
 	}
 
 }
