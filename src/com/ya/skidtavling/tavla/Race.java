@@ -28,7 +28,8 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						if(!p.isPassedMiddle() && p.getDistance()<=55) {
 							
 							System.out.println("midList Update-----------------------------------------");
-							compBoard.midTimeList.add(p);
+							midListUpdate(p,compBoard);
+//							compBoard.midTimeList.add(p);
 							p.setPassedMiddle(true);
 						}else break;
 			
@@ -56,6 +57,11 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 			}
 
 		} while (raceOn);
+	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera nu får vi ut mellantiden som det är tänkt 
+	public void midListUpdate(Participants p,CompetitionBoard compBoard) {
+		
+		Participants midListPar = new Participants(p.getParticipantNumber(),p.getForName(),p.getLastName(), p.getPlace(), p.getStartTime(), p.getDistance(), p.isNotFinished(),p.isPassedMiddle());
+		compBoard.midTimeList.add(midListPar);
 	}
 
 }
