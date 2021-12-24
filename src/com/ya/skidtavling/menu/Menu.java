@@ -37,6 +37,7 @@ public class Menu {
 		}
 		return userChoice;
 	}
+	// den här andvänds inte längre 
 	private int getInput2() {
 		Scanner scan = new Scanner(System.in);
 		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
