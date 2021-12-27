@@ -14,12 +14,13 @@ public class PrintMenu {
 		
 		System.out.println("\nGör ett av valen:\n"
 				+ "0. Avsluta.\n"
-				+ "1. Skriv ut mellantiderna\n" 
-				+ "2. Skriv ut Tävlingstavla\n" 
-				+ "3. Sök en Deltagare\n"
+				+ "1. Skriv ut mellantiderna.\n" 
+				+ "2. Skriv ut Tävlingstavla.\n" 
+				+ "3. Sök en Deltagare.\n"
 				+ "4. Starta Tävling.\n" 
 				+ "5. Skriv ut Resultattavla.\n" 
-				+ "6. Skriv ut Vinnarna 1-3");
+				+ "6. Skriv ut Vinnarna 1-3.\n"
+				+ "7. Registrera ny åkare.");
 	}
 	public static void printByeByeBox() {
 
