@@ -1,6 +1,7 @@
 package com.ya.skidtavling.menu;
 
 
+import com.ya.skidtavling.participants.NewRegistration;
 import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.Race;
@@ -38,6 +39,11 @@ public class MenuManager {
 			break;
 		case 6:
 			compBoard.printWinnerBoard();
+			break;
+		case 7:
+			System.out.println("Reg ny åkare");
+			NewRegistration reg = new NewRegistration();
+			reg.Registration(compBoard);
 			break;
 
 		default:

@@ -12,6 +12,11 @@ public class Participants extends Person {
 	private boolean notFinished;
 	private boolean passedMiddle;
 
+
+	public Participants(String forName, String lastName) { 
+		super(forName,lastName);
+		
+	}
 	public Participants(int participantNumber, String forName, String lastName, int place, Time startTime, int distance,
 			boolean notFinished,boolean passedMiddle) {
 		super(forName, lastName);
