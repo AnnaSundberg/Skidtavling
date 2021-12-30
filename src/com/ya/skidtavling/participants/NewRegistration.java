@@ -17,8 +17,9 @@ public class NewRegistration {
 			compBoard.participantsList.add(new Participants(scan.next(), scan.next()));
 
 		}
-		for (int i = 0; i < compBoard.participantsList.size(); i++) {	// Skriver ut alla åkare bara denna kan vi ta bort om vi ej behöver :)
-			System.out.println(compBoard.participantsList.get(i));
+		
+		for (Participants e : compBoard.participantsList) {		// Skriver ut alla åkare plus de nya åkarna som registrerats
+		System.out.println(e);
 		}
 	}
 

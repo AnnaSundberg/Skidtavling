@@ -17,33 +17,37 @@ public class MenuManager {
 			PrintMenu.printByeByeBox();
 			System.exit(0);// END
 		case 1:
-			compBoard.printMidTimeList();
-			break;
-		case 2:
-			System.out.println("Skriv ut Tävlingstavla");
-			compBoard.startingTime();
-			compBoard.printParticipantsBoard();
-			break;
-		case 3:
 			System.out.println("Sök en Deltagare");
 			SearchParticipant test = new SearchParticipant(compBoard);
 			break;
-		case 4:
-			System.out.println("Sim Demo Ish");
-			Race race = new Race();// skapar en instans för Rejset.
-			race.race(compBoard);// anropar metoden race
-			break;
-		case 5:
-			System.out.println(" - ");
-			compBoard.printResultBoard();
-			break;
-		case 6:
-			compBoard.printWinnerBoard();
-			break;
-		case 7:
+		case 2:
 			System.out.println("Reg ny åkare");
 			NewRegistration reg = new NewRegistration();
 			reg.Registration(compBoard);
+			
+			break;
+		case 3:
+			System.out.println("Starta tävling");
+			Race race = new Race();// skapar en instans för Rejset.
+			race.race(compBoard);// anropar metoden race
+			break;
+		case 4:
+			System.out.println("Skriv ut Tävlingstavla");
+			compBoard.startingTime();
+			compBoard.printParticipantsBoard();
+			
+			break;
+		case 5:
+			System.out.println("Skriv ut Mellantiderna");
+			compBoard.printMidTimeList();
+			break;
+		case 6:
+			System.out.println("Skriv ut Resultattavla");
+			compBoard.printResultBoard();
+			break;
+		case 7:
+			System.out.println("Skriv ut Vinnarna 1-3");
+			compBoard.printWinnerBoard();
 			break;
 
 		default:
