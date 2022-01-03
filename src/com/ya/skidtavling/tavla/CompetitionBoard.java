@@ -11,6 +11,7 @@ public class CompetitionBoard {
 	public List<Participants> participantsList = new ArrayList<>();
 	public List<Participants> resultBoard = new ArrayList<>();
 	public List<Participants> midTimeList = new ArrayList<>();
+	public List<Participants> expelledpartList = new ArrayList<>();
 	
 	
 // tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
@@ -43,6 +44,12 @@ public class CompetitionBoard {
 			System.out.println(s);
 		}
 	}
+	public void printExpelledlist() {
+
+		for (Participants s : expelledpartList) {
+			System.out.println(s);
+		}
+	}	
 	public void printWinnerBoard()
 	{
 		try

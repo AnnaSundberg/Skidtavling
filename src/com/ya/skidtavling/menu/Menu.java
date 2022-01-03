@@ -1,7 +1,7 @@
 package com.ya.skidtavling.menu;
 import java.util.Scanner;
 
-
+import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.FillFromFile;
 
@@ -10,13 +10,13 @@ public class Menu {
 	
 	boolean quit;
 	public CompetitionBoard compBoard = new CompetitionBoard();
-	public void runMenu() throws InterruptedException {
+	public void runMenu(Competitions comp1) throws InterruptedException {
 		PrintMenu.printWelcomeBox();
-		FillFromFile FFF = new FillFromFile(compBoard);// instans till nya klassen för fil läsning
+		FillFromFile FFF = new FillFromFile(compBoard,comp1);// instans till nya klassen för fil läsning
 		while(!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
-			MenuManager.switchMenu(userChoice,compBoard);
+			MenuManager.switchMenu(userChoice,compBoard,comp1);
 			
 		}
 	}

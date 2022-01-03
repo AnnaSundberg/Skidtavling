@@ -11,10 +11,24 @@ public class Participants extends Person {
 	private int distance;
 	private boolean notFinished;
 	private boolean passedMiddle;
+	private boolean isExpelled; 
 
 
 	public Participants(String forName, String lastName) { 
 		super(forName,lastName);
+		
+	}
+	
+	public boolean isExpelled() {
+		return isExpelled;
+	}
+	public void setExpelled(boolean isExpelled) {
+		this.isExpelled = isExpelled;
+	}
+	public Participants(String forName, String lastName, int place,int  participantNumber) { 
+		super(forName,lastName);
+		this.place = place;
+		this.participantNumber =participantNumber;
 		
 	}
 	public Participants(int participantNumber, String forName, String lastName, int place, Time startTime, int distance,
