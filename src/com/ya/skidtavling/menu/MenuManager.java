@@ -68,7 +68,7 @@ public class MenuManager {
 				
 				switch (userChoice) {			 
 				case 0:
-					PrintMenu.printByeByeBox();
+					ConsolePrinting.printByeByeBox();
 					System.exit(0);// END
 					break;
 				case 1:						//set up 	

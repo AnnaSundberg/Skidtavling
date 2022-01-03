@@ -8,6 +8,18 @@ import java.io.*;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
+import com.ya.skidtavling.competion.compmenueManager.Atta;
+import com.ya.skidtavling.competion.compmenueManager.Etta;
+import com.ya.skidtavling.competion.compmenueManager.Fema;
+import com.ya.skidtavling.competion.compmenueManager.Fyra;
+import com.ya.skidtavling.competion.compmenueManager.Nia;
+import com.ya.skidtavling.competion.compmenueManager.Sexa;
+import com.ya.skidtavling.competion.compmenueManager.Sju;
+import com.ya.skidtavling.competion.compmenueManager.Tia;
+import com.ya.skidtavling.competion.compmenueManager.Trea;
+import com.ya.skidtavling.competion.compmenueManager.Tvaa;
+import com.ya.skidtavling.menu.ConsolePrinting;
+
 public class Compmenue {
 	static Scanner scan = new Scanner(System.in);
 
@@ -29,7 +41,7 @@ public class Compmenue {
 
 		while (doRunmenue) {
 
-			visameny();
+			ConsolePrinting.subMenu();
 
 			fv = gorfunkval();
 			if (fv == 0)
@@ -40,26 +52,7 @@ public class Compmenue {
 		}
 
 	}
-/// den här skall flyttas ut till till print Menyn
-	private static void visameny() {
 
-		System.out.println("\t\tMENY välj funktion en av nedanstående ange nummer");
-		System.out.println("\t\t0. Tillbaks Huvudmeny");
-		System.out.println("\t\t1.Ny tävling");
-		System.out.println("\t\t2.Lista Tävlingsdata");
-		System.out.println("\t\t3.Spara Tävling på disk ...");
-		System.out.println("\t\t4.Öppna tävlingsdata från fil..");
-		System.out.println("\t\t5.Lägga  första starttid");
-		System.out.println("\t\t6.Ändra deltagarantal");
-		System.out.println("\t\t7.Lista loggfil på konsolen");
-		System.out.println("\t\t8.Nollställ Loggfil");
-		System.out.println("\t\t9.Flytta mätpunkt mellantider");
-		System.out.println("\t\t10.Ändra Spårlängd");
-		System.out.println("\t\t11.Visa Meny");
-
-		return;
-
-	}
 // kan den här kastas in i en egen klass ?? 
 	private static Incidents branchval(int fv, Competitions tavl, Incidents ins) {
 		// titta igenom om vi ska byta ut floaten till int istället 
@@ -71,37 +64,48 @@ public class Compmenue {
 		case 0:
 			break;
 		case 1:
-			result = etta(tavl);
+//			result = etta(tavl);
+			//Etta etta = new Etta();
+			Etta.etta(tavl);
 			break;
 		case 2:
-			result = tvaa(tavl);
+//			result = tvaa(tavl);
+			Tvaa.tvaa(tavl);
 			break;
 		case 3:
-			result = trea(tavl);
+//			result = trea(tavl);
+			Trea.trea(tavl);
 			break;
 		case 4:
-			result = fyra(tavl);
+//			result = fyra(tavl);
+			Fyra.fyra(tavl);
 			break;
 		case 5:
-			result = fem(tavl);
+//			result = fem(tavl);
+			Fema.fem(tavl);
 			break;
 		case 6:
-			result = sex(tavl);
+//			result = sex(tavl);
+			Sexa.sex(tavl);
 			break;
 		case 7:
-			result = sju(tavl);
+//			result = sju(tavl);
+			Sju.sju(tavl);
 			break;
 		case 8:
-			result = atta(tavl);
+//			result = atta(tavl);
+			Atta.atta(tavl);
 			break;
 		case 9:
-			result = nia(tavl);
+//			result = nia(tavl);
+			Nia.nia(tavl);
 			break;
 		case 10:
-			result = tia(tavl);
+//			result = tia(tavl);
+			Tia.tia(tavl);
 			break;
 		case 11:
-			visameny();
+			ConsolePrinting.subMenu();
 			break;
 
 		}
@@ -109,116 +113,115 @@ public class Compmenue {
 		return ins;
 	}
 
-	private static float nolla(Competitions tavl) {
+//	private static float nolla(Competitions tavl) {
+//
+////		menu2.runMenu(tavl);
+//
+//		return 0f;
+//	}
 
-//		menu2.runMenu(tavl);
+//	private static float tia(Competitions tavl) {
+//
+//		int langd = tavl.getSparLangd(); // längd i 10-tal meter;
+//		langd = langd * 10;
+//		int nytt = 0;
+//		System.out.println("Nuvarande längd i meter	: " + langd * 10);
+//		System.out.println("Ändra längd till meter - avrundas  ...");
+//		// nytt = Input.inputInt("ny längd i meter 0..350000 ",0,350000);
+//		nytt = scan.nextInt();
+//		tavl.setSparLangd((nytt / 10));
+//		tavl.setSenUppd();
+//		// TODO Auto-generated method stub
+//		System.out.println("Utfört.  gäller från nästa tävling .. glöm inte spara..");
+//		return 0;
+//
+//	}
 
-		return 0f;
-	}
+//	private static float nia(Competitions tavl) {
+//		int proc = tavl.getPlaceMellantid();
+//		int nytt = 0;
+//		System.out.println("Nuvarande placering % av tävl längd: " + proc);
+//		System.out.println("Ändra antalet procenta..");
+//		// nytt = Input.inputInt("ny placering: 0..100 ",0,100);
+//		nytt = scan.nextInt();
+//		tavl.setPlaceMellantid(nytt);
+//		tavl.setSenUppd();
+//		// TODO Auto-generated method stub
+//		System.out.println("Utfört.  gäller från nästa tävling .. glöm inte spara..");
+//		return 0;
+//
+//	}
 
-	private static float tia(Competitions tavl) {
+//	private static float atta(Competitions tavl) {
+////		boolean isOK = Input.inputBool("Nollställa loggfil - är Du säker ?");
+//		boolean isOk = scan.nextBoolean();
+//		if (isOk)
+//			isOk = Wlogg.nollalogglist();
+//
+//		return 0;
+//	}
 
-		int langd = tavl.getSparLangd(); // längd i 10-tal meter;
-		langd = langd * 10;
-		int nytt = 0;
-		System.out.println("Nuvarande längd i meter	: " + langd * 10);
-		System.out.println("Ändra längd till meter - avrundas  ...");
-		// nytt = Input.inputInt("ny längd i meter 0..350000 ",0,350000);
-		nytt = scan.nextInt();
-		tavl.setSparLangd((nytt / 10));
-		tavl.setSenUppd();
-		// TODO Auto-generated method stub
-		System.out.println("Utfört.  gäller från nästa tävling .. glöm inte spara..");
-		return 0;
+//	private static float sju(Competitions tavl) {
+//		boolean isOK = showlogglista();
+//		System.out.println("Utfört klart...");
+//		return 0f;
+//	}
 
-	}
+//	private static float sex(Competitions tavl) {
+//		int ant = tavl.getFixedStartnbr();
+//		int nytt = 0;
+//		System.out.println("Antalet anälda deltagare är: " + ant);
+//		System.out.println("Ändra antalet anmälda..");
+//		// nytt = Input.inputInt("nytt antal anmälda:",0, (ant+25));
+//		nytt = scan.nextInt();
+//		tavl.setFixedStartnbr(nytt);
+//		tavl.setSenUppd();
+//		// TODO Auto-generated method stub
+//		System.out.println("Utfört klart...");
+//		return 0;
+//	}
 
-	private static float nia(Competitions tavl) {
-		int proc = tavl.getPlaceMellantid();
-		int nytt = 0;
-		System.out.println("Nuvarande placering % av tävl längd: " + proc);
-		System.out.println("Ändra antalet procenta..");
-		// nytt = Input.inputInt("ny placering: 0..100 ",0,100);
-		nytt = scan.nextInt();
-		tavl.setPlaceMellantid(nytt);
-		tavl.setSenUppd();
-		// TODO Auto-generated method stub
-		System.out.println("Utfört.  gäller från nästa tävling .. glöm inte spara..");
-		return 0;
+//	private static float fem(Competitions tavl) {
+//		System.out.println("Ändra preliminärt stardatum till definitivt..");
+//		long wlong = scan.nextLong();// Input.inputDatum("Ange Nytt tävlingsdatum: ");
+//		tavl.setForstaStartVerklig(wlong);
+//		tavl.setSenUppd();
+//		System.out.println("Utfört klart...");
+//		return 0;
+//	}
 
-	}
+//	private static float fyra(Competitions tavl) {
+//		boolean isOK;
+//		System.out.println("läsa in från fil, skriva över befintlig ");
+////		boolean cont = Input.inputBool("läsa in från fil, skriva över befintlig ");
+//		boolean cont = scan.nextBoolean();
+//		if (!cont)
+//			return 0;
+//		if (cont) {
+//			isOK = getfromdisk(tavl);
+//			if (!isOK) {
+//
+//				System.out.println("Misslyckades...");
+//				return -1f;
+//			}
+//
+//			// TODO Auto-generated method stub
+//			tavl.setStatuskod(1);
+//			System.out.println("Utfört klart...");
+//			return 0f;
+////		}
+//		return 0f;
+//	}
 
-	private static float atta(Competitions tavl) {
-//		boolean isOK = Input.inputBool("Nollställa loggfil - är Du säker ?");
-		boolean isOk = scan.nextBoolean();
-		if (isOk)
-			isOk = Wlogg.nollalogglist();
-
-		return 0;
-	}
-
-	private static float sju(Competitions tavl) {
-		boolean isOK = showlogglista();
-		System.out.println("Utfört klart...");
-		return 0f;
-	}
-
-	private static float sex(Competitions tavl) {
-		int ant = tavl.getFixedStartnbr();
-		int nytt = 0;
-		System.out.println("Antalet anälda deltagare är: " + ant);
-		System.out.println("Ändra antalet anmälda..");
-		// nytt = Input.inputInt("nytt antal anmälda:",0, (ant+25));
-		nytt = scan.nextInt();
-		tavl.setFixedStartnbr(nytt);
-		tavl.setSenUppd();
-		// TODO Auto-generated method stub
-		System.out.println("Utfört klart...");
-		return 0;
-	}
-
-	private static float fem(Competitions tavl) {
-		System.out.println("Ändra preliminärt stardatum till definitivt..");
-		long wlong = scan.nextLong();// Input.inputDatum("Ange Nytt tävlingsdatum: ");
-		tavl.setForstaStartVerklig(wlong);
-		tavl.setSenUppd();
-		System.out.println("Utfört klart...");
-		return 0;
-	}
-
-	private static float fyra(Competitions tavl) {
-		boolean isOK;
-		System.out.println("läsa in från fil, skriva över befintlig ");
-//		boolean cont = Input.inputBool("läsa in från fil, skriva över befintlig ");
-		boolean cont = scan.nextBoolean();
-		if (!cont)
-			return 0;
-		if (cont) {
-			isOK = getfromdisk(tavl);
-			if (!isOK) {
-
-				System.out.println("Misslyckades...");
-				return -1f;
-			}
-
-			// TODO Auto-generated method stub
-			tavl.setStatuskod(1);
-			System.out.println("Utfört klart...");
-			return 0f;
-		}
-		return 0f;
-	}
-
-	private static float trea(Competitions tavl) {
-		// TODO Auto-generated method stub
-		float success = 0;
-		boolean isOK = savetodisk(tavl);
-		System.out.println("Utfört klart...");
-		return 0;
-	}
+//	private static float trea(Competitions tavl) {
+//		// TODO Auto-generated method stub
+//		float success = 0;
+//		boolean isOK = savetodisk(tavl);
+//		System.out.println("Utfört klart...");
+//		return 0;
+//	}
 
 	public static boolean savetodisk(Competitions tavl) {
-		// TODO Auto-generated method stub
 		String destpath = "skidtavling.csv";
 		String[] param = new String[14];
 		boolean append = false;
@@ -451,41 +454,41 @@ public class Compmenue {
 		return time;
 	}
 // kan detta bli en egen klass 
-	private static float tvaa(Competitions tavl) {
-		int raderpervy = 10;
-		int radcount = 0;
-		if (tavl.toString() == null) {
-			System.out.println("Finns inget att visa..");
-			return 0;
-		}
-		System.out.println("Tävlingsnamn:  " + tavl.getTavlingsnamn());
-		System.out.println("Krav på förhandsanmälan  " + tavl.isForHandsanmalanKrav());
-		System.out.println("sista_anmalningsdatum:  " + tavl.getSistaAnmalningsdatum());
-		System.out.println(" Startmetod:  " + tavl.getStartmetod());
-		System.out.println("Antalet anmälda startande " + tavl.getFixedStartnbr());
-		System.out.println("Maximalt Antalstartande=.." + tavl.getMaxAntalstartande());
-		System.out.println("Plannerad första start. " + tavl.getForstaStartPlanned());
-		System.out.println("Verklig första start:  " + tavl.getForstaStartVerklig());
-		System.out.println("StartIntervall.sekunder: " + tavl.getStartIntervall());
-		System.out.println("Senast Uppdatering: " + tavl.getSenUppd());
-
-		// boolean goon = Input.inputEnter("fortsätt visa mer...");
-		scan.next();
-
-		System.out.println("ID-numrering");
-		System.out.println("Nummerlappar för dekorering");
-		System.out.println("Lägsta nummer för startande " + tavl.getNbrStart());
-		System.out.println("Högsta nummer för startande " + tavl.getNbrSlut());
-		System.out.println("Test o utvärdering");
-		System.out.println("Banlängd i 10-tal meter: " + tavl.getSparLangd());
-		System.out.println("Mellantidtagning i % av banl räknat från start: " + tavl.getPlaceMellantid());
-
-
-		// goon = Input.inputEnter("till menyn klar...");
-		System.out.println("fortsätt");
-		scan.next();
-		return 0;
-	}
+//	private static float tvaa(Competitions tavl) {
+//		int raderpervy = 10;
+//		int radcount = 0;
+//		if (tavl.toString() == null) {
+//			System.out.println("Finns inget att visa..");
+//			return 0;
+//		}
+//		System.out.println("Tävlingsnamn:  " + tavl.getTavlingsnamn());
+//		System.out.println("Krav på förhandsanmälan  " + tavl.isForHandsanmalanKrav());
+//		System.out.println("sista_anmalningsdatum:  " + tavl.getSistaAnmalningsdatum());
+//		System.out.println(" Startmetod:  " + tavl.getStartmetod());
+//		System.out.println("Antalet anmälda startande " + tavl.getFixedStartnbr());
+//		System.out.println("Maximalt Antalstartande=.." + tavl.getMaxAntalstartande());
+//		System.out.println("Plannerad första start. " + tavl.getForstaStartPlanned());
+//		System.out.println("Verklig första start:  " + tavl.getForstaStartVerklig());
+//		System.out.println("StartIntervall.sekunder: " + tavl.getStartIntervall());
+//		System.out.println("Senast Uppdatering: " + tavl.getSenUppd());
+//
+//		// boolean goon = Input.inputEnter("fortsätt visa mer...");
+//		scan.next();
+//
+//		System.out.println("ID-numrering");
+//		System.out.println("Nummerlappar för dekorering");
+//		System.out.println("Lägsta nummer för startande " + tavl.getNbrStart());
+//		System.out.println("Högsta nummer för startande " + tavl.getNbrSlut());
+//		System.out.println("Test o utvärdering");
+//		System.out.println("Banlängd i 10-tal meter: " + tavl.getSparLangd());
+//		System.out.println("Mellantidtagning i % av banl räknat från start: " + tavl.getPlaceMellantid());
+//
+//
+//		// goon = Input.inputEnter("till menyn klar...");
+//		System.out.println("fortsätt");
+//		scan.next();
+//		return 0;
+//	}
 
 
 	private static int gorfunkval() {
@@ -530,92 +533,92 @@ public class Compmenue {
 
 	}
 
-	private static float etta(Competitions tavl) {
-
-	
-// variable namen bör ses över 
-		String wrk = "";
-		String prmt = "";
-		int win = 0;
-		float wflot = 0f;
-		long wlong = 0;
-		Boolean wbool = false;
-		// raderaKonsole(5);
-		System.out.println("Ange de uppräknade egenskaperna för aktuell tävling");
-		Competitions tavl1 = new Competitions();
-
-//		wrk =  Input.inputString("Ange tävlingens namn", false, 0);
-		System.out.println("Ange tävlingens namn");
-		wrk = scan.nextLine();
-		tavl.setCompetiotionName(wrk);
-
-//		wbool = Input.inputBool("Obligatorisk förhandsanmälan");
-		System.out.println("Obligatorisk förhandsanmälan");
-		tavl.setAdvanceNotification(wbool);
-
-//		wlong =  Input.inputDatum(" Senaste Anmälningsdag ");
-		System.out.println(" Senaste Anmälningsdag ");
-		wlong = scan.nextLong();
-		tavl.setLastNotificationDate(wlong);
-
-//		wbool = Input.inputBool("Simulerad tidtagning");
-		System.out.println("Simulerad tidtagning");
-		wbool = scan.nextBoolean();
-		tavl.setSimTidtagning(wbool);
-		// spårlängd o mellantid
-		System.out.println("Ange spårlängd i 10-tals meter");
-//		win = Input.inputInt("Ange spårlängd i 10-tals meter", 10,30000);
-		win = scan.nextInt();
-		tavl.setSparLangd(win);
-		System.out.println("Mellantidstagning i hela  procent av banlängd räknat från start tex 50 mittpunkt");
-//		win = Input.inputInt("Mellantidstagning i hela  procent av banlängd räknat från start tex 50 mittpunkt", 1,100);
-		win = scan.nextInt();
-		tavl.setPlaceMellantid(win);
-		System.out.println("Ange kod för startmetod 1-4 se manualen !!");
-//		win =  Input.inputInt("Ange kod för startmetod 1-4 se manualen !!", 1, 4);
-		win = scan.nextInt();
-		tavl.setStartmetod(win);
-		System.out.println("Ange Antalet anmälda startande!");
-//		win =  Input.inputInt("Ange Antalet anmälda startande!", 10, 500);
-		win = scan.nextInt();
-		tavl.setFixedStartnbr(win);
-		System.out.println("Ange Startnummer i serie  !");
-//		win =  Input.inputInt("Ange Startnummer i serie  !", 1, 750);
-		win = scan.nextInt();
-		tavl.setNbrStart(win);
-		// win = Input.inputInt("Ange Sista nummer i serie !", 10, 1000);
-		System.out.println("Ange Sista nummer i serie !");
-		tavl.setNbrSlut(win);
-		System.out.println("Startintervall i sekunder!");
-		// win = Input.inputInt("Startintervall i sekunder!", 10, 120);
-
-		tavl.setStartIntervall(win);
-		System.out.println("Maximalt antal startande");
-//		win =  Input.inputInt("Maximalt antal startande", 10, 300);
-		win = scan.nextInt();
-		tavl.setTotalLimitStart(win);
-
-		System.out.println("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
-//		wlong =  Input.inputDatum("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
-		wlong = scan.nextLong();
-		tavl.setLastNotificationDate(wlong);
-
-		tavl.setSenUppd();
-
-		tavl.setStatuskod(1);
-		// System.out.println(tavl.toString());
-
-		System.out.println("Utfört klart...");
-		return 0;
-
-	}
+//	private static float etta(Competitions tavl) {
+//
+//	
+//// variable namen bör ses över 
+//		String wrk = "";
+//		String prmt = "";
+//		int win = 0;
+//		float wflot = 0f;
+//		long wlong = 0;
+//		Boolean wbool = false;
+//		// raderaKonsole(5);
+//		System.out.println("Ange de uppräknade egenskaperna för aktuell tävling");
+//		Competitions tavl1 = new Competitions();
+//
+////		wrk =  Input.inputString("Ange tävlingens namn", false, 0);
+//		System.out.println("Ange tävlingens namn");
+//		wrk = scan.nextLine();
+//		tavl.setCompetiotionName(wrk);
+//
+////		wbool = Input.inputBool("Obligatorisk förhandsanmälan");
+//		System.out.println("Obligatorisk förhandsanmälan");
+//		tavl.setAdvanceNotification(wbool);
+//
+////		wlong =  Input.inputDatum(" Senaste Anmälningsdag ");
+//		System.out.println(" Senaste Anmälningsdag ");
+//		wlong = scan.nextLong();
+//		tavl.setLastNotificationDate(wlong);
+//
+////		wbool = Input.inputBool("Simulerad tidtagning");
+//		System.out.println("Simulerad tidtagning");
+//		wbool = scan.nextBoolean();
+//		tavl.setSimTidtagning(wbool);
+//		// spårlängd o mellantid
+//		System.out.println("Ange spårlängd i 10-tals meter");
+////		win = Input.inputInt("Ange spårlängd i 10-tals meter", 10,30000);
+//		win = scan.nextInt();
+//		tavl.setSparLangd(win);
+//		System.out.println("Mellantidstagning i hela  procent av banlängd räknat från start tex 50 mittpunkt");
+////		win = Input.inputInt("Mellantidstagning i hela  procent av banlängd räknat från start tex 50 mittpunkt", 1,100);
+//		win = scan.nextInt();
+//		tavl.setPlaceMellantid(win);
+//		System.out.println("Ange kod för startmetod 1-4 se manualen !!");
+////		win =  Input.inputInt("Ange kod för startmetod 1-4 se manualen !!", 1, 4);
+//		win = scan.nextInt();
+//		tavl.setStartmetod(win);
+//		System.out.println("Ange Antalet anmälda startande!");
+////		win =  Input.inputInt("Ange Antalet anmälda startande!", 10, 500);
+//		win = scan.nextInt();
+//		tavl.setFixedStartnbr(win);
+//		System.out.println("Ange Startnummer i serie  !");
+////		win =  Input.inputInt("Ange Startnummer i serie  !", 1, 750);
+//		win = scan.nextInt();
+//		tavl.setNbrStart(win);
+//		// win = Input.inputInt("Ange Sista nummer i serie !", 10, 1000);
+//		System.out.println("Ange Sista nummer i serie !");
+//		tavl.setNbrSlut(win);
+//		System.out.println("Startintervall i sekunder!");
+//		// win = Input.inputInt("Startintervall i sekunder!", 10, 120);
+//
+//		tavl.setStartIntervall(win);
+//		System.out.println("Maximalt antal startande");
+////		win =  Input.inputInt("Maximalt antal startande", 10, 300);
+//		win = scan.nextInt();
+//		tavl.setTotalLimitStart(win);
+//
+//		System.out.println("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
+////		wlong =  Input.inputDatum("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
+//		wlong = scan.nextLong();
+//		tavl.setLastNotificationDate(wlong);
+//
+//		tavl.setSenUppd();
+//
+//		tavl.setStatuskod(1);
+//		// System.out.println(tavl.toString());
+//
+//		System.out.println("Utfört klart...");
+//		return 0;
+//
+//	}
 
 	public static boolean showlogglista() {
 		String srcepath = "tavlingslogg.txt";
 		boolean isOK;
 
 		int PostID = 1;
-		boolean atend = false; // TODO Auto-generated method stub
+		boolean atend = false; 
 		System.out.println("Utfört på gång...");
 		int postant = getFilesize(srcepath);
 		System.out.println("postantal" + postant);

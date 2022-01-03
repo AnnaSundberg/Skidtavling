@@ -11,10 +11,10 @@ public class Menu {
 	boolean quit;
 	public CompetitionBoard compBoard = new CompetitionBoard();
 	public void runMenu(Competitions comp1) throws InterruptedException {
-		PrintMenu.printWelcomeBox();
+		ConsolePrinting.printWelcomeBox();
 		FillFromFile FFF = new FillFromFile(compBoard,comp1);// instans till nya klassen för fil läsning
 		while(!quit) {
-			PrintMenu.printMenu();
+			ConsolePrinting.printMenu();
 			int userChoice = getInput();		// getInput ny metod för att behandla användarens input 
 			MenuManager.switchMenu(userChoice,compBoard,comp1);
 			

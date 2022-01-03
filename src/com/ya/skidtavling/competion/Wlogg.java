@@ -5,7 +5,6 @@ import java.io.FileWriter;
 import java.io.PrintWriter;
 import java.time.LocalDate;
 import java.time.LocalTime;
-import java.time.chrono.ChronoLocalDateTime;
 import java.util.Scanner;
 
 public class Wlogg {
@@ -101,7 +100,7 @@ public class Wlogg {
 			return ret;
 		}		
 		
-		static boolean nollalogglist()
+		public static boolean nollalogglist()
 		{
 			String destpath = "tavlingslogg.txt";
 			boolean append = false;
