@@ -21,6 +21,7 @@ public class PrintMenu {
 //				+ "5. Skriv ut Mellantiderna.\n" 
 //				+ "6. Skriv ut Resultattavla.\n"
 //				+ "7. Skriv ut Vinnarna 1-3.");
+		//titta till detta för korigering 
 		System.out.println("\nGör ett av valen:\n"
 				+ "0. Avsluta.\n"
 				+ "1. Tävling undermeny setup mm\n"

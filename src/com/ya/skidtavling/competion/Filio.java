@@ -16,21 +16,7 @@ import java.io.FileReader;
  */
 public class Filio {
 
-	/**
-	 * @param args
-	 */
-	public static void main(String[] args) {
-//		// TODO Auto-generated method stub
-//		String srcepath = "C://test//incidents.txt";
-//		String[] rows;
-//		rows = readfiledatatoString(srcepath);
-//		int n = rows.length;
-//		for (int i =0; i <n; i++)
-//		{
-//			System.out.println(rows[i]);
-//		}
-//		
-	}
+	
 	
 	public static int getFilesize(String path)		
 	{

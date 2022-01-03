@@ -1,2 +1,8 @@
  01 ; 2022-01-03 18:16:08.686759100 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
  01 ; 2022-01-03 18:24:19.010560900 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 18:42:56.791917400 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 18:43:18.096435500 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 18:43:49.123313200 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 19:17:23.197919 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 19:22:45.453761800 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 
+ 01 ; 2022-01-03 19:40:45.162448500 ;  02  ; 1 ;   03  ; Deltagarlista inläst största startnr: 0 ;  04  ; 2 ;  05  ; från fil: PreviusResult.txt ; 

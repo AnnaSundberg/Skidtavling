@@ -9,18 +9,65 @@ import java.time.LocalDate;
  * default arbetskatalog skulle kunna läggas till..		
  */
 		
+		private boolean advanceNotification;       //* krav på förhandsanmälan == här: inläst lista är alla
+		private String competiotionName;				// marknadsföringsnamn  
+		
+	
 
+		private int startmetod;						//* kod för startmetod koder 
+	 
+		// =1 ; masstart
+		// =2 ; jaktstart
+		// =3 ; individuell start startintevall 
+		// =4 ; Random start lottad startordning
+		
+//		I första hand tänks variabler med //* markering hårkodas till fixerat editerbart värde medan övriga
+//		ges möjlighet att via menyn variera.
+
+
+		private int fixedStartnbr;		//* Antaled anmälda startande.
+		private long lastNotificationDate; // Java time hourmin,sista anmälan för deltagare;
+				
+
+		private int	totalLimitStart;	//* deltagarantal max
+		private long startingTime; // Java time hourmin, first or only start time;
+		private long forstaStartVerklig;// förvald datum tid för förstatart
+		private int	startIntervall;   //in seconds for indiv,random startorder
+	
+		private int nbrStart;			//* nummerserie startnummer "nummerlappar start nyckel till deltagare under
+		private int nbrSlut;			//* sista nummer i sviten nummerlappar tävling genom läsbarhet etc.
+		private boolean simTidtagning;   // för test och utvärdering all manuell tidtagning ersatt med metod för
+										//slumpad tidtagning; 
+		private String senUppd;			// senaste uppdatering av posten string format.
+		private String haschKod	;		// post check; integritet.
+		private int statuskod;			// används för att hantera ordningsföljden av åtgärder;
+										/* = 0 inga register laddade, deltagare kan inte laddas innan
+										 * tävling skapats eller laddats submeny alt 1.
+										 * = 1 tävling skapad och laddad.Nu kan/ skall starttid ev justeras
+										 * och deltagare laddas;
+										 * =2 deltagare laddade eller manuellt inlagda nu kan startlista skrivas och
+										 * frågor göras på deltagare.
+										 * = 3 Startlista utskriven, nu kan tävling startas
+										 * = 4 tävling starad och pågår
+										 * = 5 tävling avslutad, alla i mål (incidenter ej inlagda )
+										 * nu kan resultatlistor och prispall plockas fram..
+										 */
+		public Incidents ins;
+		public Competitions() {
+			super();
+			
+		}
 		/**
 		 * @param forHandsanmalanKrav the forHandsanmalanKrav to set
 		 */
-		public  void setForHandsanmalanKrav(boolean forHandsanmalanKrav) {
-			this.forHandsanmalanKrav = forHandsanmalanKrav;
+		public  void setAdvanceNotification(boolean advanceNotification) {
+			this.advanceNotification = advanceNotification;
 		}
 		/**
 		 * @param tavlingsnamn the tavlingsnamn to set
 		 */
-		public void setTavlingsnamn(String tavlingsnamn) {
-			this.tavlingsnamn = tavlingsnamn;
+		public void setCompetiotionName(String competiotionName) {
+			this.competiotionName = competiotionName;
 		}
 	
 	
@@ -39,20 +86,20 @@ import java.time.LocalDate;
 		/**
 		 * @param sistaAnmalningsdatum the sistaAnmalningsdatum to set
 		 */
-		public void setSistaAnmalningsdatum(long sistaAnmalningsdatum) {
-			this.sistaAnmalningsdatum = sistaAnmalningsdatum;
+		public void setLastNotificationDate(long lastNotificationDate) {
+			this.lastNotificationDate = lastNotificationDate;
 		}
 		/**
 		 * @param maxAntalstartande the maxAntalstartande to set
 		 */
-		public void setMaxAntalstartande(int maxAntalstartande) {
-			this.maxAntalstartande = maxAntalstartande;
+		public void setTotalLimitStart(int totalLimitStart) {
+			this.totalLimitStart = totalLimitStart;
 		}
 		/**
 		 * @param forstaStartPlanned the forstaStartPlanned to set
 		 */
-		public void setForstaStartPlanned(long forstaStartPlanned) {
-			this.forstaStartPlanned = forstaStartPlanned;
+		public void setsStartingTime(long startingTime) {
+			this.startingTime = startingTime;
 		}
 		/**
 		 * @param forstaStartVerklig the forstaStartVerklig to set
@@ -100,12 +147,12 @@ import java.time.LocalDate;
 		}
 		/**
 		 * @param forHandsanmalanKrav
-		 * @param tavlingsnamn
+		 * @param competiotionName
 		 		 * @param startmetod
 		 * @param fixedStartnbr
-		 * @param sistaAnmalningsdatum
-		 * @param maxAntalstartande
-		 * @param forstaStartPlanned
+		 * @param lastNotificationDate
+		 * @param totalLimitStart
+		 * @param startingTime
 		 * @param forstaStartVerklig
 		 * @param startIntervall
 		 * @param nbrStart
@@ -114,70 +161,28 @@ import java.time.LocalDate;
 		 * @param senUppd
 		 * @param haschKod
 		 */
-		private Competitions(boolean forHandsanmalanKrav, String tavlingsnamn,
-				int startmetod, int fixedStartnbr, long sistaAnmalningsdatum, int maxAntalstartande,
-				long forstaStartPlanned, long forstaStartVerklig, int startIntervall, int nbrStart, int nbrSlut,
-				boolean simTidtagning, String senUppd, String haschKod) {
-			super();
-			this.forHandsanmalanKrav = forHandsanmalanKrav;
-			this.tavlingsnamn = tavlingsnamn;
-			this.startmetod = startmetod;
-			this.fixedStartnbr = fixedStartnbr;
-			this.sistaAnmalningsdatum = sistaAnmalningsdatum;
-			this.maxAntalstartande = maxAntalstartande;
-			this.forstaStartPlanned = forstaStartPlanned;
-			this.forstaStartVerklig = forstaStartVerklig;
-			this.startIntervall = startIntervall;
-			this.nbrStart = nbrStart;
-			this.nbrSlut = nbrSlut;
-			this.simTidtagning = simTidtagning;
-			this.senUppd = senUppd;
-			this.haschKod = haschKod;
-		}
-		private boolean forHandsanmalanKrav;       //* krav på förhandsanmälan == här: inläst lista är alla
-		private String tavlingsnamn;				// marknadsföringsnamn  
+//		@SuppressWarnings("unused")
+//		private Competitions(boolean forHandsanmalanKrav, String tavlingsnamn,
+//				int startmetod, int fixedStartnbr, long sistaAnmalningsdatum, int maxAntalstartande,
+//				long forstaStartPlanned, long forstaStartVerklig, int startIntervall, int nbrStart, int nbrSlut,
+//				boolean simTidtagning, String senUppd, String haschKod) {
+//			super();
+//			this.forHandsanmalanKrav = forHandsanmalanKrav;
+//			this.tavlingsnamn = tavlingsnamn;
+//			this.startmetod = startmetod;
+//			this.fixedStartnbr = fixedStartnbr;
+//			this.sistaAnmalningsdatum = sistaAnmalningsdatum;
+//			this.maxAntalstartande = maxAntalstartande;
+//			this.forstaStartPlanned = forstaStartPlanned;
+//			this.forstaStartVerklig = forstaStartVerklig;
+//			this.startIntervall = startIntervall;
+//			this.nbrStart = nbrStart;
+//			this.nbrSlut = nbrSlut;
+//			this.simTidtagning = simTidtagning;
+//			this.senUppd = senUppd;
+//			this.haschKod = haschKod;
+//		}
 		
-	
-
-		private int startmetod;						//* kod för startmetod koder 
-	 
-		// =1 ; masstart
-		// =2 ; jaktstart
-		// =3 ; individuell start startintevall 
-		// =4 ; Random start lottad startordning
-		
-//		I första hand tänks variabler med //* markering hårkodas till fixerat editerbart värde medan övriga
-//		ges möjlighet att via menyn variera.
-
-
-		private int fixedStartnbr;		//* Antaled anmälda startande.
-		private long sistaAnmalningsdatum; // Java time hourmin,sista anmälan för deltagare;
-				
-
-		private int	maxAntalstartande;	//* deltagarantal max
-		private long forstaStartPlanned; // Java time hourmin, first or only start time;
-		private long forstaStartVerklig;// förvald datum tid för förstatart
-		private int	startIntervall;   //in seconds for indiv,random startorder
-	
-		private int nbrStart;			//* nummerserie startnummer "nummerlappar start nyckel till deltagare under
-		private int nbrSlut;			//* sista nummer i sviten nummerlappar tävling genom läsbarhet etc.
-		private boolean simTidtagning;   // för test och utvärdering all manuell tidtagning ersatt med metod för
-										//slumpad tidtagning; 
-		private String senUppd;			// senaste uppdatering av posten string format.
-		private String haschKod	;		// post check; integritet.
-		private int statuskod;			// används för att hantera ordningsföljden av åtgärder;
-										/* = 0 inga register laddade, deltagare kan inte laddas innan
-										 * tävling skapats eller laddats submeny alt 1.
-										 * = 1 tävling skapad och laddad.Nu kan/ skall starttid ev justeras
-										 * och deltagare laddas;
-										 * =2 deltagare laddade eller manuellt inlagda nu kan startlista skrivas och
-										 * frågor göras på deltagare.
-										 * = 3 Startlista utskriven, nu kan tävling startas
-										 * = 4 tävling starad och pågår
-										 * = 5 tävling avslutad, alla i mål (incidenter ej inlagda )
-										 * nu kan resultatlistor och prispall plockas fram..
-										 */
-		public Incidents ins;
 		public int getSparLangd() {
 			return sparLangd;
 		}
@@ -209,21 +214,18 @@ import java.time.LocalDate;
 		/**
 		 * 
 		 */
-		public Competitions() {
-			super();
-			// TODO Auto-generated constructor stub
-		}
+		
 		/**
 		 * @return the forHandsanmalanKrav
 		 */
 		public boolean isForHandsanmalanKrav() {
-			return forHandsanmalanKrav;
+			return advanceNotification;
 		}
 		/**
 		 * @return the tavlingsnamn
 		 */
 		public String getTavlingsnamn() {
-			return tavlingsnamn;
+			return competiotionName;
 		}
 		/**
 		 * @return the sista_anmalningsdatum
@@ -231,7 +233,7 @@ import java.time.LocalDate;
 		public String getSistaAnmalningsdatum() {
 			
 			 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
-			 Date date= new Date(sistaAnmalningsdatum);
+			 Date date= new Date(lastNotificationDate);
 			 
 	       
 		        String dettadatum = df.format(date);
@@ -267,14 +269,14 @@ import java.time.LocalDate;
 		 * @return the maxAntalstartande
 		 */
 		public int getMaxAntalstartande() {
-			return maxAntalstartande;
+			return totalLimitStart;
 		}
 		/**
 		 * @return the forstaStartPlanned
 		 */
 		public String getForstaStartPlanned() {
 			 SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");	
-			 Date date= new Date(forstaStartPlanned);
+			 Date date= new Date(startingTime);
 			 
 	       
 		    String dettadatum = df.format(date);
@@ -339,10 +341,10 @@ import java.time.LocalDate;
 		}
 		@Override
 		public String toString() {
-			return "Competitions [forHandsanmalanKrav=" + forHandsanmalanKrav + ", tavlingsnamn=" + tavlingsnamn
+			return "Competitions [forHandsanmalanKrav=" + advanceNotification + ", tavlingsnamn=" + competiotionName
 					+  "startmetod=" + startmetod +"\n"
-					+ ", fixedStartnbr=" + fixedStartnbr + ", sistaAnmalningsdatum=" + sistaAnmalningsdatum
-					+ ", maxAntalstartande=" + maxAntalstartande + ", forstaStartPlanned=" + forstaStartPlanned
+					+ ", fixedStartnbr=" + fixedStartnbr + ", sistaAnmalningsdatum=" + lastNotificationDate
+					+ ", maxAntalstartande=" + totalLimitStart + ", forstaStartPlanned=" + startingTime
 					+ ", forstaStartVerklig=" + forstaStartVerklig + ", startIntervall=" + startIntervall
 					+"\n"+ ", nbrStart=" + nbrStart + ", nbrSlut=" + nbrSlut + ", simTidtagning=" + simTidtagning
 					+ ", senUppd=" + senUppd + ", haschKod=" + haschKod + "="

@@ -12,7 +12,7 @@ public class Compmenue {
 	static Scanner scan = new Scanner(System.in);
 
 	public static void Compmain(Competitions comp1) {
-
+// KOLLA IGENOM BORTKOMMENTERAD KOD OM VI BEHÖVER DESSA BEHÅLLA || TA BORT
 		Competitions tavl;
 		Incidents ins;
 
@@ -40,7 +40,7 @@ public class Compmenue {
 		}
 
 	}
-
+/// den här skall flyttas ut till till print Menyn
 	private static void visameny() {
 
 		System.out.println("\t\tMENY välj funktion en av nedanstående ange nummer");
@@ -60,9 +60,9 @@ public class Compmenue {
 		return;
 
 	}
-
+// kan den här kastas in i en egen klass ?? 
 	private static Incidents branchval(int fv, Competitions tavl, Incidents ins) {
-
+		// titta igenom om vi ska byta ut floaten till int istället 
 		float result = 0f;
 		System.out.println("menyvalet: " + fv);
 
@@ -268,7 +268,7 @@ public class Compmenue {
 		System.out.println("sparat: " + isOK);
 		return isOK;
 	}
-
+// titta igenom detta 
 	private static boolean getfromdisk(Competitions tavl) {
 		String srcepath = "skidtavling.csv";
 		String[] param = new String[20];
@@ -320,7 +320,7 @@ public class Compmenue {
 			switch (i) {
 			// tävlingsnamn
 			case 0:
-				ta.setTavlingsnamn(param);
+				ta.setCompetiotionName(param);
 				break;
 			// Förhandsanmälan krav
 			case 1: {
@@ -329,12 +329,12 @@ public class Compmenue {
 				else
 					wbool = false;
 			}
-				ta.setForHandsanmalanKrav(wbool);
+				ta.setAdvanceNotification(wbool);
 				break;
 			// sista anmälningsdatum
 			case 2: {
 				wlong = getlongtime(param);
-				ta.setSistaAnmalningsdatum(wlong);
+				ta.setLastNotificationDate(wlong);
 			}
 				break;
 			// startmetod
@@ -353,13 +353,13 @@ public class Compmenue {
 			// getMaxAntalstartande
 			case 5: {
 				wint = getint(param);
-				ta.setMaxAntalstartande(wint);
+				ta.setTotalLimitStart(wint);
 			}
 				break;
 			// getForstaStartPlanned
 			case 6: {
 				wlong = getlongtime(param);
-				ta.setForstaStartPlanned(wlong);
+				ta.setsStartingTime(wlong);
 			}
 				break;
 			// getForstaStartVerklig
@@ -450,7 +450,7 @@ public class Compmenue {
 
 		return time;
 	}
-
+// kan detta bli en egen klass 
 	private static float tvaa(Competitions tavl) {
 		int raderpervy = 10;
 		int radcount = 0;
@@ -500,28 +500,7 @@ public class Compmenue {
 		boolean doScanval = true;
 
 		if (doShowval) {
-			// must be aviabljavax.swing
-//			while (sv.length() == 0) {
-//				sv = JOptionPane.showInputDialog("Ange menyval 1....."+ menyMax+ "eller '0' för att avsluta");
-//				{
-//
-//				try {
-//						val = Integer.parseInt(sv);
-//					}
-//				catch (Exception e)// om sv inte är ett integer heltal
-//					{
-//						System.out.println("ogiltigt val, försök igen!");
-//						sv = ""; // stannar kvar i whileloopen
-//
-//
-//							if  ((val < 0) ||(val >menyMax))
-//							{
-//								System.out.println("ogiltigt val, försök igen!");
-//								sv = ""; // stannar kvar i whileloopen
-//							}
-//						}
-//				}
-//			}
+
 		} else {
 			System.out.println("Ange ditt menyval: ");
 
@@ -542,20 +521,19 @@ public class Compmenue {
 
 		return val;
 	}
-
+// används detta alls? 
 	private static void raderaKonsole(int n) {
 		for (int i = 0; i < n; i++) {
 			System.out.print("\n" + "\n" + "\n" + "\n" + "\n");
 		}
 
-		// TODO Auto-generated method stub
 
 	}
 
 	private static float etta(Competitions tavl) {
 
-		// TODO Auto-generated method stub
-
+	
+// variable namen bör ses över 
 		String wrk = "";
 		String prmt = "";
 		int win = 0;
@@ -569,16 +547,16 @@ public class Compmenue {
 //		wrk =  Input.inputString("Ange tävlingens namn", false, 0);
 		System.out.println("Ange tävlingens namn");
 		wrk = scan.nextLine();
-		tavl.setTavlingsnamn(wrk);
+		tavl.setCompetiotionName(wrk);
 
 //		wbool = Input.inputBool("Obligatorisk förhandsanmälan");
 		System.out.println("Obligatorisk förhandsanmälan");
-		tavl.setForHandsanmalanKrav(wbool);
+		tavl.setAdvanceNotification(wbool);
 
 //		wlong =  Input.inputDatum(" Senaste Anmälningsdag ");
 		System.out.println(" Senaste Anmälningsdag ");
 		wlong = scan.nextLong();
-		tavl.setSistaAnmalningsdatum(wlong);
+		tavl.setLastNotificationDate(wlong);
 
 //		wbool = Input.inputBool("Simulerad tidtagning");
 		System.out.println("Simulerad tidtagning");
@@ -615,12 +593,12 @@ public class Compmenue {
 		System.out.println("Maximalt antal startande");
 //		win =  Input.inputInt("Maximalt antal startande", 10, 300);
 		win = scan.nextInt();
-		tavl.setMaxAntalstartande(win);
+		tavl.setTotalLimitStart(win);
 
 		System.out.println("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
 //		wlong =  Input.inputDatum("Ange tävlingsdatum som ÅÅÅ-MM_DD ");
 		wlong = scan.nextLong();
-		tavl.setForstaStartPlanned(wlong);
+		tavl.setLastNotificationDate(wlong);
 
 		tavl.setSenUppd();
 
