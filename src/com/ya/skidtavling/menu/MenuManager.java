@@ -59,7 +59,7 @@ public class MenuManager {
 //		default:
 //			System.out.println("Något gick snett");
 //		}
-//	}
+//	}// detta måste ses över och kanske brytas ut 
 		Incidents ins = new Incidents();
 		int status = comp1.getStatuskod();	
 		comp1.setIns(ins); // handtag, pekare till insidensklassen...
