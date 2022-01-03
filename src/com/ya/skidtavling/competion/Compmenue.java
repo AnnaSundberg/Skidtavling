@@ -1,11 +1,7 @@
 package com.ya.skidtavling.competion;
 
-//Compmenue.java
-import java.text.ParseException;
 import java.io.BufferedReader;
 import java.io.FileReader;
-import java.io.*;
-import java.text.SimpleDateFormat;
 import java.util.*;
 
 import com.ya.skidtavling.competion.compmenueManager.Atta;
@@ -221,238 +217,238 @@ public class Compmenue {
 //		return 0;
 //	}
 
-	public static boolean savetodisk(Competitions tavl) {
-		String destpath = "skidtavling.csv";
-		String[] param = new String[14];
-		boolean append = false;
-		boolean isOK = false;
-		String line = "";
-		/*
-		 * prepare data to bee written in a sTRING ARRAY.
-		 */
-		param[0] = "01  " + tavl.getTavlingsnamn();
-		param[1] = "02  " + tavl.isForHandsanmalanKrav();
-		param[2] = "03  " + tavl.getSistaAnmalningsdatum();
-		param[3] = "04  " + tavl.getStartmetod();
-		param[4] = "05  " + tavl.getFixedStartnbr();
-		param[5] = "06  " + tavl.getMaxAntalstartande();
-		param[6] = "07  " + tavl.getForstaStartPlanned();
-		param[7] = "08  " + tavl.getForstaStartVerklig();
-		param[8] = "09  " + tavl.getStartIntervall();
-		param[9] = "10  " + tavl.getSenUppd();
-		param[10] = "11  " + tavl.getNbrStart();
-		param[11] = "12  " + tavl.getNbrSlut();
-		param[12] = "13  " + tavl.getSparLangd();
-		param[13] = "14  " + tavl.getPlaceMellantid();
-		/*
-		 * öppna en kanal "ström" för att skriva till disk. skriv all parametrar på
-		 * formatet "X  parametervalue \n"
-		 *
-		 */
-		try {
-			PrintWriter utstrom = new PrintWriter(new BufferedWriter(new FileWriter(destpath, append)));
-
-			/*
-			 * use skriv sedan till filen till exempel med en forllop
-			 * 
-			 */
-			for (int i = 0; i <= 13; i++) {
-				utstrom.println(param[i] + " ;");
-			}
-
-			utstrom.close();
-			isOK = true;
-
-		} catch (Exception ex) {
-			System.out.println("något gick snett vid skrivning till disk, det gick inte att skapa fil etc");
-			isOK = false;
-		}
-
-		System.out.println("sparat: " + isOK);
-		return isOK;
-	}
+//	public static boolean savetodisk(Competitions tavl) {
+//		String destpath = "skidtavling.txt";
+//		String[] param = new String[14];
+//		boolean append = false;
+//		boolean isOK = false;
+//		String line = "";
+//		/*
+//		 * prepare data to bee written in a sTRING ARRAY.
+//		 */
+//		param[0] = "01  " + tavl.getTavlingsnamn();
+//		param[1] = "02  " + tavl.isForHandsanmalanKrav();
+//		param[2] = "03  " + tavl.getSistaAnmalningsdatum();
+//		param[3] = "04  " + tavl.getStartmetod();
+//		param[4] = "05  " + tavl.getFixedStartnbr();
+//		param[5] = "06  " + tavl.getMaxAntalstartande();
+//		param[6] = "07  " + tavl.getForstaStartPlanned();
+//		param[7] = "08  " + tavl.getForstaStartVerklig();
+//		param[8] = "09  " + tavl.getStartIntervall();
+//		param[9] = "10  " + tavl.getSenUppd();
+//		param[10] = "11  " + tavl.getNbrStart();
+//		param[11] = "12  " + tavl.getNbrSlut();
+//		param[12] = "13  " + tavl.getSparLangd();
+//		param[13] = "14  " + tavl.getPlaceMellantid();
+//		/*
+//		 * öppna en kanal "ström" för att skriva till disk. skriv all parametrar på
+//		 * formatet "X  parametervalue \n"
+//		 *
+//		 */
+//		try {
+//			PrintWriter utstrom = new PrintWriter(new BufferedWriter(new FileWriter(destpath, append)));
+//
+//			/*
+//			 * use skriv sedan till filen till exempel med en forllop
+//			 * 
+//			 */
+//			for (int i = 0; i <= 13; i++) {
+//				utstrom.println(param[i] + " ;");
+//			}
+//
+//			utstrom.close();
+//			isOK = true;
+//
+//		} catch (Exception ex) {
+//			System.out.println("något gick snett vid skrivning till disk, det gick inte att skapa fil etc");
+//			isOK = false;
+//		}
+//
+//		System.out.println("sparat: " + isOK);
+//		return isOK;
+//	}
 // titta igenom detta 
-	private static boolean getfromdisk(Competitions tavl) {
-		String srcepath = "skidtavling.csv";
-		String[] param = new String[20];
-		String info = "  ";
-		boolean isOK;
-		boolean atend = false; // TODO Auto-generated method stub
+//	private static boolean getfromdisk(Competitions tavl) {
+//		String srcepath = "skidtavling.csv";
+//		String[] param = new String[20];
+//		String info = "  ";
+//		boolean isOK;
+//		boolean atend = false; // TODO Auto-generated method stub
+//
+//		{
+//			String[] inData = new String[25];
+//			String line = "xx";
+//			int i = 0;
+//			try {
+//				var instrom = new BufferedReader(new FileReader(srcepath));
+//				while (line != null) {
+//					line = instrom.readLine();
+//					param[i] = line;
+////				System.out.println(line + i);
+//					i++;
+//
+//				}
+//				instrom.close();
+//
+//			} catch (Exception ex) {
+//				System.out.println("Fel vid filläsning !!");
+//				inData[0] = "readerror";
+//				return false;
+//			}
+//			isOK = loadparam(param, tavl, (i - 1));
+//		}
+//		return isOK;
+//	}
 
-		{
-			String[] inData = new String[25];
-			String line = "xx";
-			int i = 0;
-			try {
-				var instrom = new BufferedReader(new FileReader(srcepath));
-				while (line != null) {
-					line = instrom.readLine();
-					param[i] = line;
-//				System.out.println(line + i);
-					i++;
+//	private static boolean loadparam(String[] inD, Competitions ta, int n) {
+//		String param;
+//		String info = " ";
+//		int pend;
+//		boolean wbool;
+//		long wlong;
+//		int wint = 0;
+//		char e = ';';
+////				System.out.println("radantal" +n );
+//		for (int i = 0; i < n; i++) {
+//			pend = inD[i].indexOf(e);
+//			pend = pend - 1;
+//			param = inD[i].substring(4, pend);
+//
+////					System.out.println(param);
+//
+//			switch (i) {
+//			// tävlingsnamn
+//			case 0:
+//				ta.setCompetiotionName(param);
+//				break;
+//			// Förhandsanmälan krav
+//			case 1: {
+//				if (param.equals("true"))
+//					wbool = true;
+//				else
+//					wbool = false;
+//			}
+//				ta.setAdvanceNotification(wbool);
+//				break;
+//			// sista anmälningsdatum
+//			case 2: {
+//				wlong = getlongtime(param);
+//				ta.setLastNotificationDate(wlong);
+//			}
+//				break;
+//			// startmetod
+//			case 3: {
+//				wint = getint(param);
+//				ta.setStartmetod(wint);
+//			}
+//				break;
+//			// getFixedStartnbr
+//			case 4: {
+//				wint = getint(param);
+//				ta.setFixedStartnbr(wint);
+//			}
+//				break;
+//
+//			// getMaxAntalstartande
+//			case 5: {
+//				wint = getint(param);
+//				ta.setTotalLimitStart(wint);
+//			}
+//				break;
+//			// getForstaStartPlanned
+//			case 6: {
+//				wlong = getlongtime(param);
+//				ta.setsStartingTime(wlong);
+//			}
+//				break;
+//			// getForstaStartVerklig
+//			case 7: {
+//				wlong = getlongtime(param);
+//				ta.setForstaStartVerklig(wlong);
+//			}
+//				break;
+//			// StartIntervall()
+//
+//			case 8: {
+//				wint = getint(param);
+//				ta.setStartIntervall(wint);
+//			}
+//				break;
+//			// getSenUppd
+//			case 9: {
+//				info = param;
+//				ta.setSenUppd();
+//			}
+//				;
+//				break;
+//			// getNbrStart
+//			case 10: {
+//				wint = getint(param);
+//				ta.setNbrStart(wint);
+//			}
+//				break;
+//			// getNbrSlut
+//			case 11: {
+//				wint = getint(param);
+//				ta.setNbrSlut(wint);
+//				break;
+//			}
+//			// get sparlangd
+//			case 12: {
+//				wint = getint(param);
+//				ta.setSparLangd(wint);
+//				break;
+//			}
+//			// get midtimeplace
+//			case 13: {
+//				wint = getint(param);
+//				ta.setPlaceMellantid(wint);
+//			}
+//
+//				break;
+//			}
+//
+//		}
+//
+//		System.out.println("fildata från datum  " + info + " har laddats");
+//		return true;
+//	}
 
-				}
-				instrom.close();
-
-			} catch (Exception ex) {
-				System.out.println("Fel vid filläsning !!");
-				inData[0] = "readerror";
-				return false;
-			}
-			isOK = loadparam(param, tavl, (i - 1));
-		}
-		return isOK;
-	}
-
-	private static boolean loadparam(String[] inD, Competitions ta, int n) {
-		String param;
-		String info = " ";
-		int pend;
-		boolean wbool;
-		long wlong;
-		int wint = 0;
-		char e = ';';
-//				System.out.println("radantal" +n );
-		for (int i = 0; i < n; i++) {
-			pend = inD[i].indexOf(e);
-			pend = pend - 1;
-			param = inD[i].substring(4, pend);
-
-//					System.out.println(param);
-
-			switch (i) {
-			// tävlingsnamn
-			case 0:
-				ta.setCompetiotionName(param);
-				break;
-			// Förhandsanmälan krav
-			case 1: {
-				if (param.equals("true"))
-					wbool = true;
-				else
-					wbool = false;
-			}
-				ta.setAdvanceNotification(wbool);
-				break;
-			// sista anmälningsdatum
-			case 2: {
-				wlong = getlongtime(param);
-				ta.setLastNotificationDate(wlong);
-			}
-				break;
-			// startmetod
-			case 3: {
-				wint = getint(param);
-				ta.setStartmetod(wint);
-			}
-				break;
-			// getFixedStartnbr
-			case 4: {
-				wint = getint(param);
-				ta.setFixedStartnbr(wint);
-			}
-				break;
-
-			// getMaxAntalstartande
-			case 5: {
-				wint = getint(param);
-				ta.setTotalLimitStart(wint);
-			}
-				break;
-			// getForstaStartPlanned
-			case 6: {
-				wlong = getlongtime(param);
-				ta.setsStartingTime(wlong);
-			}
-				break;
-			// getForstaStartVerklig
-			case 7: {
-				wlong = getlongtime(param);
-				ta.setForstaStartVerklig(wlong);
-			}
-				break;
-			// StartIntervall()
-
-			case 8: {
-				wint = getint(param);
-				ta.setStartIntervall(wint);
-			}
-				break;
-			// getSenUppd
-			case 9: {
-				info = param;
-				ta.setSenUppd();
-			}
-				;
-				break;
-			// getNbrStart
-			case 10: {
-				wint = getint(param);
-				ta.setNbrStart(wint);
-			}
-				break;
-			// getNbrSlut
-			case 11: {
-				wint = getint(param);
-				ta.setNbrSlut(wint);
-				break;
-			}
-			// get sparlangd
-			case 12: {
-				wint = getint(param);
-				ta.setSparLangd(wint);
-				break;
-			}
-			// get midtimeplace
-			case 13: {
-				wint = getint(param);
-				ta.setPlaceMellantid(wint);
-			}
-
-				break;
-			}
-
-		}
-
-		System.out.println("fildata från datum  " + info + " har laddats");
-		return true;
-	}
-
-	private static int getint(String param) {
-		int x;
-
-		param = param.trim();
-
-		try {
-			x = Integer.parseInt(param);
-		} catch (Exception f) {
-			System.out.println("formatfel i fldata");
-			x = 0;
-		}
-
-		return x;
-
-	}
-
-	private static long getlongtime(String param) {
-		boolean isError;
-		long time = 0;
-		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
-		Date d = null;
-
-		try {
-			d = df.parse(param);
-		} catch (ParseException e) {
-
-			System.out.println("felangivet formati datum");
-			isError = true;
-			return 0;
-		}
-
-		time = d.getTime();
-
-		return time;
-	}
+//	private static int getint(String param) {
+//		int x;
+//
+//		param = param.trim();
+//
+//		try {
+//			x = Integer.parseInt(param);
+//		} catch (Exception f) {
+//			System.out.println("formatfel i fldata");
+//			x = 0;
+//		}
+//
+//		return x;
+//
+//	}
+//
+//	private static long getlongtime(String param) {
+//		boolean isError;
+//		long time = 0;
+//		SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd");
+//		Date d = null;
+//
+//		try {
+//			d = df.parse(param);
+//		} catch (ParseException e) {
+//
+//			System.out.println("felangivet formati datum");
+//			isError = true;
+//			return 0;
+//		}
+//
+//		time = d.getTime();
+//
+//		return time;
+//	}
 // kan detta bli en egen klass 
 //	private static float tvaa(Competitions tavl) {
 //		int raderpervy = 10;
@@ -676,7 +672,7 @@ public class Compmenue {
 		return true;
 	}
 
-	private static Eventlogg loadparam(Eventlogg event, String row, int pid) {
+	public static Eventlogg loadparam(Eventlogg event, String row, int pid) {
 
 		String[] item = new String[12];
 		item = row.split(";");
@@ -698,7 +694,7 @@ public class Compmenue {
 				break;
 			// startmetod
 			case 3: {
-				wint = getint(item[3]);
+				wint = Fyra.getint(item[3]);
 				event.setEventkod(wint);
 			}
 				;
@@ -711,7 +707,7 @@ public class Compmenue {
 			case 6:
 				break;
 			case 7: {
-				wint = getint(item[7]);
+				wint = Fyra.getint(item[7]);
 			}
 				event.setEventsrce(wint);
 				break;
