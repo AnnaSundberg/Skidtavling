@@ -12,6 +12,7 @@ import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.FillFromFile;
 import com.ya.skidtavling.tavla.Race;
+import com.ya.skidtavling.tavla.TimeDifference;
 
 public class MenuManager {
 	static Scanner scan = new Scanner(System.in);
@@ -70,6 +71,8 @@ public class MenuManager {
 				switch (userChoice) {			 
 				case 0:
 					ConsolePrinting.printByeByeBox();
+					TimeDifference td = new TimeDifference(compBoard);
+					
 					System.exit(0);// END
 					break;
 				case 1:						//set up 	

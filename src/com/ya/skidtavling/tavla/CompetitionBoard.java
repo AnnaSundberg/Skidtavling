@@ -17,8 +17,10 @@ public class CompetitionBoard {
 // tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
 	public void startingTime() {// hur fungerar detta ???? 
 
-		long twoPm = 50400;// kl är 1400.
-
+//		long twoPm = 50400;// kl är 1400.
+		
+		long twoPm = 0;
+		
 		for(Participants p:participantsList) {
 			Time startTime = new Time(twoPm);
 			p.setStartTime(startTime);

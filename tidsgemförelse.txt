@@ -1,0 +1,9 @@
+En deltagare går i mål (flaggad som nummer 1);
+
+	Gemför deltagares tider med ResultList(Nummer (1));
+	p.compareTime(nummer 1);
+		System.out.println(p.compareTime(nummer 1)(Difference Time (Long));
+		
+		
+			Compare.ResultList(Index 0);
+		
