@@ -3,11 +3,13 @@ package com.ya.skidtavling.competion.compmenueManager;
 import java.util.Scanner;
 
 import com.ya.skidtavling.competion.Competitions;
+import com.ya.skidtavling.competion.Input;
 
 public class Tvaa {
 	
 	public static float tvaa(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);
+		Input input = new Input();
 		int raderpervy = 10;
 		int radcount = 0;
 		if (tavl.toString() == null) {
@@ -25,8 +27,8 @@ public class Tvaa {
 		System.out.println("StartIntervall.sekunder: " + tavl.getStartIntervall());
 		System.out.println("Senast Uppdatering: " + tavl.getSenUppd());
 
-		// boolean goon = Input.inputEnter("fortsätt visa mer...");
-		scan.next();
+		 boolean goon = Input.inputEnter("fortsätt visa mer...");
+//		scan.next();
 
 		System.out.println("ID-numrering");
 		System.out.println("Nummerlappar för dekorering");
@@ -37,9 +39,9 @@ public class Tvaa {
 		System.out.println("Mellantidtagning i % av banl räknat från start: " + tavl.getPlaceMellantid());
 
 
-		// goon = Input.inputEnter("till menyn klar...");
-		System.out.println("fortsätt");
-		scan.next();
+		 goon = Input.inputEnter("till menyn klar...");
+//		System.out.println("fortsätt");
+//		scan.next();
 		return 0;
 	}
 }

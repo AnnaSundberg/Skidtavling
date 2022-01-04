@@ -6,6 +6,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Compmenue;
 import com.ya.skidtavling.competion.Incidents;
+import com.ya.skidtavling.competion.Input;
 import com.ya.skidtavling.participants.NewRegistration;
 import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
@@ -64,7 +65,7 @@ public class MenuManager {
 		int status = comp1.getStatuskod();	
 		comp1.setIns(ins); // handtag, pekare till insidensklassen...
 				
-				
+		Input input = new Input();
 				
 				switch (userChoice) {			 
 				case 0:
@@ -89,17 +90,17 @@ public class MenuManager {
 					}
 					
 					System.out.println("Deltagare ladda/ lägga till");
-//					boolean doLoad = Input.inputBool("Ladda från fil");
-					System.out.println("Ladda från fil");
-					boolean doLoad = scan.nextBoolean();
+					boolean doLoad = Input.inputBool("Ladda från fil");
+//					System.out.println("Ladda från fil");
+//					boolean doLoad = scan.nextBoolean();
 					if (doLoad)
 					{
 					FillFromFile FFF = new FillFromFile(compBoard, comp1);// instans till nya klassen för fil läsning
 //					System.out.println("Nytt placenr1 " + tavl1.getNbrStart());
 					}
-//					doLoad = Input.inputBool("Registrera Mannuellt");
-					System.out.println("Registrera Mannuellt");
-					doLoad = scan.nextBoolean();
+					doLoad = Input.inputBool("Registrera Mannuellt");
+//					System.out.println("Registrera Mannuellt");
+//					doLoad = scan.nextBoolean();
 //					System.out.println("Nytt placenr2" + tavl1.getNbrStart());
 					if (doLoad)
 					{

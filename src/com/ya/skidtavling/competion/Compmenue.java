@@ -19,7 +19,7 @@ import com.ya.skidtavling.menu.ConsolePrinting;
 public class Compmenue {
 	static Scanner scan = new Scanner(System.in);
 
-	public static void Compmain(Competitions comp1) {
+	public void Compmain(Competitions comp1) {
 // KOLLA IGENOM BORTKOMMENTERAD KOD OM VI BEHÖVER DESSA BEHÅLLA || TA BORT
 		Competitions tavl;
 		Incidents ins;
@@ -113,8 +113,8 @@ public class Compmenue {
 
 	private static int gorfunkval() {
 		int fv = 0; // aktuellt funktionsval definieras av menyfunktionen.
-		String[] funk = { "Exit", "Ny", "Visa", "Spara", "Öppna", "Uppdatera", "delt antsal", "TAN", "SQR", "Mstore",
-				"MRecall", "Meny" };
+//		String[] funk = { "Exit", "Ny", "Visa", "Spara", "Öppna", "Uppdatera", "delt antsal", "TAN", "SQR", "Mstore",
+//				"MRecall", "Meny" };
 		String sv = "";
 		int val = 0;
 		int menyMax = 11;
@@ -124,7 +124,8 @@ public class Compmenue {
 
 		if (doShowval) {
 
-		} else {
+		}
+		else {
 			System.out.println("Ange ditt menyval: ");
 
 			Scanner scan = new Scanner(System.in);
@@ -199,16 +200,16 @@ public class Compmenue {
 				for (int k = 0; k < i; k++, l++) {
 					System.out.println(events[k].toString());
 					if (l == 19) {
-//											Input.inputEnter("visa fler 'enter'");	
+											Input.inputEnter("visa fler 'enter'");	
 						System.out.println("visa fler 'enter'");
 						scan.next();
 						l = 0;
 					}
 
 				}
-				System.out.println("återvänd menyn 'enter'");
-				scan.next();
-//						Input.inputEnter("återvänd menyn 'enter'");
+//				System.out.println("återvänd menyn 'enter'");
+//				scan.next();
+						Input.inputEnter("återvänd menyn 'enter'");
 
 				// event = loadparam(event,line,PostID);
 			}
