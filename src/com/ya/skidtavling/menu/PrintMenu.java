@@ -20,7 +20,8 @@ public class PrintMenu {
 				+ "4. Skriv ut Tävlingstavla.\n" 
 				+ "5. Skriv ut Mellantiderna.\n" 
 				+ "6. Skriv ut Resultattavla.\n"
-				+ "7. Skriv ut Vinnarna 1-3.");
+				+ "7. Skriv ut Vinnarna 1-3.\n"
+				+ "8. Gör en gemförelse Med Vinnaren.\n");
 	}
 	public static void printByeByeBox() {
 

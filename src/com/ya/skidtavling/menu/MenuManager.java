@@ -5,6 +5,7 @@ import com.ya.skidtavling.participants.NewRegistration;
 import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.Race;
+import com.ya.skidtavling.tavla.TimeDifference;
 
 public class MenuManager {
 	
@@ -48,6 +49,9 @@ public class MenuManager {
 		case 7:
 			System.out.println("Skriv ut Vinnarna 1-3");
 			compBoard.printWinnerBoard();
+			break;
+		case 8:
+			TimeDifference timeDiff = new TimeDifference(compBoard);
 			break;
 
 		default:
