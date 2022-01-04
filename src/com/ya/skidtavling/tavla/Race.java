@@ -26,7 +26,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					//Här måste tittas över 
 					if (!p.isPassedMiddle() && p.getDistance()>=50) {
 						if(!p.isPassedMiddle() && p.getDistance()<=55) {// vet inte om detta gör så mkt längre
-							
+							// om längd är 500 ha denna på 250
 							System.out.println("midList Update-----------------------------------------");
 							midListUpdate(p,compBoard);// ny metod som gör jobbet 
 //							compBoard.midTimeList.add(p);
@@ -36,7 +36,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					}else if(p.isPassedMiddle() && p.getDistance()>50) {
 						System.out.println(" ----");}
 					
-					if (p.getDistance() >= 100) {
+					if (p.getDistance() >= 100) {// gissar på att denna är den som styr loppets längd. testa om det går att göra det längre med 500 istället
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
 
 						p.setDistance(p.getDistance());

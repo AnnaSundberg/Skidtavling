@@ -6,7 +6,8 @@ import com.ya.skidtavling.participants.Participants;
 import com.ya.skidtavling.time.Time;
 
 public class TimeDifference {
-
+// Lägg till Lite mer data i Utskrift tex : namn och tid. 
+	// kanske göra något liknande med mellantiderna
 	public TimeDifference(CompetitionBoard comBoard) {
 		Participants winner = comBoard.resultBoard.get(0);
 

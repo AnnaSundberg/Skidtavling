@@ -11,8 +11,8 @@ public class FillFromFile {
 	public FillFromFile(CompetitionBoard compBoard) {
 
 		// Läser in deltagarena från filen
-//		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
+		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
+//		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
 			String line;
 			int i = 0;			
 
@@ -23,7 +23,7 @@ public class FillFromFile {
 				String fName = split[0];// sparar förnamn
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
-
+				// skall vi ha det såhär vi uppställning lr hur vill vi göra = ? 
 				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false,false);
 
 				compBoard.participantsList.add(newParticipant);
