@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 import com.ya.skidtavling.competion.Competitions;
 
-public class Nia {
+public class CompMenuSetCompetionSetPlaceForNextTime {
 	
 	public static float nia(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);

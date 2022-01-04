@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
-public class Tia {
+public class CompMenuSetCompetionLengthForNextTime {
 	public static float tia(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);
 		Input input = new Input();

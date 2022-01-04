@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
-public class Fema {
+public class CompMenuNewCompetionDate {
 	
 	public static float fem(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);

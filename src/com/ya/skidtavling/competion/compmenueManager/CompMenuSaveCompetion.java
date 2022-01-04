@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 
 import com.ya.skidtavling.competion.Competitions;
 
-public class Trea {
+public class CompMenuSaveCompetion {
 	public static float trea(Competitions tavl) {
 		// TODO Auto-generated method stub
 		float success = 0;

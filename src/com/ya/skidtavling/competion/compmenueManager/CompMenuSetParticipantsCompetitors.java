@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
-public class Sexa {
+public class CompMenuSetParticipantsCompetitors {
 	
 	public static float sex(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);

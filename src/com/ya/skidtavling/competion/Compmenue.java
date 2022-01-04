@@ -4,16 +4,16 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.util.*;
 
-import com.ya.skidtavling.competion.compmenueManager.Atta;
-import com.ya.skidtavling.competion.compmenueManager.Etta;
-import com.ya.skidtavling.competion.compmenueManager.Fema;
-import com.ya.skidtavling.competion.compmenueManager.Fyra;
-import com.ya.skidtavling.competion.compmenueManager.Nia;
-import com.ya.skidtavling.competion.compmenueManager.Sexa;
-import com.ya.skidtavling.competion.compmenueManager.Sju;
-import com.ya.skidtavling.competion.compmenueManager.Tia;
-import com.ya.skidtavling.competion.compmenueManager.Trea;
-import com.ya.skidtavling.competion.compmenueManager.Tvaa;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuClearLoggList;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuCreatCompetion;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuNewCompetionDate;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuLoadCompetion;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuSetCompetionSetPlaceForNextTime;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuSetParticipantsCompetitors;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuPrintLoggList;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuSetCompetionLengthForNextTime;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuSaveCompetion;
+import com.ya.skidtavling.competion.compmenueManager.CompMenuPrintCompetion;
 import com.ya.skidtavling.menu.ConsolePrinting;
 
 public class Compmenue {
@@ -62,43 +62,43 @@ public class Compmenue {
 		case 1:
 //			result = etta(tavl);
 			//Etta etta = new Etta();
-			Etta.etta(tavl);
+			CompMenuCreatCompetion.etta(tavl);
 			break;
 		case 2:
 //			result = tvaa(tavl);
-			Tvaa.tvaa(tavl);
+			CompMenuPrintCompetion.tvaa(tavl);
 			break;
 		case 3:
 //			result = trea(tavl);
-			Trea.trea(tavl);
+			CompMenuSaveCompetion.trea(tavl);
 			break;
 		case 4:
 //			result = fyra(tavl);
-			Fyra.fyra(tavl);
+			CompMenuLoadCompetion.fyra(tavl);
 			break;
 		case 5:
 //			result = fem(tavl);
-			Fema.fem(tavl);
+			CompMenuNewCompetionDate.fem(tavl);
 			break;
 		case 6:
 //			result = sex(tavl);
-			Sexa.sex(tavl);
+			CompMenuSetParticipantsCompetitors.sex(tavl);
 			break;
 		case 7:
 //			result = sju(tavl);
-			Sju.sju(tavl);
+			CompMenuPrintLoggList.sju(tavl);
 			break;
 		case 8:
 //			result = atta(tavl);
-			Atta.atta(tavl);
+			CompMenuClearLoggList.atta(tavl);
 			break;
 		case 9:
 //			result = nia(tavl);
-			Nia.nia(tavl);
+			CompMenuSetCompetionSetPlaceForNextTime.nia(tavl);
 			break;
 		case 10:
 //			result = tia(tavl);
-			Tia.tia(tavl);
+			CompMenuSetCompetionLengthForNextTime.tia(tavl);
 			break;
 		case 11:
 			ConsolePrinting.subMenu();
@@ -240,7 +240,7 @@ public class Compmenue {
 				break;
 			// startmetod
 			case 3: {
-				wint = Fyra.getint(item[3]);
+				wint = CompMenuLoadCompetion.getint(item[3]);
 				event.setEventkod(wint);
 			}
 				;
@@ -253,7 +253,7 @@ public class Compmenue {
 			case 6:
 				break;
 			case 7: {
-				wint = Fyra.getint(item[7]);
+				wint = CompMenuLoadCompetion.getint(item[7]);
 			}
 				event.setEventsrce(wint);
 				break;

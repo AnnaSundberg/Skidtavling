@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
-public class Etta {
+public class CompMenuCreatCompetion {
 
 	public static float etta(Competitions tavl) {
 		Input input = new Input();

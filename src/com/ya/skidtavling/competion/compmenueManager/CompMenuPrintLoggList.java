@@ -3,7 +3,7 @@ package com.ya.skidtavling.competion.compmenueManager;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Compmenue;
 
-public class Sju {
+public class CompMenuPrintLoggList {
 	
 	public static float sju(Competitions tavl) {
 //		boolean isOK showlogglista();

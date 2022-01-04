@@ -5,7 +5,7 @@ import java.util.Scanner;
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
-public class Tvaa {
+public class CompMenuPrintCompetion {
 	
 	public static float tvaa(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);

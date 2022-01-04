@@ -6,7 +6,7 @@ import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 import com.ya.skidtavling.competion.Wlogg;
 
-public class Atta {
+public class CompMenuClearLoggList {
 	
 	public static float atta(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);

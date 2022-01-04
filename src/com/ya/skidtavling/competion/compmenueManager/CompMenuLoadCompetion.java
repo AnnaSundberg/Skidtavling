@@ -11,7 +11,7 @@ import com.ya.skidtavling.competion.Competitions;
 // gör egentligen samma som innan fast nu flyttat till en egen klass 
 // gjorde nu så att alla methoder är med sedan innan för att det skulle fungera
 // men går säkert att bryta ner detta i mindre delar ytligare 
-public class Fyra {
+public class CompMenuLoadCompetion {
 	public static float fyra(Competitions tavl) {
 		Scanner scan = new Scanner(System.in);
 		boolean isOK;
