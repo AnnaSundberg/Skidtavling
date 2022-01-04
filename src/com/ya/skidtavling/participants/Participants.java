@@ -31,6 +31,11 @@ public class Participants extends Person {
 		this.participantNumber =participantNumber;
 		
 	}
+	public Participants(String forName,String lastName,int participantNumber,Time startTime) {
+		super(forName, lastName);
+		this.participantNumber = participantNumber;
+		this.startTime = startTime;
+	}
 	public Participants(int participantNumber, String forName, String lastName, int place, Time startTime, int distance,
 			boolean notFinished,boolean passedMiddle) {
 		super(forName, lastName);
@@ -42,6 +47,7 @@ public class Participants extends Person {
 		this.passedMiddle=passedMiddle;
 
 	}
+
 
 	public boolean isNotFinished() {
 		return notFinished;

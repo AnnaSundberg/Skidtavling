@@ -201,8 +201,8 @@ public class Compmenue {
 					System.out.println(events[k].toString());
 					if (l == 19) {
 											Input.inputEnter("visa fler 'enter'");	
-						System.out.println("visa fler 'enter'");
-						scan.next();
+//						System.out.println("visa fler 'enter'");
+//						scan.next();
 						l = 0;
 					}
 

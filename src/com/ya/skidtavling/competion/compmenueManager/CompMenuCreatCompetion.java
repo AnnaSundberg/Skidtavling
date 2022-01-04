@@ -1,7 +1,5 @@
 package com.ya.skidtavling.competion.compmenueManager;
 
-import java.util.Scanner;
-
 import com.ya.skidtavling.competion.Competitions;
 import com.ya.skidtavling.competion.Input;
 
@@ -9,12 +7,12 @@ public class CompMenuCreatCompetion {
 
 	public static float etta(Competitions tavl) {
 		Input input = new Input();
-		Scanner scan = new Scanner(System.in);
+//		Scanner scan = new Scanner(System.in);
 		// variable namen bör ses över
 		String wrk = "";
-		String prmt = "";
+//		String prmt = "";
 		int win = 0;
-		float wflot = 0f;
+//		float wflot = 0f;
 		long wlong = 0;
 		Boolean wbool = false;
 		// raderaKonsole(5);

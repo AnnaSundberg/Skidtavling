@@ -25,7 +25,7 @@ public class Menu {
 	private int getInput() {
 		Scanner scan = new Scanner(System.in);
 		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
-		while(userChoice < 0 || userChoice > 7) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
+		while(userChoice < 0 || userChoice > 9) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
 			try {
 				System.out.print("\nSkriv en siffra: ");
 				userChoice = Integer.parseInt(scan.nextLine());
@@ -37,22 +37,5 @@ public class Menu {
 		}
 		return userChoice;
 	}
-	// den här andvänds inte längre 
-//	private int getInput2() {
-//		Scanner scan = new Scanner(System.in);
-//		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
-//		while(userChoice < 0 || userChoice > 100) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
-//			try {
-//				System.out.print("\nSkriv en siffra: ");
-//				userChoice = Integer.parseInt(scan.nextLine());
-//			}
-//			catch (NumberFormatException e) {
-//				System.out.println("Försök igen");		
-//			}
-//			
-//		}
-//		return userChoice-1;// vet inte varför man måste ha -1 
-//	}
-	
 
 }

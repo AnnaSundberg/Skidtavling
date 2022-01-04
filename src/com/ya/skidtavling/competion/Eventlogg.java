@@ -112,6 +112,7 @@ public class Eventlogg {
 	 * @param eventsrce
 	 * @param eventobj
 	 */
+	@SuppressWarnings("unused")
 	private Eventlogg(int eventID, String handelsetidpunkt, int eventkod, String eventdescr, int eventsrce,
 			String eventobj) {
 		super();

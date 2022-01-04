@@ -151,7 +151,7 @@ public class Incidents {
 	 */
 	public Incidents() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 	/**
 	 * @param isnewIncident
@@ -167,7 +167,8 @@ public class Incidents {
 	 * @param antIncidentFall
 	 * @param insidentKod
 	 */
-	private Incidents(boolean isnewIncident, String insidentBeskrivning, int konsekvensKod, boolean isTavlingsrelated,
+
+	public Incidents(boolean isnewIncident, String insidentBeskrivning, int konsekvensKod, boolean isTavlingsrelated,
 			int proabilityKod, int forvantatAntalanrop, int anropsCnt, int totalanropscnt, int anropsIntervall,
 			int insidentAntal, int antIncidentFall, int insidentKod) {
 		super();

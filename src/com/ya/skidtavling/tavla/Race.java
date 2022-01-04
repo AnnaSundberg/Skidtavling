@@ -35,7 +35,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 		//skriv loggpost tävlinsstart;
 		
 		isOK=Wlogg.nyevent(1,"start_tavling",5,"längd:"+ sl/100 + " km mellantid: " + mt/100 );
-		Participants expelledpartlist;
+//		Participants expelledpartlist;
 		for (Participants p1 : compBoard.participantsList) {
 			p1.setNotFinished(false);
 			p1.setDistance(0);

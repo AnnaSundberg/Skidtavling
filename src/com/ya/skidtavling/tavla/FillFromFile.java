@@ -13,14 +13,16 @@ public class FillFromFile {
 	public FillFromFile(CompetitionBoard compBoard, Competitions comp1) {
 
 		// Läser in deltagarena från filen
-//		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
-		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
+		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
+//		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
 			String line;
 			//int i = 0;
 			int stMetod = comp1.getStartmetod();  // styr numrering mm
 			int stNbr = comp1.getNbrStart();
 			int i = comp1.getNbrStart();
-
+//			Time time = time.setSec(49000);
+			
+				
 
 			// ställer upp deltagarna rad för rad
 			while ((line = fReader.readLine()) != null) {
@@ -43,6 +45,10 @@ public class FillFromFile {
 					comp1.setNbrStart(stNbr);
 					compBoard.participantsList.add(newParticipant);
 					stNbr++;
+				}
+				if(stMetod == 2) {
+					Participants newParticipant = new Participants(fName, lName,stNbr, null);
+					compBoard.participantsList.add(newParticipant);
 				}
 				
 			}
