@@ -47,7 +47,8 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 			for (Participants p : compBoard.participantsList) {// ställer upp listan
 
 				if (!p.isNotFinished()&&(!p.isExpelled())) {
-					p.setDistance(p.getDistance() + rand.nextInt(5));
+//					p.setDistance(p.getDistance() + rand.nextInt(5));
+					p.setDistance(p.getDistance() + rand.nextInt(speed));
 					if (speed !=5) {
 
 						raknavarv++;
@@ -58,6 +59,23 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						}
 						
 					}
+					ins = HandleIncidents.CheckInsident(ins);
+					if (ins.isIsnewIncident()) {
+//						System.out.println(ins.getInsidentBeskrivning() +"Kons: "+ ins.getKonsekvensKod());
+						 isOK = Wlogg.nyevent(1,ins.getInsidentBeskrivning()+ "  " + ins.getInsidentKod(),5,p.getForName() +" "+ p.getLastName()+ " incident");
+						 speed = konsekvenshandler(p,ins.getKonsekvensKod(),speed);
+						 if (p.isExpelled())
+						 { 
+							 p.setExpelled(true);
+							 p.setDistance(0);
+							 p.setNotFinished(true);
+							 compBoard.expelledpartList.add(p);
+//							 compBoard.participantsList.remove(p);
+							 antdiskade++;
+						 }
+						 
+						ins.setIsnewIncident(false);
+					}
 					/*
 					 * Idé 'är att vi skall använda randen för att generera fram en tid som blir
 					 * kopplad till tid
@@ -65,26 +83,34 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					p.startTime.setSec(p.startTime.getSec() + plusSec);// man måste ta class metoderna så fungera det :)
 //					System.out.println(p.toString());
 					// Här måste tittas över
-					if (!p.isPassedMiddle() && p.getDistance() >= 50) {
-						if (!p.isPassedMiddle() && p.getDistance() <= 55) {// vet inte om detta gör så mkt längre
-
-							System.out.println("midList Update-----------------------------------------");
-							midListUpdate(p, compBoard);// ny metod som gör jobbet
+//					if (!p.isPassedMiddle() && p.getDistance() >= 50) {
+					if (!p.isPassedMiddle() && p.getDistance()>=mt) {
+						p.setPassedMiddle(true);
+						midListUpdate(p, compBoard);}// ny metod som gör jobbet
+//						if (!p.isPassedMiddle() && p.getDistance() <= 55) {// vet inte om detta gör så mkt längre
+						
+							//System.out.println("midList Update-----------------------------------------");
+							
 //							compBoard.midTimeList.add(p);
-							p.setPassedMiddle(true);
-						} else
-							break;
+//							p.setPassedMiddle(true);
+//						} else
+//							break;
 
-					} else if (p.isPassedMiddle() && p.getDistance() > 50) {
-						System.out.println(" ----");
-					}
+//					} else if (p.isPassedMiddle() && p.getDistance() > 50) {
+//						System.out.println(" ----");
+//					}
 
-					if (p.getDistance() >= 100) {
+//					if (p.getDistance() >= 100) {
+					if(p.getDistance()>sl) {
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
 
-						p.setDistance(p.getDistance());
+//						p.setDistance(p.getDistance());
 						compBoard.resultBoard.add(p);
 						p.setNotFinished(true);
+						p.setPlace(placering);
+						placering++;
+//						compBoard.resultBoard.add(p);
+						 isOK = Wlogg.nyevent(1,"Målgång",5,p.getForName() +" "+ p.getLastName());
 
 					}
 					// den här behöver ses över en del gånger kommer de alla fram andra inte ....
@@ -100,6 +126,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 			}
 
 		} while (raceOn);
+		System.out.println("Tävlingen avslutad - Alla tävlande i mål-- Antalet diskade: "+ antdiskade);
 	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera
 		// nu får vi ut mellantiden som det är tänkt
 //	public void midListUpdate(Participants p,CompetitionBoard compBoard) {

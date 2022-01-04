@@ -12,9 +12,9 @@ public class CompMenuClearLoggList {
 		Scanner scan = new Scanner(System.in);
 		Input input= new Input();
 		boolean isOK = Input.inputBool("Nollställa loggfil - är Du säker ?");
-		boolean isOk = scan.nextBoolean();
-		if (isOk)
-			isOk = Wlogg.nollalogglist();
+//		boolean isOk = scan.nextBoolean();
+		if (isOK)
+			isOK = Wlogg.nollalogglist();
 
 		return 0;
 	}

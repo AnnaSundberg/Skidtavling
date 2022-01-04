@@ -8,16 +8,18 @@ import java.util.Date;
 import java.util.Scanner;
 
 import com.ya.skidtavling.competion.Competitions;
+import com.ya.skidtavling.competion.Input;
 // gör egentligen samma som innan fast nu flyttat till en egen klass 
 // gjorde nu så att alla methoder är med sedan innan för att det skulle fungera
 // men går säkert att bryta ner detta i mindre delar ytligare 
 public class CompMenuLoadCompetion {
 	public static float fyra(Competitions tavl) {
-		Scanner scan = new Scanner(System.in);
+//		Scanner scan = new Scanner(System.in);
+		Input input = new Input();
 		boolean isOK;
 		System.out.println("läsa in från fil, skriva över befintlig ");
-//		boolean cont = Input.inputBool("läsa in från fil, skriva över befintlig ");
-		boolean cont = scan.nextBoolean();
+		boolean cont = Input.inputBool("läsa in från fil, skriva över befintlig ");
+//		boolean cont = scan.nextBoolean();
 		if (!cont)
 			return 0;
 		if (cont) {
