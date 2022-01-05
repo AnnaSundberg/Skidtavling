@@ -44,7 +44,7 @@ public class Participants extends Person {
 //		
 //	}
 	@Override
-	public String toString() {// trimmad Sträng för utskriften
+	public String toString() {// trimmad Sträng för utskriften// Qi Ra Blir fortfarande konstig utskrift . . .:( 
 		String prettierOutPutString = participantNumber + forName.trim() + "  "+ lastName.trim();
 		int Length = prettierOutPutString.length();
 		if (Length < 10)  
@@ -59,8 +59,8 @@ public class Participants extends Person {
 				+ " har kommit : " + distance ;
 		else
 			return participantNumber + " " + forName.trim() 
-			+ " " + lastName.trim() + "              " 
-			+ "\t place=" + place + " :  " + startTime
+					+ " " + lastName.trim() + "              " 
+					+ "\t place=" + place + " :  " + startTime
 					+ " har kommit : " + distance ;
 	}
 
@@ -73,7 +73,7 @@ public class Participants extends Person {
 	}
 
 	public int getPlace() {
-		return place;
+		return place; 
 	}
 
 	public void setPlace(int place) {
