@@ -24,8 +24,8 @@ public class FillFromFile {
 				String lName = split[1];// sparar efternamn
 				int randNum = rand.nextInt(100);
 				// skall vi ha det såhär vi uppställning lr hur vill vi göra = ? 
-				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false,false);
-
+//				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false,false);
+				Participants newParticipant = new Participants(randNum, fName, lName, 0, null, 0, false,false);
 				compBoard.participantsList.add(newParticipant);
 				i++;
 

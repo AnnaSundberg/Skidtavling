@@ -12,15 +12,23 @@ public class CompetitionBoard {
 	public List<Participants> resultBoard = new ArrayList<>();
 	public List<Participants> midTimeList = new ArrayList<>();
 	
-	
+	public void randomizeList() {
+		Collections.shuffle(participantsList);
+		startingTime();
+		for (Participants s : participantsList) {
+			System.out.println(s);
+		}
+			
+	}
 // tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
 	public void startingTime() {// hur fungerar detta ???? 
 
 		long twoPm = 50400;// kl är 1400.
-
+		long plusTime = 0;
 		for(Participants p:participantsList) {
-			Time startTime = new Time(twoPm);
+			Time startTime = new Time(twoPm+plusTime);
 			p.setStartTime(startTime);
+			plusTime+=15;
 			
 		}
 	}

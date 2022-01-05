@@ -12,9 +12,10 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 		boolean raceOn = true;
 		int trackDistance = 250;
 		long plusSec = 15;// lägger på 15 sekunder för alla varje varv
-		
+		int finishPlace = 1;//för målgångsPlats
+		int midPlace = 1;// midTimePlats
 		do {
-
+			
 			for (Participants p : compBoard.participantsList) {// ställer upp listan
 
 				if (!p.isNotFinished()) {
@@ -29,8 +30,9 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						if(!p.isPassedMiddle() && p.getDistance()<=(trackDistance/2)+5) {// vet inte om detta gör så mkt längre
 							// om längd är 500 ha denna på 250
 							System.out.println("midList Update-----------------------------------------");
+							p.setPlace(midPlace);
 							midListUpdate(p,compBoard);// ny metod som gör jobbet 
-
+							midPlace++;
 							p.setPassedMiddle(true);
 						}else break;
 						
@@ -38,15 +40,18 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						System.out.println(" ----");}
 					
 					if (p.getDistance() >= trackDistance) {// gissar på att denna är den som styr loppets längd. testa om det går att göra det längre med 500 istället
+						p.setPlace(finishPlace);
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
-
+						finishPlace++;
 						p.setDistance(p.getDistance());
 						compBoard.resultBoard.add(p);
 						p.setNotFinished(true);
 
 					}
 					// Föredetta buggar är nu löst med denna kod. Alla Deltagare får faktiskt komma i mål! 
+					int winnerListSize = compBoard.participantsList.size();
 						if (compBoard.resultBoard.size()<=99) {
+//						if (compBoard.resultBoard.size()<=winnerListSize) {
 							System.out.println(compBoard.participantsList.size());
 							raceOn = true;
 					}
@@ -63,8 +68,14 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 	public void midListUpdate(Participants p, CompetitionBoard compBoard) {
 		// gör en ny deltagare och copy n pastar Värderna för att sedan spara in dem i
 		// Mid mellantidsListan
-		Participants midListPar = new Participants(p.getParticipantNumber(), p.getForName(), p.getLastName(),
-				p.getPlace(), p.getStartTime(), p.getDistance(), p.isNotFinished(), p.isPassedMiddle());
+		Participants midListPar = new Participants(p.getParticipantNumber()
+				, p.getForName()
+				, p.getLastName()
+				, p.getPlace()
+				, p.getStartTime()
+				, p.getDistance()
+				, p.isNotFinished()
+				, p.isPassedMiddle());
 		compBoard.midTimeList.add(midListPar);
 	}
 

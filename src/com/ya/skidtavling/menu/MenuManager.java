@@ -34,8 +34,9 @@ public class MenuManager {
 			break;
 		case 4:
 			System.out.println("Skriv ut Tävlingstavla");
-			compBoard.startingTime();
-			compBoard.printParticipantsBoard();
+			compBoard.randomizeList();// nya metoden randomizare listans utfall och tilldelar nya tider 15 secs intervall
+//			compBoard.startingTime();
+//			compBoard.printParticipantsBoard();
 			
 			break;
 		case 5:
@@ -54,7 +55,9 @@ public class MenuManager {
 			System.out.println("Sök ett Namn för Tidskillnad");
 			TimeDifference timeDiff = new TimeDifference(compBoard);
 			break;
-
+		case 9:
+			compBoard.randomizeList();
+			break;
 		default:
 			System.out.println("Något gick snett");
 		}
