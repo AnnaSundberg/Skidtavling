@@ -9,30 +9,32 @@ public class TimeDifference {
 // Lägg till Lite mer data i Utskrift tex : namn och tid. 
 	// kanske göra något liknande med mellantiderna
 	public TimeDifference(CompetitionBoard comBoard) {
-		Participants winner = comBoard.resultBoard.get(0);
+		try {
+			Participants winner = comBoard.resultBoard.get(0);
 
-		System.out.println(winner.startTime.toString());
-		long found = 0;
+			System.out.println(winner.startTime.toString());
+			long found = 0;
 
-		Scanner input = new Scanner(System.in);
-		String search = input.nextLine();
+			Scanner input = new Scanner(System.in);
+			String search = input.nextLine();
 
-		{
-			for (Participants p : comBoard.resultBoard) {
-				if (p.getForName().equals(search) || p.getLastName().equals(search)) {
-					System.out.println(p.startTime);
+			{
+				for (Participants p : comBoard.resultBoard) {
+					if (p.getForName().equals(search) || p.getLastName().equals(search)) {
+						System.out.println(p.startTime);
 
-					found = p.startTime.getSec();
+						found = p.startTime.getSec();
+					}
 				}
+
+				long difTime = found - winner.startTime.getSec();
+				System.out.println(difTime);
+				Time newTime = new Time(difTime);
+				System.out.println(newTime.toString());
 			}
-//				if (found != true) {
-//					System.out.println("Kunde inte hitta deltagare.");
-//					
-//				}
-			long difTime = found - winner.startTime.getSec();
-			System.out.println(difTime);
-			Time newTime = new Time(difTime);
-			System.out.println(newTime.toString());
+		} catch (Exception e) {
+			System.out.println("Det finns ingen som har kommit till mål ännu. . .");
+
 		}
 	}
 }
