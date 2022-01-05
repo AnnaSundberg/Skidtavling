@@ -10,7 +10,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 	
 	public void race(CompetitionBoard compBoard) {// tar listan som Parameter
 		boolean raceOn = true;
-		int trackDistance = 250;
+		int trackDistance = 250;// Ny variable som sätter värdet av loppets Längd
 		long plusSec = 15;// lägger på 15 sekunder för alla varje varv
 		
 		do {
@@ -35,7 +35,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						}else break;
 						
 					}else if(p.isPassedMiddle() && p.getDistance()>trackDistance/2) {
-						System.out.println(" ----");}
+						System.out.println(" ----");}// kan det vara detta som buggar det hela och gör så det krashar ?
 					
 					if (p.getDistance() >= trackDistance) {// gissar på att denna är den som styr loppets längd. testa om det går att göra det längre med 500 istället
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
@@ -61,7 +61,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 		// nu får vi ut mellantiden som det är tänkt
 
 	public void midListUpdate(Participants p, CompetitionBoard compBoard) {
-		// gör en ny deltagare och copy n pastar Värderna för att sedan spara in dem i
+		// gör en ny deltagare och copy n pastear Värderna för att sedan spara in dem i
 		// Mid mellantidsListan
 		Participants midListPar = new Participants(p.getParticipantNumber(), p.getForName(), p.getLastName(),
 				p.getPlace(), p.getStartTime(), p.getDistance(), p.isNotFinished(), p.isPassedMiddle());
