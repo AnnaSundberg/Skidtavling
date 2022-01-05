@@ -14,7 +14,7 @@ public class FillFromFile {
 		try (BufferedReader fReader = new BufferedReader(new FileReader("Deltagare.txt"))) {
 //		try(BufferedReader fReader = new BufferedReader(new FileReader("PreviusResult.txt"))){// Nytt nerbantad deltagarlista
 			String line;
-			int i = 0;			
+					
 
 
 			// ställer upp deltagarna rad för rad
@@ -27,7 +27,7 @@ public class FillFromFile {
 //				Participants newParticipant = new Participants(randNum, fName, lName, i + 1, null, 0, false,false);
 				Participants newParticipant = new Participants(randNum, fName, lName, 0, null, 0, false,false);
 				compBoard.participantsList.add(newParticipant);
-				i++;
+			
 
 			}
 		} catch (Exception e) {
