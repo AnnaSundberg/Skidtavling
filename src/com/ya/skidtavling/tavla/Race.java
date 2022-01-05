@@ -4,12 +4,13 @@ import java.util.Random;
 
 import com.ya.skidtavling.participants.Participants;
 
-public class Race {// Flyttad till egen klass för att snygga till det hela 
-	
-	Random rand = new Random();
+public class Race {// Flyttad till egen klass för att snygga till det hela
 
+	Random rand = new Random();
+	
 	public void race(CompetitionBoard compBoard) {// tar listan som Parameter
 		boolean raceOn = true;
+		int trackDistance = 250;
 		long plusSec = 15;// lägger på 15 sekunder för alla varje varv
 		
 		do {
@@ -24,19 +25,19 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					p.startTime.setSec(p.startTime.getSec()+plusSec);// man måste ta class metoderna så fungera det :) 
 					System.out.println(p.toString());
 					//Här måste tittas över 
-					if (!p.isPassedMiddle() && p.getDistance()>=500) {
-						if(!p.isPassedMiddle() && p.getDistance()<=505) {// vet inte om detta gör så mkt längre
+					if (!p.isPassedMiddle() && p.getDistance()>=trackDistance/2) {
+						if(!p.isPassedMiddle() && p.getDistance()<=(trackDistance/2)+5) {// vet inte om detta gör så mkt längre
 							// om längd är 500 ha denna på 250
 							System.out.println("midList Update-----------------------------------------");
 							midListUpdate(p,compBoard);// ny metod som gör jobbet 
-//							compBoard.midTimeList.add(p);
+
 							p.setPassedMiddle(true);
 						}else break;
 						
-					}else if(p.isPassedMiddle() && p.getDistance()>500) {
+					}else if(p.isPassedMiddle() && p.getDistance()>trackDistance/2) {
 						System.out.println(" ----");}
 					
-					if (p.getDistance() >= 1000) {// gissar på att denna är den som styr loppets längd. testa om det går att göra det längre med 500 istället
+					if (p.getDistance() >= trackDistance) {// gissar på att denna är den som styr loppets längd. testa om det går att göra det längre med 500 istället
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
 
 						p.setDistance(p.getDistance());
@@ -44,32 +45,26 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						p.setNotFinished(true);
 
 					}
-					// den här behöver ses över en del gånger kommer de alla fram andra inte .... 
-					if (p.isNotFinished()) {// kollar om någon inte kommit till mål än 
-						// Han verkar inte kolla alla utan har sista gått i mål så bryts det hela . . .
-						for (Participants p1 : compBoard.participantsList) {
-							if (p1.isNotFinished()) {
-								raceOn = false;
-							} else
-								raceOn = true;
-						}
+					// Föredetta buggar är nu löst med denna kod. Alla Deltagare får faktiskt komma i mål! 
+						if (compBoard.resultBoard.size()<=99) {
+							System.out.println(compBoard.participantsList.size());
+							raceOn = true;
 					}
+						else
+							raceOn = false;
 				}
 			}
 
-		} while (raceOn);
-	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera nu får vi ut mellantiden som det är tänkt 
-	public void midListUpdate(Participants p,CompetitionBoard compBoard) {
+	}while(raceOn);
+
+	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera
+		// nu får vi ut mellantiden som det är tänkt
+
+	public void midListUpdate(Participants p, CompetitionBoard compBoard) {
 		// gör en ny deltagare och copy n pastar Värderna för att sedan spara in dem i
-		// Mid mellantidsListan 
-		Participants midListPar = new Participants(p.getParticipantNumber(),
-				p.getForName(),
-				p.getLastName(), 
-				p.getPlace(),
-				p.getStartTime(),
-				p.getDistance(),
-				p.isNotFinished(),
-				p.isPassedMiddle());
+		// Mid mellantidsListan
+		Participants midListPar = new Participants(p.getParticipantNumber(), p.getForName(), p.getLastName(),
+				p.getPlace(), p.getStartTime(), p.getDistance(), p.isNotFinished(), p.isPassedMiddle());
 		compBoard.midTimeList.add(midListPar);
 	}
 

@@ -19,10 +19,6 @@ public class NewRegistration {
 				System.out.println("Fyll i följande: Förnamn, Efternamn: ");
 				compBoard.participantsList.add(new Participants(scan.next(), scan.next()));
 
-				for (Participants e : compBoard.participantsList) { // Skriver ut alla åkare plus de nya åkarna som
-																	// registrerats
-					System.out.println(e);
-				}
 			}
 		} catch (NumberFormatException ex) {
 			System.out.println("Fel inmatning av antal, försök igen\n");
