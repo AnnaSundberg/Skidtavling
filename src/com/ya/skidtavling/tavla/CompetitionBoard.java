@@ -18,7 +18,7 @@ public class CompetitionBoard {
 		for (Participants s : participantsList) {
 			System.out.println(s);
 		}
-			
+			   
 	}
 // tilldela tiden mer efter ett klockslag och inte en random. för att göra det helt verkligare.
 	public void startingTime() {// hur fungerar detta ???? 
