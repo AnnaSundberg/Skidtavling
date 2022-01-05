@@ -25,7 +25,7 @@ public class Menu {
 	private int getInput() {
 		Scanner scan = new Scanner(System.in);
 		int userChoice = -1;					// index på -1 så while loopen inte evighetsloopar
-		while(userChoice < 0 || userChoice > 9) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
+		while(userChoice < 0 || userChoice > 8) {		// Satte val 0 ifall användaren råkar så får den ett meddelande
 			try {
 				System.out.print("\nSkriv en siffra: ");
 				userChoice = Integer.parseInt(scan.nextLine());
