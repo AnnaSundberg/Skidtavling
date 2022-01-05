@@ -36,12 +36,32 @@ public class Participants extends Person {
 	public void setNotFinished(boolean notFinished) {
 		this.notFinished = notFinished;
 	}
-	// används den här ?? 
+	
+//	@Override
+//	public String toString() {
+//		return participantNumber + " " + forName + " " + lastName + "        " + "\t\t\t place=" + place + " :  " + startTime
+//				+ " har kommit : " + distance;
+//		
+//	}
 	@Override
-	public String toString() {
-		return participantNumber + " " + forName + " " + lastName + "" + "\t place=" + place + " :  " + startTime
-				+ " har kommit : " + distance;
-
+	public String toString() {// trimmad Sträng för utskriften
+		String prettierOutPutString = participantNumber + forName.trim() + "  "+ lastName.trim();
+		int Length = prettierOutPutString.length();
+		if (Length < 10)  
+			return participantNumber + " " + forName.trim() 
+					+ " " + lastName.trim() + "\t\t" + "\t place=" + place 
+					+ " :   " + startTime
+					+ " har kommit : " + distance ;
+		if (Length > 17)
+		return participantNumber + " " + forName.trim() 
+				+ " " + lastName.trim() + "\t" + "\t place=" 
+				+ place + " :  " + startTime
+				+ " har kommit : " + distance ;
+		else
+			return participantNumber + " " + forName.trim() 
+			+ " " + lastName.trim() + "              " 
+			+ "\t place=" + place + " :  " + startTime
+					+ " har kommit : " + distance ;
 	}
 
 	public int getParticipantNumber() {

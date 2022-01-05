@@ -26,7 +26,7 @@ public class Time {
 		int secu = temp;
 		return " time "+hour+" :" + min +" :"+ secu ;
 	}
-	public String toPrettyString() {
+	public String toPrettyString() {// som innan fast med mindre korrigering
 		int temp = (int) sec;
 		int hour = temp/3600;
 		temp = temp-hour*3600;
