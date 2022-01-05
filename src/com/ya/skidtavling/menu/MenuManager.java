@@ -51,6 +51,7 @@ public class MenuManager {
 			compBoard.printWinnerBoard();
 			break;
 		case 8:
+			System.out.println("Sök ett Namn för Tidskillnad");
 			TimeDifference timeDiff = new TimeDifference(compBoard);
 			break;
 
