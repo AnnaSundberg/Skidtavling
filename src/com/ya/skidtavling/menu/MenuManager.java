@@ -29,8 +29,15 @@ public class MenuManager {
 			break;
 		case 3:
 			System.out.println("Starta tävling");
+			try {
+				
+			
 			Race race = new Race();// skapar en instans för Rejset.
 			race.race(compBoard);// anropar metoden race
+			}catch (Exception e) {
+				System.out.println("Tävlingen kan inte startas \n"
+						+ "Börja med att Sriva ut Tävlingstavlan.");
+				}
 			break;
 		case 4:
 			System.out.println("Skriv ut Tävlingstavla");
