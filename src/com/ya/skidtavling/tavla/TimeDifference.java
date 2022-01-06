@@ -10,7 +10,7 @@ public class TimeDifference {
 	// kanske göra något liknande med mellantiderna
 	public TimeDifference(CompetitionBoard comBoard) {
 		try {
-			Participants winner = comBoard.resultBoard.get(0);
+			Participants winner = comBoard.resultBoard.get(0);// Indexet för första åkaren som kommer i mål
 
 			long found = 0;
 
