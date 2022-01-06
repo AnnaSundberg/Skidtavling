@@ -20,7 +20,7 @@ public class TimeDifference {
 			{
 				for (Participants p : comBoard.resultBoard) {
 					if (p.getForName().equals(search) || p.getLastName().equals(search)) {
-						System.out.println(p.startTime + " vad är det här ??");
+						System.out.println(p.startTime);
 
 						found = p.startTime.getSec();
 					}
