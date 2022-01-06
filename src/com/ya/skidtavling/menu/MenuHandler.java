@@ -1,68 +1,40 @@
 package com.ya.skidtavling.menu;
 
+import java.util.Scanner;
 
-import com.ya.skidtavling.participants.NewRegistration;
-import com.ya.skidtavling.participants.SearchParticipant;
 import com.ya.skidtavling.tavla.CompetitionBoard;
-import com.ya.skidtavling.tavla.Race;
-import com.ya.skidtavling.tavla.TimeDifference;
+import com.ya.skidtavling.tavla.FillFromFile;
 
+//Kanske bör byta namn på denna klass för den börja komma ifrån Sitt syfte
 public class MenuHandler {
-	
-	public static void switchMenu(int userChoice, CompetitionBoard compBoard) throws InterruptedException {
-	
-		// behöver ses igenom
-		// behöver vi under menyer för diverse menyval
-		switch (userChoice) {			// 
-		case 0:
-			PrintMenu.printByeByeBox();
-			System.exit(0);// END
-		case 1:
-			System.out.println("\nSök en Deltagare:\n¤ Skriv Förnamn och/eller Efternamn ¤");
-			SearchParticipant test = new SearchParticipant(compBoard);
-			break;
-		case 2:
-			System.out.println("Reg ny åkare");
-			NewRegistration reg = new NewRegistration();
-			reg.Registration(compBoard);
-			
-			break;
-		case 3:
-			System.out.println("Starta tävling");
-			Race race = new Race();// skapar en instans för Rejset.
-			race.race(compBoard);// anropar metoden race
-			break;
-		case 4:
-			System.out.println("Skriv ut Tävlingstavla");
-			compBoard.randomizeList();// nya metoden randomizare listans utfall och tilldelar nya tider 15 secs intervall
-//			compBoard.startingTime();
-//			compBoard.printParticipantsBoard();
-			
-			break;
-		case 5:
-			System.out.println("Skriv ut Mellantiderna");
-			compBoard.printMidTimeList();
-			break;
-		case 6:
-			System.out.println("Skriv ut Resultattavla");
-			compBoard.printResultBoard();
-			break;
-		case 7:
-			System.out.println("Skriv ut Vinnarna 1-3");
-			compBoard.printWinnerBoard();
-			break;
-		case 8:
-			System.out.println("Sök ett Namn för Tidskillnad");
-			TimeDifference timeDiff = new TimeDifference(compBoard);
-			break;
-		case 9:
-			compBoard.randomizeList();
-			break;
-		default:
-			System.out.println("Något gick snett");
+
+	boolean quit;
+	public CompetitionBoard compBoard = new CompetitionBoard();
+
+	public void runMenu() throws InterruptedException {
+		PrintMenu.printWelcomeBox();
+		FillFromFile FFF = new FillFromFile(compBoard);// instans till nya klassen för fil läsning
+		while (!quit) {
+			PrintMenu.printMenu();
+			int userChoice = getInput(); // getInput ny metod för att behandla användarens input
+			MenuManager.switchMenu(userChoice, compBoard);
+
 		}
 	}
 
-	
-	
+	private int getInput() {
+		Scanner scan = new Scanner(System.in);
+		int userChoice = -1; // index på -1 så while loopen inte evighetsloopar
+		while (userChoice < 0 || userChoice > 8) { // Satte val 0 ifall användaren råkar så får den ett meddelande
+			try {
+				System.out.print("\nSkriv en siffra: ");
+				userChoice = Integer.parseInt(scan.nextLine());
+			} catch (NumberFormatException e) {
+				System.out.println("Försök igen");
+			}
+
+		}
+		return userChoice;
+	}
+
 }

@@ -1,12 +1,12 @@
 package com.ya.skidtavling.main;
 
-import com.ya.skidtavling.menu.Menu;
+import com.ya.skidtavling.menu.MenuHandler;
 
 public class Main {
 
 	public static void main(String[] args) throws InterruptedException {
 
-		Menu menu = new Menu(); // instans för meny klassen
+		MenuHandler menu = new MenuHandler(); // instans för meny klassen
 		menu.runMenu(); // kallar på runMenu klassen som skriver ut välkommen rutan och sedan valen
 
 	}
