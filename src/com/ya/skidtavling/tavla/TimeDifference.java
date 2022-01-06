@@ -13,6 +13,7 @@ public class TimeDifference {
 			Participants winner = comBoard.resultBoard.get(0);// Indexet för första åkaren som kommer i mål
 
 			long found = 0;
+			Participants foundPar = null;
 
 			Scanner input = new Scanner(System.in);
 			String search = input.nextLine();
@@ -21,7 +22,7 @@ public class TimeDifference {
 				for (Participants p : comBoard.resultBoard) {
 					if (p.getForName().equals(search) || p.getLastName().equals(search)) {
 						System.out.println(p.startTime);
-
+						foundPar = p;
 						found = p.startTime.getSec();
 					}
 				}
@@ -31,7 +32,8 @@ public class TimeDifference {
 				Time newTime = new Time(difTime);
 				System.out.print("Vinnaren är :" + winner.getForName() + " " + winner.getLastName());
 				System.out.print(winner.startTime.toString() + "\n");
-				System.out.println(" Skillnaden är : " + newTime.toPrettyString());
+				System.out.println(" Skillnaden är : "+ winner.getForName()+" "+winner.getLastName()+" : " + newTime.toPrettyString() 
+					+" "+ foundPar.getForName() +" " + foundPar.getLastName());
 			}
 		} catch (Exception e) {
 			System.out.println("Det finns ingen som har kommit till mål ännu. . .");

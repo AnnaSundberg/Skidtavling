@@ -29,6 +29,9 @@ public class CompetitionBoard {
 			Time startTime = new Time(twoPm+plusTime);
 			p.setStartTime(startTime);
 			plusTime+=15;
+			// behöver någon typ av start och mål tid för att få någon typ av offset 
+			// funderar på om man kanske inte skall ha en till parameter i Participant som 
+			// heter just finnishingTime lr något 
 			
 		}
 	}
