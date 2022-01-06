@@ -18,7 +18,7 @@ public class MenuManager {
 			PrintMenu.printByeByeBox();
 			System.exit(0);// END
 		case 1:
-			System.out.println("Sök en Deltagare\nFörnamn eller Efternamn");
+			System.out.println("\nSök en Deltagare:\n¤ Skriv Förnamn och/eller Efternamn ¤");
 			SearchParticipant test = new SearchParticipant(compBoard);
 			break;
 		case 2:

@@ -13,17 +13,16 @@ public class NewRegistration {
 		System.out.println("Hur många åkare vill du registrera?: ");
 
 		try {
-			
+
 			int size = Integer.parseInt(scan.nextLine());
 			for (int p = 0; p < size; p++) {
 				System.out.println("Fyll i följande: Förnamn, Efternamn: ");
 				compBoard.participantsList.add(new Participants(scan.next(), scan.next()));
-
 			}
-		} catch (NumberFormatException ex) {
+		} 
+		catch (NumberFormatException ex) {
 			System.out.println("Fel inmatning av antal, försök igen\n");
 		}
 
 	}
-
 }
