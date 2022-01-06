@@ -17,7 +17,7 @@ public class Menu {
 		while (!quit) {
 			PrintMenu.printMenu();
 			int userChoice = getInput(); // getInput ny metod för att behandla användarens input
-			MenuManager.switchMenu(userChoice, compBoard);
+			MenuHandler.switchMenu(userChoice, compBoard);
 
 		}
 	}

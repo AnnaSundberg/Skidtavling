@@ -7,7 +7,7 @@ import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.Race;
 import com.ya.skidtavling.tavla.TimeDifference;
 
-public class MenuManager {
+public class MenuHandler {
 	
 	public static void switchMenu(int userChoice, CompetitionBoard compBoard) throws InterruptedException {
 	
