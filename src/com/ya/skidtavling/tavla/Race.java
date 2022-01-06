@@ -49,7 +49,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
  
 					}
 					// Föredetta buggar är nu löst med denna kod. Alla Deltagare får faktiskt komma i mål! 
-					int winnerListSize = compBoard.participantsList.size();
+					int winnerListSize = compBoard.participantsList.size();// bryr vi oss om det är någon stackare som inte kommer till mål när vi lägger in nya åkare för hand ?? 
 						if (compBoard.resultBoard.size()<=99) {
 //						if (compBoard.resultBoard.size()<=winnerListSize) {
 							System.out.println(compBoard.participantsList.size());
