@@ -31,7 +31,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					p.setDistance(p.getDistance() + rand.nextInt(5));
 					p.startTime.setSec(p.startTime.getSec() + plusSec);// man måste ta class metoderna så fungera det :)
 					System.out.println(p.toString());
-					// Har åkaren nått mitten ?
+					// ----Har åkaren nått mitten ?----
 					if (!p.isPassedMiddle() && p.getDistance() >= trackDistance / 2) {
 						if (!p.isPassedMiddle() && p.getDistance() <= (trackDistance / 2) + 5) {
 							System.out.println("midList Update-----------------------------------------");
@@ -47,7 +47,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 					} else if (p.isPassedMiddle() && p.getDistance() > trackDistance / 2) {
 						System.out.println(" ----");
 					} // kan det vara detta som buggar det hela och gör så det krashar ?
-
+					// ----har Åkaren nått mål?----
 					if (p.getDistance() >= trackDistance) {
 						p.setPlace(finishPlace);
 						System.out.println("\n  " + p.getForName() + " " + p.getLastName() + " Har Gått i mål");
