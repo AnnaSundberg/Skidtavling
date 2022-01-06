@@ -46,7 +46,7 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						p.setDistance(p.getDistance());
 						compBoard.resultBoard.add(p);
 						p.setNotFinished(true);
-
+ 
 					}
 					// Föredetta buggar är nu löst med denna kod. Alla Deltagare får faktiskt komma i mål! 
 					int winnerListSize = compBoard.participantsList.size();
