@@ -34,9 +34,9 @@ public class CompetitionBoard {
 			
 		}
 	}
-	// den här andvänds inte längre 
+	
 // Dessa tre kanske kan göras om till egna klasser. 
-	public void printParticipantsBoard() {
+	public void printParticipantsBoard() {// den här andvänds inte längre 
 
 		for (Participants s : participantsList) {
 			System.out.println(s);
