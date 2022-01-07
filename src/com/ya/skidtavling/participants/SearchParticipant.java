@@ -11,10 +11,10 @@ public class SearchParticipant {
 			boolean found = false;
 			
 			Scanner input = new Scanner(System.in);
-			String search = input.nextLine();
+			String search = input.nextLine();// tar emot Indata från användaren 
 			{
-				for (Participants p : compBoard.participantsList) {
-					if (p.getForName().equals(search) || p.getLastName().equals(search)) {
+				for (Participants p : compBoard.participantsList) {// ställer upp listan 
+					if (p.getForName().equals(search) || p.getLastName().equals(search)) {// ser om datan användaren skrivit in finns i listan
 						System.out.println(p);
 						found = true;
 					}
