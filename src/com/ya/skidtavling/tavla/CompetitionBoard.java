@@ -7,7 +7,6 @@ import com.ya.skidtavling.time.Time;
 
 public class CompetitionBoard {
 
-	Random rand = new Random();
 	public List<Participants> participantsList = new ArrayList<>();
 	public List<Participants> resultBoard = new ArrayList<>();
 	public List<Participants> midTimeList = new ArrayList<>();
