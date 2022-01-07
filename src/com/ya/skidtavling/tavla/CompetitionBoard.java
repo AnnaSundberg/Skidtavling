@@ -24,11 +24,14 @@ public class CompetitionBoard {
 	public void startingTime() {// hur fungerar detta ???? 
 
 		long twoPm = 50400;// kl är 1400.
+		long beginTime = 0;
+//		Time beginingTime = new Time(beginTime);
 		long plusTime = 0;
 		for(Participants p:participantsList) {
 			Time startTime = new Time(twoPm+plusTime);
 			p.setStartTime(startTime);
 			plusTime+=15;
+			p.setRaceTime(0);
 			// behöver någon typ av start och mål tid för att få någon typ av offset 
 			// funderar på om man kanske inte skall ha en till parameter i Participant som 
 			// heter just finnishingTime lr något 

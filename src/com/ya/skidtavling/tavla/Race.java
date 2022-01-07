@@ -22,15 +22,23 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 		int finishPlace = 1;// för målgångsPlats
 		int midPlace = 1;// midTimePlats
 		long getMidTimeFromPartic = 0;// long för mellantiden
-
+		long racePlusTime = 1;
+		
 		do {
-
+			
 			for (Participants p : compBoard.participantsList) {// ställer upp listan
 
 				if (!p.isNotFinished()) {
+					
+				Time PlusTime = new Time(racePlusTime);
 					p.setDistance(p.getDistance() + rand.nextInt(5));
 					p.startTime.setSec(p.startTime.getSec() + plusSec);// man måste ta class metoderna så fungera det :)
+					//p.raceTime.setSec(p.raceTime.getSec()+racePlusTime);
+//					p.setRaceTime(PlusTime);
 					System.out.println(p.toString());
+//					System.out.println(p.getRaceTime()/3600);
+					p.setRaceTime(racePlusTime);
+					racePlusTime++;
 					// ----Har åkaren nått mitten ?----
 					if (!p.isPassedMiddle() && p.getDistance() >= trackDistance / 2) {
 						if (!p.isPassedMiddle() && p.getDistance() <= (trackDistance / 2) + 5) {
@@ -65,9 +73,9 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 						raceOn = true;
 					} else
 						raceOn = false;
-				}
+				}		 
 			}
-
+			
 		} while (raceOn);
 
 	}// verkar stämma med Hans Hypotés att det var en pekare som behövdes korrigera
@@ -83,7 +91,8 @@ public class Race {// Flyttad till egen klass för att snygga till det hela
 				, p.getStartTime()//Den här går inte att ta bort Men i o med midTime Så sparas han rätt.
 				, p.getDistance()
 				, p.isNotFinished()
-				, p.isPassedMiddle());
+				, p.isPassedMiddle()
+				, p.getRaceTime());
 		midListPar.setStartTime(midTime);// sätter mellantiden för mellantidslistan
 		compBoard.midTimeList.add(midListPar);// lägger till åkaren i listan för mellantid
 	}

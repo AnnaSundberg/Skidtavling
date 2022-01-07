@@ -11,6 +11,7 @@ public class Participants extends Person {
 	private int distance;
 	private boolean notFinished;
 	private boolean passedMiddle;
+	private long  raceTime;
 
 
 	public Participants(String forName, String lastName) { 
@@ -18,7 +19,7 @@ public class Participants extends Person {
 		
 	}
 	public Participants(int participantNumber, String forName, String lastName, int place, Time startTime, int distance,
-			boolean notFinished,boolean passedMiddle) {
+			boolean notFinished,boolean passedMiddle,long raceTime) {
 		super(forName, lastName);
 		this.participantNumber = participantNumber;
 		this.place = place;
@@ -26,6 +27,7 @@ public class Participants extends Person {
 		this.distance = distance;
 		this.notFinished = notFinished;
 		this.passedMiddle=passedMiddle;
+		this.raceTime = raceTime;
 
 	}
 
@@ -51,17 +53,17 @@ public class Participants extends Person {
 			return participantNumber + " " + forName.trim() 
 					+ " " + lastName.trim() + "\t\t" + "\t place=" + place 
 					+ " :   " + startTime
-					+ " har kommit : " + distance ;
+					+ " har kommit : " + distance +" :"+raceTime;
 		if (Length > 17)
 		return participantNumber + " " + forName.trim() 
 				+ " " + lastName.trim() + "\t" + "\t place=" 
 				+ place + " :  " + startTime
-				+ " har kommit : " + distance ;
+				+ " har kommit : " + distance +" :"+raceTime;
 		else
 			return participantNumber + " " + forName.trim() 
 					+ " " + lastName.trim() + "              " 
 					+ "\t place=" + place + " :  " + startTime
-					+ " har kommit : " + distance ;
+					+ " har kommit : " + distance +" :"+raceTime;
 	}
 
 	public int getParticipantNumber() {
@@ -102,6 +104,12 @@ public class Participants extends Person {
 
 	public void setPassedMiddle(boolean passedMiddle) {
 		this.passedMiddle = passedMiddle;
+	}
+	public long getRaceTime() {
+		return raceTime;
+	}
+	public void setRaceTime(long raceTime) {
+		this.raceTime = raceTime;
 	}
 
 }
