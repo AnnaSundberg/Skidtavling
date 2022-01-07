@@ -11,7 +11,7 @@ import com.ya.skidtavling.tavla.CompetitionBoard;
 import com.ya.skidtavling.tavla.FillFromFile;
 import com.ya.skidtavling.tavla.Race;
 
-class CompBoardTest {
+class RaceTest {
 
 	public static CompetitionBoard testCompBoard = new CompetitionBoard();
 	static Participants testParticipant;
