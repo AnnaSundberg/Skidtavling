@@ -2,7 +2,7 @@
 
 Välkommen till Grupp3As Skidtävling 2022
 
-- Main Branch är den ni ska granska koden i. Resterande är antingen överflödigt, tester eller annat. Ursäkna röran :)
+- Main Branch är den ni ska granska koden i. Resterande är antingen överflödigt, tester eller annat. Ursäkta röran :)
 
 ## Members
 Anna
